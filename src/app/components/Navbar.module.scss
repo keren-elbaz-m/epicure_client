@@ -1,0 +1,63 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 46px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    width: 375;
+    height: 46;
+    left: -1px;
+
+  }
+  
+  .hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 16px;
+    font-size: 24px;
+  }
+  
+  .menu {
+    width: 377;
+    height: 367;
+    gap: 24px;
+    top: 46px;
+    left: -1px;
+    padding-top: 40px;
+    padding-right: 12px;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    
+  }
+  
+  .close {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 32px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+  }
+  
+  .menu ul li {
+    margin-bottom: 24px;
+  }
