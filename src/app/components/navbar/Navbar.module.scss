@@ -7,6 +7,20 @@ $close-border-color: #000000;
 $background-color: #FFFFFF;
 $icons-size: 24px;
 
+@mixin visible-state($visible: true, $x: -50%) {
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+  @if $visible {
+    opacity: 1;
+    transform: translateX($x) translateY(0);
+    visibility: visible;
+  } @else {
+    opacity: 0;
+    transform: translateX($x) translateY(-10px);
+    visibility: hidden;
+  }
+}
+
 @mixin navbar-font {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 200;
@@ -46,16 +60,32 @@ body{
   cursor: pointer;
 }
 
-.logo {
+.logoWrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center; 
 }
-  
+
+.logo {
+  @include visible-state(true, -50%);
+}
+
+.logo.hidden {
+  @include visible-state(false, -50%);
+}
+
 .icons {
   display: flex;
   gap: 16px;
   font-size: $icons-size;
+  @include visible-state(true, 0);
+}
+
+.icons.hidden {
+  @include visible-state(false, 0);
 }
 
 %menu-style {
