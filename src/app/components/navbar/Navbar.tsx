@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import hamburger from "@/app/images/hamburger.svg";
-import epicure_logo from "@/app/images/epicure_logo.jpg";
-import person_icon from "@/app/images/person_icon.svg";
-import search_icon from "@/app/images/search_icon.svg";
-import shopping_bag_icon from "@/app/images/shopping_bag_icon.svg";
-import close_icon from "@/app/images/close_icon.svg";
+import hamburger from "@/app/assets/icons/hamburger.svg";
+import epicure_logo from "@/app/assets/images/epicure_logo.jpg";
+import person_icon from "@/app/assets/icons/person_icon.svg";
+import search_icon from "@/app/assets/icons/search_icon.svg";
+import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
+import close_icon from "@/app/assets/icons/close_icon.svg";
 import Image from "next/image";
-import styles from "@/app/components/Navbar.module.scss";
+import styles from "@/app/components/navbar/Navbar.module.scss";
 
 
 export default function Navbar() {
@@ -36,17 +36,18 @@ export default function Navbar() {
             </nav>
 
             {menuOpen && (
-                <div className={styles.menu}>
-
-              <ul>
-                <li><Link href="/restaurants">Restaurants</Link></li>
-                <li><Link href="/chefs">Chefs</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
-                <li><Link href="/terms">Term of Use</Link></li>
-                <li><Link href="/privacy">Privacy Policy</Link></li>
-                </ul>
-
-            </div>
+                <div>
+                    <div className={styles.menu}>
+                        <Link href="/restaurants">Restaurants</Link>
+                        <Link href="/chefs">Chefs</Link>
+                    </div>
+                    <div className={styles.menuFooter}>
+                        <Link href="/contact">Contact Us</Link>
+                        <Link href="/terms">Term of Use</Link>
+                        <Link href="/privacy">Privacy Policy</Link>
+                    </div>
+                </div>
+                
               
             )}
         </>
