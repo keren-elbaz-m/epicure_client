@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { screenType } from "../types";
 
 export function useScreenType(screenWidth = 768) {
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -13,5 +14,5 @@ export function useScreenType(screenWidth = 768) {
         return () => window.removeEventListener("resize", checkScreen);
     }, [screenWidth]);
 
-    return isMobile ? "mobile" : "desktop";
+    return isMobile ? screenType.MOBILE : screenType.DESKTOP;
 }

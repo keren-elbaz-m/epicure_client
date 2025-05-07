@@ -22,3 +22,13 @@ export type Restaurant = {
         dinner: string[];
     };
 };
+
+export enum screenType {
+    DESKTOP  = "desktop",
+    MOBILE = "mobile"
+}
+
+export enum DropDownType{
+    BURGER = "burger",
+    SEARCH = "search", 
+}
