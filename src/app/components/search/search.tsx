@@ -2,7 +2,7 @@ import style from "@/app/components/search/search.module.scss";
 import search_icon from "@/app/assets/icons/search_icon.svg";
 import Image from "next/image";
 
-export default function SearchContent() {
+export default function Search() {
   return(
     <div className={style.container}>
 

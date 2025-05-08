@@ -1,7 +1,7 @@
 import React from "react";
 import style from "@/app/components/navbar/styles/DropDown.module.scss"
 
-type DropDownType = "burger" | "search" | "cart";
+import { DropDownType } from "@/app/types";
 
 interface DropDownProps{
     isOpen: boolean;
@@ -15,13 +15,22 @@ const DropDown: React.FunctionComponent<DropDownProps> = ({ isOpen, onClose, chi
   
     return (
         <div onClick={onClose}>
-            <div
-                className={`${type === "burger" ? style.burger : ""} ${type === "search" ? style.search : ""}`}
-                onClick={(e) => e.stopPropagation()}
-            >
+            <div onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
         </div>
+        // <div onClick={onClose}>
+        //     <div
+        //         className={`
+        //             ${type === "burger" ? style.burger : ""}
+        //             ${type === "search" ? style.search : ""}
+        //             ${type === "cart" ? style.cart : ""}
+        //         `}
+        //         onClick={(e) => e.stopPropagation()}
+        //     >
+        //         {children}
+        //     </div>
+        // </div>
     );
 };
   

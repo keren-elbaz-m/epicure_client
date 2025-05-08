@@ -1,9 +1,8 @@
 'use client'
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { navbarFooterLinks } from "@/app/data/link";
 
-import Link from "next/link";
 import hamburger from "@/app/assets/icons/hamburger.svg";
 import epicure_logo_icon from "@/app/assets/icons/epicure_logo_icon.svg";
 import person_icon from "@/app/assets/icons/person_icon.svg";
@@ -14,8 +13,16 @@ import Image from "next/image";
 import styles from "@/app/components/navbar/styles/Navbar.module.scss";
 import DropDown from "../dropDown/DropDown";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
-import SearchContent from "@/app/components/search/search";
-import { DropDownType } from "@/app/types";
+import Search from "@/app/components/search/search";
+import { dropdownBehaviors, DropDownType } from "@/app/types";
+import Cart from "@/app/components/cart/cart";
+
+
+// export type NavbarItem = {
+//     type: DropDownType | "person";
+//     content?: ReactNode;
+//     onClick?: () => void;
+// };
 
 export default function NavbarMobile() {
 
@@ -28,20 +35,23 @@ export default function NavbarMobile() {
         setDropdownContent(null);
         setDropdownType(null);
     };
+
+    const handleDropdownClick = (type: DropDownType, content: ReactNode) => {
+        if (isOpen) {
+            closeDropdown();
+        } else {
+            setDropdownContent(content);
+            setDropdownType(type);
+        }
+    };
     
+    const behavior = dropdownBehaviors[dropdownType ?? DropDownType.CART];
 
     return (
         <>
             <nav className={styles.navbar}>
                 <button 
-                    onClick={() => {
-                        if (isOpen) {
-                            closeDropdown();
-                        } else {
-                            setDropdownContent(<BurgerMenu />);
-                            setDropdownType(DropDownType.BURGER);
-                        }
-                    }} 
+                    onClick={()=> handleDropdownClick(DropDownType.BURGER, <BurgerMenu/>)}
                     className={styles.hamburger}
                 >
                     {isOpen 
@@ -51,30 +61,33 @@ export default function NavbarMobile() {
                 </button>
 
                 <div className={styles.logoWrapper}>
-                    <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
-                        <Image src={epicure_logo_icon} alt="epicure logo icon" />
-                    </div>
-
+                    {!behavior.hideLogo && (
+                        <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
+                            <Image src={epicure_logo_icon} alt="epicure logo icon" />
+                        </div>
+                    )}
                     {dropdownType === "search" && (
                         <span className={styles.searchTitle}>Search</span>
                     )}
                 </div>
             
-                <div className={`${styles.icons} ${isOpen ? styles.hidden : ""}`}>
-                    <button className={styles.buttonIconsStyle} onClick={()=>{
-                            if(isOpen){
-                                closeDropdown();
-                            }else{
-                                setDropdownContent(<SearchContent/>);
-                                setDropdownType(DropDownType.SEARCH);
-                            }
+                {!behavior.hideIcons && (
+                    <div className={styles.icons}>
+                        <button className={styles.buttonIconsStyle} onClick={()=>{
+                            handleDropdownClick(DropDownType.SEARCH, <Search/>)
                         }}>
-                        <Image src={search_icon} alt="search icon" />
-                    </button>
-                    
-                    <Image src={person_icon} alt="person icon" />
-                    <Image src={shopping_bag_icon} alt="shopping bag icon" />
-                </div>
+                            <Image src={search_icon} alt="search icon" />
+                        </button>
+
+                            <Image src={person_icon} alt="person icon" />
+                        <button className={styles.buttonIconsStyle} onClick={()=>{
+                            handleDropdownClick(DropDownType.CART, <Cart/>)
+                        }}>
+                            <Image src={shopping_bag_icon} alt="shopping bag icon" />
+                        </button>
+                    </div>
+                )}
+               
             </nav>
 
             <DropDown isOpen={isOpen} onClose={closeDropdown} type={dropdownType ?? undefined}>

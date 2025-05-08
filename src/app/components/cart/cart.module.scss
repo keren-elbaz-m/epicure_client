@@ -1,0 +1,37 @@
+.container {
+    width: 100%;
+    // max-width: 800px;
+    height: 367px;
+    left: -1px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding-top: 24px;  
+}
+  
+  .icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .text {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .cart {
+    width: 380px;
+    height: 218px;
+    padding: 16px 12px 24px 12px;
+    background-color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
