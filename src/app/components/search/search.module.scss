@@ -3,7 +3,7 @@ $icons-size: 24px;
 .container{
     width: 100%;
     // max-width: 800px;
-    height: 367px;
+    height:218px;
     left: -1px;
     display: flex;
     justify-content: center;
@@ -47,22 +47,6 @@ $icons-size: 24px;
 
 
 
-// @mixin visible-state($visible: true, $x: -50%) {
-//     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  
-//     @if $visible {
-//       opacity: 1;
-//       transform: translateX($x) translateY(0);
-//       visibility: visible;
-//     } @else {
-//       opacity: 0;
-//       transform: translateX($x) translateY(-10px);
-//       visibility: hidden;
-//     }
-//   }
-
-
-
 .icons {
     display: flex;
     padding: 6px;
@@ -70,32 +54,3 @@ $icons-size: 24px;
     font-size: $icons-size;
     // @include visible-state(true, 0);
   }
-
-// .inputText{
-//     font-family: Helvetica Neue;
-//     font-weight: 200;
-//     font-size: 12px;
-//     line-height: 100%;
-//     letter-spacing: 1.29px;
-//     color: #000000;
-// }
-  
-// .searchBloc{
-//     width: 315;
-//     height: 30;
-//     top: 100px;
-//     left: 30px;
-//     border-radius: 4px;
-//     border-width: 0.5px;
-//     padding-top: 6px;
-//     padding-right: 12px;
-//     padding-bottom: 6px;
-//     padding-left: 12px;
-//     gap: 8px;
-
-// }
-// .searchBox {
-//     width: 263;
-//     height: 32;
-
-// }

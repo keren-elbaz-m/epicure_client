@@ -18,12 +18,6 @@ import { dropdownBehaviors, DropDownType } from "@/app/types";
 import Cart from "@/app/components/cart/cart";
 
 
-// export type NavbarItem = {
-//     type: DropDownType | "person";
-//     content?: ReactNode;
-//     onClick?: () => void;
-// };
-
 export default function NavbarMobile() {
 
     const [dropdownContent, setDropdownContent] = useState<React.ReactNode | null>(null);

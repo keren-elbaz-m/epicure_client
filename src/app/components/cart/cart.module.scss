@@ -1,14 +1,16 @@
 .container {
     width: 100%;
     // max-width: 800px;
-    height: 367px;
+    height: 218px;
     left: -1px;
     display: flex;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 22.04px;
     padding-top: 24px;  
 }
-  
+
   .icon {
     width: 64px;
     height: 64px;
