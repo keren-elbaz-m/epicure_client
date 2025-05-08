@@ -1,0 +1,77 @@
+$menu-width-mobile: 377px;
+$menu-width-desktop: 1440px;
+$min-desktop-width: 1024px;
+
+$menu-footer-border-color: #F2F2F2;
+$close-border-color: #000000;
+$background-color: #ffffff;
+$icons-size: 24px;
+
+
+@mixin navbar-font {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 1.92px;
+}
+
+@mixin flex-column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+body{
+  @include navbar-font;
+}
+
+%menu-style {
+  @include navbar-font;
+  @include flex-column(32px);
+}
+
+.menu {
+  @extend %menu-style;
+  padding-top: 40px;
+  padding-left: 20px;
+
+  width: $menu-width-mobile;
+  height: 148px;
+
+  a{
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @media (min-width: $min-desktop-width) {
+    max-width: $menu-width-desktop;
+    padding: 150px 40px 40px 40px;
+  }
+}
+
+.menuFooter {
+  @extend %menu-style;
+  width: menu-width-mobile;
+  height: 203px;
+  padding: 20px;
+  border-top: 1px solid $menu-footer-border-color;
+  top: 194px;
+  left: -1px;
+  border-width: 1px;
+
+  a, span {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (min-width: $min-desktop-width) {
+    max-width: $menu-width-desktop;
+    padding: 40px 40px 60px 40px;
+  }
+}
+  
