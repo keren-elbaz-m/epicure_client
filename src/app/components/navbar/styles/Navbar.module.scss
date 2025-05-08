@@ -59,23 +59,21 @@ body{
   border: none;
   cursor: pointer;
 }
-
 .logoWrapper {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  align-items: center; 
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-  @include visible-state(true, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;   
-  width: auto; 
+  flex-direction: column;
 }
 
 .logo.hidden {
