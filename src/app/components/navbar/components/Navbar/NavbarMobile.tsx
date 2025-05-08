@@ -12,10 +12,11 @@ import close_icon from "@/app/assets/icons/close_icon.svg";
 import Image from "next/image";
 import styles from "@/app/components/navbar/styles/Navbar.module.scss";
 import DropDown from "../dropDown/DropDown";
-import BurgerMenu from "../burgerMenu/BurgerMenu";
+import Cart from "@/app/components/cart/cart";
+import BurgerMenuContent from "../burgerMenu/BurgerMenu";
 import Search from "@/app/components/search/search";
 import { dropdownBehaviors, DropDownType } from "@/app/types";
-import Cart from "@/app/components/cart/cart";
+
 
 
 export default function NavbarMobile() {
@@ -45,7 +46,7 @@ export default function NavbarMobile() {
         <>
             <nav className={styles.navbar}>
                 <button 
-                    onClick={()=> handleDropdownClick(DropDownType.BURGER, <BurgerMenu/>)}
+                    onClick={()=> handleDropdownClick(DropDownType.BURGER, <BurgerMenuContent onClose={closeDropdown} />)}
                     className={styles.hamburger}
                 >
                     {isOpen 
