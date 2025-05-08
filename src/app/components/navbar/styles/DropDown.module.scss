@@ -1,3 +1,10 @@
 $icons-size: 24px;
 
-
+.dropdownContainer {
+    position: fixed; 
+    top: 46px; 
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999; 
+  }

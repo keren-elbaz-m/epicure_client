@@ -14,23 +14,11 @@ const DropDown: React.FunctionComponent<DropDownProps> = ({ isOpen, onClose, chi
     if (!isOpen) return null;
   
     return (
-        <div onClick={onClose}>
+        <div className={style.dropdownContainer} onClick={onClose}>
             <div onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
         </div>
-        // <div onClick={onClose}>
-        //     <div
-        //         className={`
-        //             ${type === "burger" ? style.burger : ""}
-        //             ${type === "search" ? style.search : ""}
-        //             ${type === "cart" ? style.cart : ""}
-        //         `}
-        //         onClick={(e) => e.stopPropagation()}
-        //     >
-        //         {children}
-        //     </div>
-        // </div>
     );
 };
   
