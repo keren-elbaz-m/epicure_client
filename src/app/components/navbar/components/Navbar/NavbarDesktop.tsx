@@ -1,5 +1,43 @@
+import styles from "@/app/components/navbar/styles/Navbar.module.scss"
+import Image from "next/image";
+import Link from "next/link";
+
+import epicure_logo_icon from "@/app/assets/icons/epicure_logo_icon.svg";
+import person_icon from "@/app/assets/icons/person_icon.svg";
+import search_icon from "@/app/assets/icons/search_icon.svg";
+import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
+
 export default function NavbarDesktop() {
     return (
-      <h1>Desktop Navbar</h1>
+      
+      <nav className={styles.navbar}>
+        <div className={styles.desktopContent}>
+          <div className={styles.leftSection}>
+            <div className={styles.logo}>
+              <Image src={epicure_logo_icon} alt="epicure logo icon" />
+            </div>
+            
+            <span className={styles.brand}>
+              Epicure
+            </span>
+
+            <div className={styles.links}>
+                <Link href="/restaurants">Restaurants</Link>
+                <Link href="/chefs">Chefs</Link>
+            </div>
+          </div>
+
+          <div className={styles.icons}>
+              <button className={styles.buttonIconsStyle}>
+                  <Image src={search_icon} alt="search icon" />
+              </button>
+                  <Image src={person_icon} alt="person icon" />
+              <button className={styles.buttonIconsStyle}>
+                  <Image src={shopping_bag_icon} alt="shopping bag icon" />
+              </button>
+          </div>
+
+        </div>
+      </nav>
     );
   }

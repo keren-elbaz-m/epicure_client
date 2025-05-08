@@ -63,3 +63,4 @@ export const dropdownBehaviors: Record<DropDownType, DropdownBehavior> = {
         toggleBurgerToClose: false,
     },
 };
+

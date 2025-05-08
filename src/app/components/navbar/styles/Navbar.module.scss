@@ -90,9 +90,10 @@ body{
 
 .icons {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   font-size: $icons-size;
   @include visible-state(true, 0);
+  
 }
 
 .icons.hidden {
@@ -104,5 +105,57 @@ body{
   background-color: transparent;
 }
 
+@media screen and (min-width: $min-desktop-width) {
+  .navbar {
+    width: menu-width-desktop;
+    height: 64px  ; 
+    padding: 0 32px;
+  }
+}
 
+.desktopContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 
+  max-width: 1440px;
+  margin: 0 auto; 
+
+  width: 100%;
+  padding: 0 32px;
+
+  @media screen and (min-width: $min-desktop-width) {
+    gap: 64px;
+  }
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+}
+
+.brand {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  font-size: 27px;
+  line-height: 100%;
+  letter-spacing: 1.35px;
+  display: flex;
+  align-items: center;
+  padding-right:32px;
+  padding-left: 15.02px;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+
+  a {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+  }
+}
