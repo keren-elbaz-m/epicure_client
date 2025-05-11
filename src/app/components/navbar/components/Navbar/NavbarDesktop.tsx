@@ -7,37 +7,57 @@ import person_icon from "@/app/assets/icons/person_icon.svg";
 import search_icon from "@/app/assets/icons/search_icon.svg";
 import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
 
+import { DropDownType } from "@/app/types";
+import Cart from "@/app/components/cart/cart";
+import { ReactNode, useState } from "react";
+import DropDown from "../dropDown/DropDown";
+
 export default function NavbarDesktop() {
-    return (
-      
-      <nav className={styles.navbar}>
-        <div className={styles.desktopContent}>
-          <div className={styles.leftSection}>
-            <div className={styles.logo}>
-              <Image src={epicure_logo_icon} alt="epicure logo icon" />
-            </div>
-            
-            <span className={styles.brand}>
-              Epicure
-            </span>
 
-            <div className={styles.links}>
-                <Link href="/restaurants">Restaurants</Link>
-                <Link href="/chefs">Chefs</Link>
-            </div>
-          </div>
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const toggleCart = () => setIsCartOpen(prev => !prev);
+  const closeCart = () => setIsCartOpen(false);
 
-          <div className={styles.icons}>
-              <button className={styles.buttonIconsStyle}>
-                  <Image src={search_icon} alt="search icon" />
-              </button>
-                  <Image src={person_icon} alt="person icon" />
-              <button className={styles.buttonIconsStyle}>
-                  <Image src={shopping_bag_icon} alt="shopping bag icon" />
-              </button>
+  return (
+    <>
+    <nav className={styles.navbar}>
+      <div className={styles.desktopContent}>
+        <div className={styles.leftSection}>
+          <div className={styles.logo}>
+            <Image src={epicure_logo_icon} alt="epicure logo icon" />
           </div>
+          
+          <span className={styles.brand}>
+            Epicure
+          </span>
+
+          <div className={styles.links}>
+              <Link href="/restaurants">Restaurants</Link>
+              <Link href="/chefs">Chefs</Link>
+          </div>
+        </div>
+
+        <div className={styles.icons}>
+            <button className={styles.buttonIconsStyle}>
+                <Image src={search_icon} alt="search icon" />
+            </button>
+                <Image src={person_icon} alt="person icon" />
+
+            <button className={styles.buttonIconsStyle} onClick={toggleCart}>
+                <Image src={shopping_bag_icon} alt="shopping bag icon" />
+            </button>
 
         </div>
-      </nav>
-    );
-  }
+
+      </div>
+    </nav>
+    <DropDown
+      isOpen={isCartOpen}
+      onClose={closeCart}
+      type={DropDownType.CART}
+    >
+      <Cart />
+    </DropDown>
+  </>
+  );
+}

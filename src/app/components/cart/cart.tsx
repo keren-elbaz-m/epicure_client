@@ -1,12 +1,27 @@
+'use client';
+
 import Image from "next/image";
 import empty_bag_icon from "@/app/assets/icons/cart_big_icon.svg";
 import styles from "@/app/components/cart/cart.module.scss";
+import useIsDesktop from "@/app/hooks/useIsDesktop";
 
 export default function Cart() {
+  const isDesktop = useIsDesktop();
+
   return (
-    <div className={styles.container}>
-      <Image src={empty_bag_icon} alt="empty bag icon" className={styles.icon} />
-      <p className={styles.text}>YOUR BAG IS EMPTY</p>
+    <div
+      className={isDesktop ? styles.cartDropDownDesktop : styles.cartDropDownMobile}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className={styles.wrapper}>
+        <Image src={empty_bag_icon} alt="empty bag icon"   className={isDesktop ? styles.iconDesktop : styles.iconMobile} />
+        <p className={styles.text}>YOUR BAG IS EMPTY</p>
+      </div>
+      <button
+        className={`${styles.orderHistoryButton} ${!isDesktop ? styles.hidden : ""}`}
+      >
+        ORDER HISTORY
+      </button>
     </div>
   );
 }
