@@ -1,0 +1,56 @@
+$icons-size: 24px;
+
+.container{
+    width: 100%;
+    // max-width: 800px;
+    height:218px;
+    left: -1px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding-top: 24px;
+}
+
+.searchBloc {
+    width: 315px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 0.5px solid #000000;
+    border-radius: 4px;
+    width: 315px;
+    padding: 8px 12px;
+}
+
+.searchBox input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 12px;
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    line-height: 100%;
+    letter-spacing: 1.29px;
+    color: #000000;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.icons {
+    display: flex;
+    padding: 6px;
+    gap: 16px;
+    font-size: $icons-size;
+    // @include visible-state(true, 0);
+  }

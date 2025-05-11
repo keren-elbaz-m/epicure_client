@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { restaurants } from "../data/restaurants.data";
 export default function RestaurantsPage() {
+  
     return (
       <div>
         <h1>All Restaurants</h1>
