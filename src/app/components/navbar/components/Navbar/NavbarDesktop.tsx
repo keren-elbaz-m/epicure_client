@@ -9,7 +9,7 @@ import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
 
 import { DropDownType } from "@/app/types";
 import Cart from "@/app/components/cart/cart";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import DropDown from "../dropDown/DropDown";
 
 export default function NavbarDesktop() {
