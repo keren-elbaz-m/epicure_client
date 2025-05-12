@@ -9,8 +9,9 @@ import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
 
 import { DropDownType } from "@/app/types";
 import Cart from "@/app/components/cart/cart";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import DropDown from "../dropDown/DropDown";
+import { RESOURES } from "@/app/data/text";
 
 export default function NavbarDesktop() {
 
@@ -28,7 +29,7 @@ export default function NavbarDesktop() {
           </div>
           
           <span className={styles.brand}>
-            Epicure
+            {RESOURES.app.appName}
           </span>
 
           <div className={styles.links}>
