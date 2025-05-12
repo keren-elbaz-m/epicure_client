@@ -52,18 +52,16 @@
 .cartDropDownDesktop {
   position: fixed;
   right: 0;
-  top: 64px;
+  // top: 64px;
   width: 497px;
   height: 586px;
   background-color: white;
   box-shadow: 2px 4px 10px 0px #AFAFAF40;
-  border-radius: 8px;
-
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   padding-top: 241px;
   padding-bottom: 48px; 
 }
