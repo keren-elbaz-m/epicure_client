@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import Search from "../search/search";
+import Search from "@/app/components/search/search";
 import style from "@/app/components/hero/hero.module.scss";
 import hero_desktop from "@/app/assets/images/hero_desktop.png";
 import hero_mobile from "@/app/assets/images/hero_mobile.png";
@@ -24,7 +24,6 @@ export default function Hero() {
             <div className={isMobile ? style.heroTextMobile : style.heroText}>
               Epicure works with the top chef restaurants in Tel Aviv
             </div>
-            {/* <Search variant="hero" /> */}
             <Search variant={isMobile ? screenType.MOBILE : screenType.DESKTOP} />
           </div>
         </div>

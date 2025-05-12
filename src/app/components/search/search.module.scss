@@ -2,12 +2,10 @@ $icons-size: 24px;
 
 .container{
     width: 100%;
-    // max-width: 800px;
     height:218px;
     left: -1px;
     display: flex;
     justify-content: center;
-    // align-items: center;
     padding-top: 24px;
 }
 
@@ -47,11 +45,9 @@ $icons-size: 24px;
 }
 
 
-
 .icons {
     display: flex;
     padding: 6px;
     gap: 16px;
     font-size: $icons-size;
-    // @include visible-state(true, 0);
   }
