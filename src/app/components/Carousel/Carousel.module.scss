@@ -1,0 +1,16 @@
+.carouselContainer {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.slideContainer {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+} 
