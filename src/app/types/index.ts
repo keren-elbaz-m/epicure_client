@@ -23,6 +23,28 @@ export type Restaurant = {
     };
 };
 
+export type Chef = {
+    id: number;
+    name: string;
+    imageUrl: string;
+    views: number;
+    isNew: boolean;
+    description: string;
+    restaurants: string[];
+}
+
+export type Dish = {
+    id: number;
+    name: string;
+    imageUrl: string;
+    price: number;
+    ingredients: string[];
+    type:{
+        name: string;
+        iconUrl: string;
+    }
+}
+
 export enum screenType {
     DESKTOP  = "desktop",
     MOBILE = "mobile"
