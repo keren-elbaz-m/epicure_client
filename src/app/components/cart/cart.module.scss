@@ -36,7 +36,9 @@
   .cartDropDownMobile {
     width: 100%;
     // max-width: 800px;
+    position: fixed;
     height: 218px;
+    background-color:#FFFFFF;
     left: -1px;
     display: flex;
     justify-content: center;
