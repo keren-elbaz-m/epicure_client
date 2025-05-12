@@ -1,9 +1,10 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 import Hero from "@/app/components/hero/Hero";
 import Carousel from "@/app/components/Carousel/Carousel";
 import Card from "@/app/components/Card/Card";
-import { restaurants } from "@/app/data/restaurants.data";
-import { RESOURES } from "@/app/data/text";
+import { restaurants } from "./src/app/data/restaurants.data";
+import { RESOURES } from "./src/app/data/text";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <Hero/>
       <div className={styles.popularContainer}>
         {RESOURES.homepage.popularSection}
-        <div className="px-8 py-6">
+        <div>
           <Carousel>
             {restaurants.map((restaurant) => (
               <Card 
