@@ -42,8 +42,13 @@
 }
 .footerLinks {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
+  flex-direction: column;
+  gap:8px;
+
+  @media (min-width: 769px) {
+    flex-direction: row;  
+    gap: 40px;
+  }
 }
 
 .footerLink {
@@ -57,6 +62,7 @@
   text-align: left;
   padding: 20px 0;
   white-space: nowrap;
+  
 
   a {
     color: #000;
