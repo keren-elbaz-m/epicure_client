@@ -1,28 +1,31 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
 import styles from './Card.module.scss';
 import { Restaurant } from '@/app/types';
 
-interface CardProps {
-    restaurant: Restaurant;
+type CardProps = {
+    item: {
+      name: string;
+      imageUrl: string;
+      [key: string]: any; 
+    };
     children?: React.ReactNode;
-}
+};
 
-export default function Card({ restaurant, children}: CardProps) {
+export default function Card({item, children}: CardProps) {
     return (
         <div className={styles.card}>
             <div className={styles.imageContainer}>
                     <Image
-                        src={restaurant.imageUrl}
-                        alt={restaurant.name}
+                        src={item.imageUrl}
+                        alt={item.name}
                         fill
-                        className={styles.image}
                     />
                 </div>
             <div className={styles.content}>
-                {children || <h3 className={styles.name}>{restaurant.name}</h3>}
+                <h1 className={styles.name}>{item.name}</h1>  
+                <div className={styles.children}>
+                    {children}
+                </div>         
             </div>
         </div>
     );
