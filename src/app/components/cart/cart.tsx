@@ -8,7 +8,6 @@ import { useScreenType } from "@/app/hooks/useScreenType";
 import { screenType } from "@/app/types";
 
 export default function Cart() {
-  // const isDesktop = useIsDesktop();
   const screen = useScreenType();
   const isDesktop=screen===screenType.DESKTOP;
 

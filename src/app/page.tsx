@@ -1,27 +1,23 @@
-import styles from "./page.module.css";
 import Hero from "@/app/components/hero/Hero";
-import Carousel from "@/app/components/Carousel/Carousel";
 import Card from "@/app/components/Card/Card";
 import { restaurants } from "@/app/data/restaurants.data";
 import { RESOURES } from "@/app/data/text";
+import Section from "./components/Section/Section";
+import { sectionLinks } from "./data/link";
 
 export default function Home() {
+  const restaurantCards = restaurants.map((restaurant)=>(
+    <Card key={restaurant.id} restaurant={restaurant}/>
+  ))
+
   return (
     <>
       <Hero/>
-      <div className={styles.popularContainer}>
-        {RESOURES.homepage.popularSection}
-        <div className="px-8 py-6">
-          <Carousel>
-            {restaurants.map((restaurant) => (
-              <Card 
-                key={restaurant.id} 
-                restaurant={restaurant}
-              />
-            ))}
-          </Carousel>
-        </div>
-      </div>
+      <Section
+        sectionLabel={RESOURES.homepage.popularSection}
+        cards={restaurantCards}
+        titleLink={sectionLinks[0]}
+      />
     </>
   );
 }

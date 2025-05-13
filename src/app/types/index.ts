@@ -85,3 +85,8 @@ export const dropdownBehaviors: Record<DropDownType, DropdownBehavior> = {
         toggleBurgerToClose: false,
     },
 };
+
+export type SectionLink = {
+    label: string;
+    url: string;
+}

@@ -1,3 +1,5 @@
+import { SectionLink } from "../types";
+
 export const navbarFooterLinks = [
     {
       label: "Contact Us",
@@ -11,4 +13,15 @@ export const navbarFooterLinks = [
       label: "Privacy Policy",
       path: "/privacy",
     },
+  ];
+
+  export const sectionLinks: SectionLink[] = [
+    {
+      label: "All Restaurants",
+      url: "/restaurants"
+    },
+    {
+      label: "All Dished", 
+      url: "/dishes"
+    }
   ];

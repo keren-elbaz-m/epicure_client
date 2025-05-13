@@ -1,7 +1,9 @@
 .card {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;       
+    min-width: 180px; 
     height: auto;
-    min-height: 200px;
+    
     background-color: #F9F4EA;
     margin: 0 10px;
     flex-shrink: 0;
@@ -9,6 +11,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto; 
 }
 
 .imageContainer {
