@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import { screenType } from "../types";
+import { screenType } from "@/types";
 
 export function useScreenType(screenWidth = 768) {
     const [isMobile, setIsMobile] = useState<boolean>(false);

@@ -1,17 +1,17 @@
-import styles from "@/app/components/navbar/styles/Navbar.module.scss"
+import styles from "@/components/Navbar/Navbar.module.scss"
 import Image from "next/image";
 import Link from "next/link";
 
-import epicure_logo_icon from "@/app/assets/icons/epicure_logo_icon.svg";
-import person_icon from "@/app/assets/icons/person_icon.svg";
-import search_icon from "@/app/assets/icons/search_icon.svg";
-import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
+import epicure_logo_icon from "@/assets/icons/epicure_logo_icon.svg";
+import person_icon from "@/assets/icons/person_icon.svg";
+import search_icon from "@/assets/icons/search_icon.svg";
+import shopping_bag_icon from "@/assets/icons/shopping_bag_icon.svg";
 
-import { DropDownType } from "@/app/types";
-import Cart from "@/app/components/cart/cart";
+import { DropDownType } from "@/types";
+import Cart from "@/components/cart/cart";
 import { useState } from "react";
-import DropDown from "../dropDown/DropDown";
-import { RESOURES } from "@/app/data/text";
+import DropDown from "@/components/dropDown/DropDown";
+import { RESOURES } from "@/data/text";
 
 export default function NavbarDesktop() {
 

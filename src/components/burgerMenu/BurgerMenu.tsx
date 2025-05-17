@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { navbarFooterLinks } from "@/app/data/link";
-import style from "@/app/components/navbar/styles/BurgerContent.module.scss";
+import { navbarFooterLinks } from "@/data/link";
+import style from "@/components/burgerMenu/BurgerContent.module.scss";
 
 type BurgerMenuContentProps = {
   onClose: () => void;

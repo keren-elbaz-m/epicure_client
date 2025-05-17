@@ -1,8 +1,8 @@
-import style from "@/app/components/search/search.module.scss";
-import heroStyle from "@/app/components/hero/hero.module.scss";
-import search_icon from "@/app/assets/icons/search_icon.svg";
+import style from "@/components/search/search.module.scss";
+import heroStyle from "@/components/hero/hero.module.scss";
+import search_icon from "@/assets/icons/search_icon.svg";
 import Image from "next/image";
-import { screenType } from "@/app/types";
+import { screenType } from "@/types";
 
 interface SearchProps {
   variant?: screenType;

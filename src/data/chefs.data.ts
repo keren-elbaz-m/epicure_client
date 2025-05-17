@@ -1,4 +1,4 @@
-import { Chef } from '@/app/types/index'
+import { Chef } from '@/types/index'
 
 export const chefs: Chef[] = [
     {

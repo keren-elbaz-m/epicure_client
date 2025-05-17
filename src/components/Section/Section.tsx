@@ -1,9 +1,9 @@
-import { SectionLink } from "@/app/types";
+import { SectionLink } from "@/types";
 import { ReactNode } from "react";
 import Image from "next/image";
-import style from "@/app/components/Section/Section.module.scss";
-import section_link_icon from "@/app/assets/icons/section_link_icon.svg";
-import Carousel from "@/app/components/Carousel/Carousel";
+import style from "@/components/Section/Section.module.scss";
+import section_link_icon from "@/assets/icons/section_link_icon.svg";
+import Carousel from "@/components/Carousel/Carousel";
 
 type SectionProps = {
     sectionLabel: string;

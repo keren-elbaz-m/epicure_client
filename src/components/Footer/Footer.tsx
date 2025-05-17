@@ -1,9 +1,9 @@
 'use client'
-import { navbarFooterLinks } from "@/app/data/link";
-import { useScreenType } from "@/app/hooks/useScreenType";
-import { screenType } from "@/app/types";
+import { navbarFooterLinks } from "@/data/link";
+import { useScreenType } from "@/hooks/useScreenType";
+import { screenType } from "@/types";
 import Link from "next/link";
-import styles from "@/app/components/Footer/Footer.module.scss";
+import styles from "@/components/Footer/Footer.module.scss";
 
 export default function Footer() {
   const screen = useScreenType();

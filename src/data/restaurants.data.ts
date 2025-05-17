@@ -1,4 +1,4 @@
-import { Restaurant } from '@/app/types/index'
+import { Restaurant } from '@/types/index'
 
 export const restaurants: Restaurant[] = [
     {

@@ -1,4 +1,4 @@
-import { Dish } from '@/app/types/index'
+import { Dish } from '@/types/index'
 
 export const dishes: Dish[] = [
     {

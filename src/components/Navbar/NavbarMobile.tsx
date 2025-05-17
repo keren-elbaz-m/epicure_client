@@ -1,21 +1,20 @@
 'use client'
 
 import { ReactNode, useState } from "react";
-import { navbarFooterLinks } from "@/app/data/link";
 
-import hamburger from "@/app/assets/icons/hamburger.svg";
-import epicure_logo_icon from "@/app/assets/icons/epicure_logo_icon.svg";
-import person_icon from "@/app/assets/icons/person_icon.svg";
-import search_icon from "@/app/assets/icons/search_icon.svg";
-import shopping_bag_icon from "@/app/assets/icons/shopping_bag_icon.svg";
-import close_icon from "@/app/assets/icons/close_icon.svg";
+import hamburger from "@/assets/icons/hamburger.svg";
+import epicure_logo_icon from "@/assets/icons/epicure_logo_icon.svg";
+import person_icon from "@/assets/icons/person_icon.svg";
+import search_icon from "@/assets/icons/search_icon.svg";
+import shopping_bag_icon from "@/assets/icons/shopping_bag_icon.svg";
+import close_icon from "@/assets/icons/close_icon.svg";
 import Image from "next/image";
-import styles from "@/app/components/navbar/styles/Navbar.module.scss";
-import DropDown from "../dropDown/DropDown";
-import Cart from "@/app/components/cart/cart";
-import BurgerMenuContent from "../burgerMenu/BurgerMenu";
-import Search from "@/app/components/search/search";
-import { dropdownBehaviors, DropDownType } from "@/app/types";
+import styles from "@/components/Navbar/Navbar.module.scss";
+import DropDown from "@/components/dropDown/DropDown";
+import Cart from "@/components/cart/cart";
+import BurgerMenuContent from "@/components/burgerMenu/BurgerMenu";
+import Search from "@/components/search/search";
+import { dropdownBehaviors, DropDownType } from "@/types";
 
 
 

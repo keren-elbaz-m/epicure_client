@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { restaurants } from "../data/restaurants.data";
+import { restaurants } from "@/data/restaurants.data";
 export default function RestaurantsPage() {
   
     return (

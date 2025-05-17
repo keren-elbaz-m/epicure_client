@@ -1,11 +1,11 @@
 "use client"
 import Image from "next/image";
-import Search from "@/app/components/search/search";
-import style from "@/app/components/hero/hero.module.scss";
-import hero_desktop from "@/app/assets/images/hero_desktop.png";
-import hero_mobile from "@/app/assets/images/hero_mobile.png";
-import { useScreenType } from "@/app/hooks/useScreenType";
-import { screenType } from "@/app/types/index";
+import Search from "@/components/search/search";
+import style from "@/components/hero/hero.module.scss";
+import hero_desktop from "@/assets/images/hero_desktop.png";
+import hero_mobile from "@/assets/images/hero_mobile.png";
+import { useScreenType } from "@/hooks/useScreenType";
+import { screenType } from "@/types/index";
 
 export default function Hero() {
   const screen = useScreenType();

@@ -1,9 +1,9 @@
 'use client'; 
 
 import { useEffect, useState } from "react";
-import styles from "@/app/components/navbar/styles/DropDown.module.scss";
-import useIsDesktop from "@/app/hooks/useIsDesktop";
-import { DropDownType } from "@/app/types";
+import styles from "@/components/dropDown/DropDown.module.scss";
+import useIsDesktop from "@/hooks/useIsDesktop";
+import { DropDownType } from "@/types";
 
 interface DropDownProps {
   isOpen: boolean;

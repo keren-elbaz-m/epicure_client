@@ -1,11 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import empty_bag_icon from "@/app/assets/icons/cart_big_icon.svg";
-import styles from "@/app/components/cart/cart.module.scss";
-import useIsDesktop from "@/app/hooks/useIsDesktop";
-import { useScreenType } from "@/app/hooks/useScreenType";
-import { screenType } from "@/app/types";
+import empty_bag_icon from "@/assets/icons/cart_big_icon.svg";
+import styles from "@/components/cart/cart.module.scss";
+import { useScreenType } from "@/hooks/useScreenType";
+import { screenType } from "@/types";
 
 export default function Cart() {
   const screen = useScreenType();

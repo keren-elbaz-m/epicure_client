@@ -1,9 +1,9 @@
-import Hero from "@/app/components/hero/Hero";
-import Card from "@/app/components/Card/Card";
-import { RESOURES } from "@/app/data/text";
-import Section from "@/app/components/Section/Section";
-import { sectionLinks } from "./data/link";
-import RatingStars from "@/app/components/Rating/Rating";
+import Hero from "@/components/hero/Hero";
+import Card from "@/components/Card/Card";
+import { RESOURES } from "@/data/text";
+import Section from "@/components/Section/Section";
+import { sectionLinks } from "@/data/link";
+import RatingStars from "@/components/Rating/Rating";
 import style from "@/app/Homepage.module.scss";
 
 export default async function Home() {
