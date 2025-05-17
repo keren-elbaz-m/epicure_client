@@ -1,0 +1,37 @@
+$mim-width: 769px;
+
+.container{
+    width: 1440;
+    height: 555;
+    gap: 40px;
+
+}
+
+.headlineText{
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+
+    @media screen {min-width: 1024px;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+    }
+}
+
+.rateStars{
+    display: none;
+    @media screen and (min-width: $mim-width) {
+        display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // gap: 8px; 
+        
+  
+ 
+
+    }
+}
