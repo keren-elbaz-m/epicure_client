@@ -27,7 +27,7 @@
     background-color: $background-color;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    @include flex-center-col;
+    @include flex(column,center,center);
   }
 
   .cartDropDownMobile {
@@ -37,7 +37,7 @@
     background-color:#FFFFFF;
     left: -1px;
     z-index: 5;
-    @include flex-center-col;
+    @include flex(column,center,center);
     gap: 22.04px;
     padding-top: 24px;  
 }
@@ -50,7 +50,7 @@
   background-color: white;
   box-shadow: 2px 4px 10px 0px #AFAFAF40;
   z-index: 5;
-  @include flex-center-col;
+  @include flex(column,center,center);
   justify-content: space-between;
   padding-top: 241px;
   padding-bottom: 48px; 
@@ -63,7 +63,7 @@
   left: 188px;
   opacity: 0.5;
   gap: $gap-small-mini;
-  @include flex-center-col;
+  @include flex(column,center,center);
 }
 
 .hidden {

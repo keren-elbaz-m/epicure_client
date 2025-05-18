@@ -25,14 +25,6 @@
     flex-direction: column;
     gap: $gap;
   }
-
-  //delete it:
-  @mixin flex-center-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   
   @mixin padding-block($vertical, $horizontal) {
   padding: $vertical $horizontal;

@@ -7,7 +7,7 @@
     aspect-ratio: 1440 / 696; 
     position: relative;
     overflow: hidden;
-    @include flex-center-col;
+    @include flex(column,center,center);
 }
 
 .heroImage {
