@@ -1,13 +1,13 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
 .heroContainer {
     width: 100%;
     min-width: 335px;
     aspect-ratio: 1440 / 696; 
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-col;
 }
 
 .heroImage {
@@ -19,10 +19,7 @@
     width: 335;
     height: 144;
     gap: 18px;
-    padding-top: 36px;
-    padding-right: 126px;
-    padding-bottom: 36px;
-    padding-left: 126px;
+    @include padding-block(36px,126px);
 
 }
 
@@ -35,7 +32,7 @@
     text-align: center;
     width: 776px;
     height: 221px;
-    padding: 36px 126px;
+    @include padding-block(36px,126px);
     z-index: 1;
   }
 
@@ -44,16 +41,15 @@
     z-index: 1;
     width: 335px;
     height: 144px;
-    padding: 18px 24px;
+    @include padding-block(18px,24px);
     background-color: rgba(255, 255, 255, 0.85);
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
 }
   
 .heroText{
-    font-family: Helvetica Neue;
-    font-weight: 200;
+    font-family: $font-family-main;
+    font-weight: $font-weight-light;
     font-size: 30px;
     line-height: 40px;
     letter-spacing: 1.97px;

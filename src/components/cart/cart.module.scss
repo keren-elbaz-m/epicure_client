@@ -1,3 +1,6 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
   .iconMobile {
     width: 64px;
     height: 64px;
@@ -7,14 +10,13 @@
     width: 49px;
     height: auto;
   }
- 
 
   .text {
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: $font-family-main;
+    font-size: $font-size-small;  
+    font-weight: $font-weight-regular;
     letter-spacing: 1.5px;
-    color: #000000;
+    color: $font-color;
     text-align: center;
   }
 
@@ -22,12 +24,10 @@
     width: 380px;
     height: 218px;
     padding: 16px 12px 24px 12px;
-    background-color: white;
+    background-color: $background-color;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-col;
   }
 
   .cartDropDownMobile {
@@ -37,10 +37,7 @@
     background-color:#FFFFFF;
     left: -1px;
     z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center-col;
     gap: 22.04px;
     padding-top: 24px;  
 }
@@ -53,24 +50,20 @@
   background-color: white;
   box-shadow: 2px 4px 10px 0px #AFAFAF40;
   z-index: 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center-col;
   justify-content: space-between;
   padding-top: 241px;
   padding-bottom: 48px; 
 }
 
 .wrapper{
-  width: 121;
-  height: 105;
+  width: 121px;
+  height: 105px;
   top: 241px;
   left: 188px;
   opacity: 0.5;
-  gap: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: $gap-small-mini;
+  @include flex-center-col;
 }
 
 .hidden {
@@ -78,14 +71,14 @@
 }
   
 .orderHistoryButton {
-  background-color: white;
+  background-color: $background-color;
   border: 1px solid black;
-  padding: 12px 24px;
+  @include padding-block(12px, 24px);
   letter-spacing: 2px;
   cursor: pointer;
-  font-family: Helvetica Neue;
-  font-weight: 400;
-  font-size: 18px;
+  font-family: $font-family-main;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-default;
   line-height: 20px;
   letter-spacing: 2.67px;
   text-align: center;

@@ -1,0 +1,47 @@
+@mixin visible-state($visible: true, $x: -50%) {
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  
+    @if $visible {
+      opacity: 1;
+      transform: translateX($x) translateY(0);
+      visibility: visible;
+    } @else {
+      opacity: 0;
+      transform: translateX($x) translateY(-10px);
+      visibility: hidden;
+    }
+  }
+  
+  @mixin navbar-font {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1.92px;
+  }
+  
+  @mixin flex-column($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+
+  //delete it:
+  @mixin flex-center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin padding-block($vertical, $horizontal) {
+  padding: $vertical $horizontal;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+  }

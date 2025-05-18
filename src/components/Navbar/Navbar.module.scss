@@ -1,39 +1,5 @@
-$menu-width-mobile: 375px;
-$menu-width-desktop: 1440px;
-$min-desktop-width: 1024px;
-
-$menu-footer-border-color: #F2F2F2;
-$close-border-color: #000000;
-$background-color: #FFFFFF;
-$icons-size: 24px;
-
-@mixin visible-state($visible: true, $x: -50%) {
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-
-  @if $visible {
-    opacity: 1;
-    transform: translateX($x) translateY(0);
-    visibility: visible;
-  } @else {
-    opacity: 0;
-    transform: translateX($x) translateY(-10px);
-    visibility: hidden;
-  }
-}
-
-@mixin navbar-font {
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 200;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 1.92px;
-}
-
-@mixin flex-column($gap: 0) {
-  display: flex;
-  flex-direction: column;
-  gap: $gap;
-}
+@import '../../styles/mixins';
+@import '../../styles/variables';
 
 body{
   @include navbar-font;
@@ -81,16 +47,12 @@ body{
 }
 
 .searchTitle {
-  font-family: Helvetica Neue;
-  font-weight: 200;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 1.92px;
+  @include navbar-font;
 }
 
 .icons {
   display: flex;
-  gap: 24px;
+  gap: $gap-small;
   font-size: $icons-size;
   @include visible-state(true, 0);
   
@@ -117,7 +79,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: $gap-medium;
 
   max-width: 1440px;
   margin: 0 auto; 
@@ -126,34 +88,34 @@ body{
   padding: 0 32px;
 
   @media screen and (min-width: $min-desktop-width) {
-    gap: 64px;
+    gap: $gap-large;
   }
 }
 
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 24px; 
+  gap: $gap-small; 
 }
 
 .brand {
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 200;
+  font-family: $font-family-main;
+  font-weight: $font-weight-light;
   font-size: 27px;
   line-height: 100%;
   letter-spacing: 1.35px;
   display: flex;
   align-items: center;
-  padding-right:32px;
+  padding-right:$padding-horizontal-desktop;
   padding-left: 15.02px;
 }
 
 .links {
   display: flex;
-  gap: 32px;
+  gap: $gap-medium;
 
   a {
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: $font-family-main;
     font-size: 16px;
     color: #000000;
     text-decoration: none;
