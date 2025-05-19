@@ -1,0 +1,100 @@
+@import './variables';
+
+@mixin visible-state($visible: true, $x: -50%) {
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  
+    @if $visible {
+      opacity: 1;
+      transform: translateX($x) translateY(0);
+      visibility: visible;
+    } @else {
+      opacity: 0;
+      transform: translateX($x) translateY(-10px);
+      visibility: hidden;
+    }
+  }
+  
+  @mixin navbar-font {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1.92px;
+  }
+  
+  @mixin flex-column($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin padding-block($vertical, $horizontal) {
+  padding: $vertical $horizontal;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+  }
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile{
+    @media (min-width: $breakpoint-mobile) { @content; }
+  }
+  @if $breakpoint == tablet {
+    @media (min-width: $breakpoint-tablet) { @content; }
+  } @else if $breakpoint == medium {
+    @media (min-width: $breakpoint-medium) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) { @content; }
+  } @else if $breakpoint == large {
+    @media (min-width: $breakpoint-large) { @content; }
+  }
+}
+
+@mixin responsive-name-style-mobile-first(
+  $mobile-font-size: 18px,
+  $tablet-font-size: 24px,
+  $desktop-font-size: 30px,
+  $large-font-size: 32px,
+  $letter-spacing: 3px
+) {
+  font-family: Helvetica Neue;
+  font-weight: 400;
+  letter-spacing: $letter-spacing;
+  color: #000000;
+  font-size: $mobile-font-size;
+  text-align: left;
+
+  @include respond-to(tablet) {
+    font-size: $tablet-font-size;
+    text-align: center;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $desktop-font-size;
+  }
+
+  @include respond-to(large) {
+    font-size: $large-font-size;
+  }
+}
+
+@mixin responsive-font($base-size) {
+  font-size: $base-size - 5px;
+
+  @include respond-to(tablet) {
+    font-size: $base-size - 3px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $base-size;
+  }
+
+  @include respond-to(large) {
+    font-size: $base-size + 2px;
+  }
+}
