@@ -1,35 +1,53 @@
 $mim-width: 900px;
-
+@import '../../styles/variables';
+@import '../../styles/mixins';
 .card {
     width: 245px;
-    height: 232.80392456054688px;
-    background-color: #F9F4EA;
-    margin: 0 10px;
+    height: 233px;
+    background-color: $card-background-color;
     flex-shrink: 1 1 245px;
     overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    
-    @media screen and (min-width: $mim-width) {
+    // display: flex;
+    // flex-direction: column;
+    @include flex-column();
+
+    @include respond-to(tablet){
+        width: 239px;
+        height: 266px;
+    }
+    @include respond-to(desktop){
+        width: 265px;
+        height: 291px;
+    }
+    @include respond-to(large){
         width: 379px;
         height: 405px;
     }
+    
 }
 
 .name {
-    font-family: Helvetica Neue;
-    font-weight: 400;
-    font-size: 18px;
+    font-family: $font-family-main;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-default;
     line-height: 100%;
     letter-spacing: 2.67px;
     color: #000000;
     padding-left: 16px;
     padding-top: 16px;
 
-    @media screen and (min-width: $mim-width) {
-        font-size: 40px;
-        line-height: 47px;
+    @include respond-to(tablet){
+        font-size: $font-size-default+8px;
+        line-height: 31px;
+        text-align: center;
+    }
+    @include respond-to(desktop){
+        font-size: $font-size-default+14px;
+        text-align: center;
+    }
+    @include respond-to(large){
+        font-size: $font-size-default+22px;
         text-align: center;
     }
 } 
@@ -40,44 +58,90 @@ $mim-width: 900px;
     height: 152px;
     width: 100%;
 
-    @media screen and (min-width: $mim-width) {
+    @include respond-to(tablet){
+        width: 240px;
+        height: 137px;
+    }
+    @include respond-to(desktop){
+        width: 265px;
+        height: 291px;
+    }
+    @include respond-to(large){
         width: 379px;
         height: 235px;
-        
     }
 }
 
 .content {
-    font-family: Helvetica Neue;
-    font-weight: 200;
-    font-size: 16px;
+    font-family: $font-family-main;
+    font-weight: $font-weight-light;
+    font-size: $font-size-small+2px;
     line-height: 20px;
     letter-spacing: 1.97px;
 
-    @media screen and (min-width: $mim-width) {
-        font-size: 24px;
+    @include respond-to(tablet){
+        font-size: ($font-size-small)-2px;
+        line-height: 18px;
+    }
+    @include respond-to(desktop){
+        font-size: $font-size-default;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+    @include respond-to(large){
+        font-size: $font-size-default+6px;
         line-height: 30px;
-        font-family: Helvetica Neue;
 
     }
 }
 
 .children {
-    font-family: Helvetica Neue;
-    font-weight: 200;
-    font-size: 16px;
+    font-family: $font-family-main;
+    font-weight: $font-weight-light;
+    font-size: $font-size-small+2px;
     line-height: 20px;
     letter-spacing: 1.97px;
     padding-left: 16px;
     padding-top: 8px;
 
     @media screen and (min-width: $mim-width) {
-        display: flex;
-        flex-direction: column;
+        @include flex-column(9px);
         align-items: center;
-        gap: 9px; 
         font-size: 24px;
         line-height: 30px;
+    }
 
+    @include respond-to(tablet){
+        @include flex-column(9px);
+        align-items: center;
+        font-size: 20px;
+        line-height: 26px;
+    }
+    @include respond-to(desktop){
+        @include flex-column(9px);
+        align-items: center;
+        font-size: 22px;
+        line-height: 28px;
+    }
+    @include respond-to(large){
+        @include flex-column(9px);
+        align-items: center;
+        font-size: 24px;
+        line-height: 30px;
     }
   }
+
+.starRatingStyle{
+    font-size: 40px;
+    color: #DE9200;
+
+    @include respond-to(tablet){
+        font-size: 30px;
+    }
+    @include respond-to(desktop){
+        font-size: 32px;
+    }
+    @include respond-to(large){
+        font-size: 40px;
+    }
+}

@@ -2,15 +2,27 @@
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
-
 }
 
 .carousel {
     overflow: hidden;
+    margin: 0 -10px;
 }
 
 .slideContainer {
     display: flex;
     gap: 20px;
     will-change: transform;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 769px) {
+    .carousel {
+        margin: 0 -20px;
+    }
+    
+    .slideContainer {
+        gap: 40px;
+        padding: 0 20px;
+    }
 } 

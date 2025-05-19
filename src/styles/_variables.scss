@@ -3,9 +3,11 @@ $font-color: #000000;
 $background-color: #FFFFFF;
 $border-color-main: #000000;
 
+$card-background-color: #F9F4EA;
+
 $font-family-main: "Helvetica Neue";
 $font-weight-light: 200;
-$font-weight-regular: 400px;
+$font-weight-regular: 400;
 $font-size-default: 18px;
 $font-size-small: 14px;
 $letter-spacing-wide: 1.92px;
@@ -18,8 +20,9 @@ $max-desktop-width: 1440px;
 $min-desktop-width: 1024px;
 
 $breakpoint-mobile: 0;
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 769px;
 $breakpoint-desktop: 1024px;
+$breakpoint-large: 1440px;
 
 $padding-horizontal-mobile: 16px;
 $padding-horizontal-desktop: 32px;
