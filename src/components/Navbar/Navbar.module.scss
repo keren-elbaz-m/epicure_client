@@ -1,0 +1,123 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+body{
+  @include navbar-font;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 46px;
+  background-color: $background-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  left: -1px;
+  position: relative;
+}
+  
+.hamburger {
+  font-size: $icons-size;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.logoWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo.hidden {
+  @include visible-state(false, -50%);
+}
+
+.searchTitle {
+  @include navbar-font;
+}
+
+.icons {
+  display: flex;
+  gap: $gap-small;
+  font-size: $icons-size;
+  @include visible-state(true, 0);
+  
+}
+
+.icons.hidden {
+  @include visible-state(false, 0);
+}
+
+.buttonIconsStyle{
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: $min-desktop-width) {
+  .navbar {
+    width: menu-width-desktop;
+    height: 64px  ; 
+    padding: 0 32px;
+  }
+}
+
+.desktopContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $gap-medium;
+
+  max-width: 1440px;
+  margin: 0 auto; 
+
+  width: 100%;
+  padding: 0 32px;
+
+  @media screen and (min-width: $min-desktop-width) {
+    gap: $gap-large;
+  }
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: $gap-small; 
+}
+
+.brand {
+  font-family: $font-family-main;
+  font-weight: $font-weight-light;
+  font-size: 27px;
+  line-height: 100%;
+  letter-spacing: 1.35px;
+  display: flex;
+  align-items: center;
+  padding-right:$padding-horizontal-desktop;
+  padding-left: 15.02px;
+}
+
+.links {
+  display: flex;
+  gap: $gap-medium;
+
+  a {
+    font-family: $font-family-main;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+  }
+}

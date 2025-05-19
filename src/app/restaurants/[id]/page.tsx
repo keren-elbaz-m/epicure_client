@@ -1,4 +1,4 @@
-import { Restaurant } from "@/app/types";
+import { Restaurant } from "@/types";
 
 type Props = {
     params: {
