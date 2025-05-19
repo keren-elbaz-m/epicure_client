@@ -3,7 +3,7 @@ export const RESOURES = {
         appName: 'Epicure',
     },
     homepage: {
-        popularSection: 'popular restaurant in epicure:'
-
+        popularSection: 'popular restaurant in epicure:',
+        signaturSection : 'signature dish of',
     }
 }
