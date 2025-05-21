@@ -6,15 +6,15 @@ import { sectionLinks } from "@/data/link";
 import RatingStars from "@/components/Rating/Rating";
 import style from "@/app/Homepage.module.scss";
 import { getDataFromApi } from "@/lib/getCardsFromApi";
-import { mapToCards } from "@/lib/mapToCard";
+import { MapToCards } from "@/lib/MapToCard";
 import { SectionPart } from "@/types";
 
 export default async function Home() {
 
   const dataRest = await getDataFromApi('http://localhost:3000/api/restaurants');
   const dataDish = await getDataFromApi('http://localhost:3000/api/dish');
-  const restaurantCards = mapToCards(dataRest,SectionPart.RESTAURANT);
-  const dishCards = mapToCards(dataDish, SectionPart.DISH);
+  const restaurantCards = MapToCards(dataRest,SectionPart.RESTAURANT);
+  const dishCards = MapToCards(dataDish, SectionPart.DISH);
 
   return (
     <>
