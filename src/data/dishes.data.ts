@@ -7,7 +7,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/pad_ki_mao.png",
         price: 88,
         ingredients: ['Green Papaya', 'Mango', 'Chukka Chili', 'Mint', 'Kaffir lime', 'Cashew', 'Akaya Cham sauce'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/garbanzo_frito.png",
         price: 98,
         ingredients: ['Polenta fingers', 'veal cheek', 'magic chili', 'cured lemon cream', 'yellow laksa'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/smoked_pizza.png",
         price: 65,
         ingredients: ['Basil dough', 'cashew "butter"', 'demi-glace', 'bison & radish'],
-        type: { name: 'vegan', iconUrl: 'icons/VeganIcon.svg' },
+        type: { name: 'vegan', iconUrl: '/images/icons/veganSmall.svg' },
     },
     {
         id: 4,
@@ -31,7 +31,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/pad_ki_mao.png",
         price: 88,
         ingredients: ['Green Papaya', 'Mango', 'Chukka Chili', 'Mint', 'Kaffir lime', 'Cashew', 'Akaya Cham sauce'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 5,
@@ -39,7 +39,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/garbanzo_frito.png",
         price: 98,
         ingredients: ['Polenta fingers', 'veal cheek', 'magic chili', 'cured lemon cream', 'yellow laksa'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 6,
@@ -47,7 +47,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/smoked_pizza.png",
         price: 65,
         ingredients: ['Basil dough', 'cashew "butter"', 'demi-glace', 'bison & radish'],
-        type: { name: 'vegan', iconUrl: 'icons/VeganIcon.svg' },
+        type: { name: 'vegan', iconUrl: '/images/icons/veganSmall.svg' },
     },
     {
         id: 7,
@@ -55,7 +55,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/pad_ki_mao.png",
         price: 88,
         ingredients: ['Green Papaya', 'Mango', 'Chukka Chili', 'Mint', 'Kaffir lime', 'Cashew', 'Akaya Cham sauce'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 8,
@@ -63,7 +63,7 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/garbanzo_frito.png",
         price: 98,
         ingredients: ['Polenta fingers', 'veal cheek', 'magic chili', 'cured lemon cream', 'yellow laksa'],
-        type: { name: 'spicy', iconUrl: 'icons/SpicyIcon.svg' },
+        type: { name: 'spicy', iconUrl: '/images/icons/spicySmall.svg' },
     },
     {
         id: 9,
@@ -71,6 +71,6 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/smoked_pizza.png",
         price: 65,
         ingredients: ['Basil dough', 'cashew "butter"', 'demi-glace', 'bison & radish'],
-        type: { name: 'vegan', iconUrl: 'icons/VeganIcon.svg' },
+        type: { name: 'vegan', iconUrl: '/images/icons/veganSmallsvg' },
     },
 ]
