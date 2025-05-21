@@ -90,3 +90,9 @@ export type SectionLink = {
     label: string;
     url: string;
 }
+
+export enum SectionPart{
+    RESTAURANT = 'restaurant',
+    DISH = 'dish',
+    CHEF = 'chef'
+}
