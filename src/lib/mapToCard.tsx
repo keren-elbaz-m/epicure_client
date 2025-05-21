@@ -13,11 +13,46 @@ interface CardItem {
   imageUrl: string;
 }
 
-type ItemType = SectionPart.RESTAURANT | SectionPart.DISH | SectionPart.CHEF;
+function renderContent(item: unknown, type:SectionPart): React.ReactNode {
+  switch (type) {
+    case SectionPart.RESTAURANT:
+      const restaurant = item as Restaurant;
+      return (
+        <>
+          <p>{restaurant.chefName}</p>
+          <RatingStars rating={restaurant.rating} max={5} />
+        </>
+      );
 
-export function mapToCards(
+    case SectionPart.DISH:
+      const dish = item as Dish;
+      return (
+        <>
+          <div>
+            <Image
+              src={dish.type.iconUrl}
+              alt={dish.type.name}
+              width={30}
+              height={30}
+            />
+          </div>
+          <p>{dish.ingredients.join(', ')}</p>
+          <p>
+            <span>₪</span>{dish.price}
+          </p>
+        </>
+      );
+
+    default:
+      return null;
+  }
+}
+
+
+
+export function MapToCards(
   data: unknown[] | undefined | null,
-  type: ItemType
+  type: SectionPart
 ): ReactElement[] {
   if (!data) return [];
 
@@ -29,38 +64,9 @@ export function mapToCards(
 
     return (
       <Card key={baseItem.id} item={baseItem} variant={type}>
-        {type === SectionPart.RESTAURANT && (
-          <>
-            <p>{(item as Restaurant).chefName}</p>
-            <div className={style.rateStars}>
-              <RatingStars rating={(item as Restaurant).rating} max={5} />
-            </div>
-          </>
-        )}
-        {type === SectionPart.DISH && (
-          <>
-          <div>
-            <Image
-              src={(item as Dish).type.iconUrl}
-              alt={(item as Dish).type.name}
-              width={40}
-              height={40}
-            />
-          </div>
-          
-            <p>{(item as Dish).ingredients.join(', ')}</p>
-            <p>
-              <span>₪</span>
-              {(item as Dish).price}
-            </p>
-    
-          </>
-        )}
-        {type === 'chef' && (
-          <>
-            <p>{(item as Chef).description}</p>
-          </>
-        )}
+        {
+          renderContent(item, type)
+        }
       </Card>
     );
   }).filter((card): card is ReactElement => card !== null);
