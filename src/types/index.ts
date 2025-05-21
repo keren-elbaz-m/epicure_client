@@ -97,3 +97,8 @@ export enum TypeDishIcon{
     VEGAN = "vegan",
     VEGETARIAN = "vegetarian"
 }
+
+export enum ContactType{
+    apple = "apple",
+    android = "android",
+}
