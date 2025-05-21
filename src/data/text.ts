@@ -3,7 +3,8 @@ export const RESOURES = {
         appName: 'Epicure',
     },
     homepage: {
-        popularSection: 'popular restaurant in epicure:'
-
+        popularSection: 'popular restaurant in epicure:',
+        iconMeaning: 'The meaning of our icons',
+        
     }
 }

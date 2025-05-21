@@ -90,3 +90,10 @@ export type SectionLink = {
     label: string;
     url: string;
 }
+
+
+export enum TypeDishIcon{
+    SPICY = "spicy",
+    VEGAN = "vegan",
+    VEGETARIAN = "vegetarian"
+}
