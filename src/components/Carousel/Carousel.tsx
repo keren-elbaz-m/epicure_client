@@ -9,7 +9,7 @@ interface CarouselProps {
     loop?: boolean;
 }
 
-export default function Carousel({ children, loop = false }: CarouselProps) {
+export default function Carousel({ children, loop = false}: CarouselProps) {
     const [emblaRef] = useEmblaCarousel({
         align: 'start',
         slidesToScroll: 1,
