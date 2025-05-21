@@ -21,7 +21,6 @@ export default function Card({item, children, variant}: CardProps) {
                     src={item.imageUrl}
                     alt={item.name}
                     fill
-                    style={{ objectFit: 'cover' }}
                 />
             </div>
             <div className={`${styles.content} ${styles[`content--${variant}`]}`}>

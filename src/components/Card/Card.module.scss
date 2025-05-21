@@ -81,7 +81,6 @@ $mim-width: 900px;
         padding-top: 16px;
     }
     @include respond-to(desktop) {
-        // height: 72px;
         min-height: 80px; 
         font-size: $font-size-default+14px;
         display: -webkit-box;
@@ -94,7 +93,6 @@ $mim-width: 900px;
         padding-bottom: 5px;
     }
     @include respond-to(large) {
-        // height: 82px;
         height: 120px; 
         display: -webkit-box;
         font-size: $font-size-default+22px;
@@ -118,6 +116,9 @@ $mim-width: 900px;
     overflow: hidden;
     width: 245px;
     height: 152px;
+    img {
+        object-fit: cover;
+    }
 
     @include respond-to(tablet){
         width: 240px;
