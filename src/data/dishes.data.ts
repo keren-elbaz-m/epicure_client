@@ -71,6 +71,6 @@ export const dishes: Dish[] = [
         imageUrl: "/images/dishes/smoked_pizza.png",
         price: 65,
         ingredients: ['Basil dough', 'cashew "butter"', 'demi-glace', 'bison & radish'],
-        type: { name: 'vegan', iconUrl: '/images/icons/veganSmallsvg' },
+        type: { name: 'vegan', iconUrl: '/images/icons/veganSmall.svg' },
     },
 ]
