@@ -96,3 +96,10 @@ export enum SectionPart{
     DISH = 'dish',
     CHEF = 'chef'
 }
+
+export enum TypeDishIcon{
+    SPICY = "spicy",
+    VEGAN = "vegan",
+    VEGETARIAN = "vegetarian"
+}
+

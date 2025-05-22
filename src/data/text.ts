@@ -5,5 +5,7 @@ export const RESOURES = {
     homepage: {
         popularSection: 'popular restaurant in epicure:',
         signaturSection : 'signature dish of',
+        iconMeaning: 'The meaning of our icons',
+        
     }
 }

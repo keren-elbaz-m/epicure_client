@@ -5,9 +5,11 @@ import Section from "@/components/Section/Section";
 import { sectionLinks } from "@/data/link";
 import RatingStars from "@/components/Rating/Rating";
 import style from "@/app/Homepage.module.scss";
+
 import { getDataFromApi } from "@/lib/getCardsFromApi";
 import { MapToCards } from "@/lib/MapToCard";
 import { SectionPart } from "@/types";
+import DishType from "@/components/DishType/DishType";
 
 export default async function Home() {
 
@@ -30,6 +32,7 @@ export default async function Home() {
         cards={dishCards}
         variant={SectionPart.DISH}
       />
+      <DishType/>
     </>
   );
 }
