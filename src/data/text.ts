@@ -6,7 +6,6 @@ export const RESOURES = {
         popularSection: 'popular restaurant in epicure:',
         iconMeaning: 'The meaning of our icons',
         aboutUs: 'About us', 
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas necessitatibus nam, consequatur eaque sunt dolor ratione distinctio voluptatibus cupiditate vel, provident maiores vero hic! Est debitis quibusdam odit mollitia iste.',
-        
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna sodales porta. Vivamus elit urna, dignissim a vestibulum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.",
     }
 }

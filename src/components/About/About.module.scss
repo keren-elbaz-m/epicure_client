@@ -66,47 +66,55 @@
     };
 }
 .iconsWrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-        button{
-            width: 180px;
-            height: 52px;
-            gap: 7px;
-            border-radius: 10px;
-            border: 0.5px solid black;
-            padding: 7px 12px;
-            display: flex;
-            align-items: center;
-            background-color: white;
-            cursor: pointer;
-        }
+    button{
+        width: 180px;
+        height: 52px;
+        gap: 7px;
+        border-radius: 10px;
+        border: 0.5px solid black;
+        padding: 7px 12px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        cursor: pointer;
     }
+}
 
 .textBlock{
-        padding-top: 48px;
+    padding-top: 48px;
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 2.14px;
+
+
+    .title{
         font-family: Helvetica Neue;
         font-weight: 200;
         font-size: 18px;
-        line-height: 28px;
-        letter-spacing: 2.14px;
+        line-height: 35px;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
 
-
-        .title{
-            font-family: Helvetica Neue;
-            font-weight: 200;
-            font-size: 18px;
-            line-height: 35px;
-            letter-spacing: 1.25px;
-            text-transform: uppercase;
-
-        }
-
-        P{
-            padding-right: 20px;
-            margin-bottom: 16px;
-            line-height: 1.6;
-        }
     }
+
+    P{
+        padding-right: 20px;
+        margin-bottom: 16px;
+        line-height: 1.6;
+    }
+}
+
+.description{
+    padding-top:16px;
+    @include respond-to(desktop){
+        white-space: pre-line;
+    }
+
+}
 
