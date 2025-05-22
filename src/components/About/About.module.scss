@@ -1,0 +1,112 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+
+.container {
+    background-color: $light-gray-color;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 24px;
+    
+    .logo{
+        order:1;
+        padding-bottom: 32px;
+    }
+
+    .secondaryContainer{
+        order:2;        
+    }
+
+    @include respond-to(desktop){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 64px 128px;
+        
+        .secondaryContainer{
+            display: flex;
+            flex-direction: column;
+            order:1;
+            gap: 32px;
+            width: 60%;
+            .textBlock{
+                order:1;
+            }
+            .iconsWrapper{
+                flex-direction: row;
+                order:2
+            }
+        }
+        .logo{
+            order:2;
+            display: flex;
+            align-self: center;
+            justify-content: flex-end;
+            width: 30%;
+        }
+    }
+}
+
+.secondaryContainer{
+    display: flex;
+    flex-direction: column;
+    .logo{
+        order:1;
+        padding-bottom: 32px;
+    }
+
+    .iconsWrapper{
+        order:2;        
+    }
+
+    .textBlock{
+        order:3;
+    };
+}
+.iconsWrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        button{
+            width: 180px;
+            height: 52px;
+            gap: 7px;
+            border-radius: 10px;
+            border: 0.5px solid black;
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+
+.textBlock{
+        padding-top: 48px;
+        font-family: Helvetica Neue;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 2.14px;
+
+
+        .title{
+            font-family: Helvetica Neue;
+            font-weight: 200;
+            font-size: 18px;
+            line-height: 35px;
+            letter-spacing: 1.25px;
+            text-transform: uppercase;
+
+        }
+
+        P{
+            padding-right: 20px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+    }
+
