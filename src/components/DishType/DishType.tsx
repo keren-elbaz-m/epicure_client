@@ -2,7 +2,7 @@
 import Image from "next/image";
 import style from '@/components/DishType/DishType.module.scss';
 import {RESOURES} from "@/data/text";
-import { dishIcons } from "@/constans/Dish.contans";    
+import { dishIcons } from "@/constans/Dish.constans";    
 
 export default function DishType(){
   return (
