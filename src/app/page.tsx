@@ -10,11 +10,12 @@ import { getDataFromApi } from "@/lib/getCardsFromApi";
 import { MapToCards } from "@/lib/MapToCard";
 import { SectionPart } from "@/types";
 import DishType from "@/components/DishType/DishType";
+import { API_ROUTES } from "@/constans/Api.constans";
 
 export default async function Home() {
 
-  const dataRest = await getDataFromApi('http://localhost:3000/api/restaurants');
-  const dataDish = await getDataFromApi('http://localhost:3000/api/dish');
+  const dataRest = await getDataFromApi(API_ROUTES.RESTAURANTS);
+  const dataDish = await getDataFromApi(API_ROUTES.DISHES);
   const restaurantCards = MapToCards(dataRest,SectionPart.RESTAURANT);
   const dishCards = MapToCards(dataDish, SectionPart.DISH);
 
