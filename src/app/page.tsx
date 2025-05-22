@@ -10,6 +10,7 @@ import { getDataFromApi } from "@/lib/getCardsFromApi";
 import { MapToCards } from "@/lib/MapToCard";
 import { SectionPart } from "@/types";
 import DishType from "@/components/DishType/DishType";
+import About from "@/components/About/About";
 import { API_ROUTES } from "@/constans/Api.constans";
 
 export default async function Home() {
@@ -34,6 +35,7 @@ export default async function Home() {
         variant={SectionPart.DISH}
       />
       <DishType/>
+      <About/>
     </>
   );
 }
