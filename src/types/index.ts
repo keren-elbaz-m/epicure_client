@@ -91,9 +91,15 @@ export type SectionLink = {
     url: string;
 }
 
+export enum SectionPart{
+    RESTAURANT = 'restaurant',
+    DISH = 'dish',
+    CHEF = 'chef'
+}
 
 export enum TypeDishIcon{
     SPICY = "spicy",
     VEGAN = "vegan",
     VEGETARIAN = "vegetarian"
 }
+

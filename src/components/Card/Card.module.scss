@@ -1,17 +1,18 @@
 $mim-width: 900px;
 @import '../../styles/variables';
 @import '../../styles/mixins';
+
 .card {
-    width: 245px;
-    height: 233px;
     background-color: $card-background-color;
     flex-shrink: 1 1 245px;
     overflow: hidden;
     position: relative;
-    // display: flex;
-    // flex-direction: column;
     @include flex-column();
 
+    
+}
+.restaurant{
+    @include card-size(245px, 233px);
     @include respond-to(tablet){
         width: 239px;
         height: 266px;
@@ -24,7 +25,22 @@ $mim-width: 900px;
         width: 379px;
         height: 405px;
     }
-    
+}
+.dish{
+    @include card-size(245px, 388px);
+    @include respond-to(tablet){
+        width: 240px;
+        height: 510px;
+    }
+    @include respond-to(desktop){
+        width: 265px;
+        height: 654px;
+    }
+    @include respond-to(large){
+        width: 379px;
+        height: 654px;
+    }
+        
 }
 
 .name {
@@ -52,25 +68,91 @@ $mim-width: 900px;
     }
 } 
 
+.name--dish {
+    @include respond-to(tablet) {
+        min-height: 62px;
+        font-size: $font-size-default+8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 16px;
+        padding-top: 16px;
+    }
+    @include respond-to(desktop) {
+        min-height: 80px; 
+        font-size: $font-size-default+14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 16px;
+        padding-top: 18px;
+        padding-bottom: 5px;
+    }
+    @include respond-to(large) {
+        height: 120px; 
+        display: -webkit-box;
+        font-size: $font-size-default+22px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 16px;
+        font-family: Helvetica Neue;
+
+        line-height: 47px;
+        letter-spacing: 2.67px;
+        text-align: center;
+
+
+    }
+}
+
 .imageContainer {
     position: relative;
+    overflow: hidden;
     width: 245px;
     height: 152px;
-    width: 100%;
+    img {
+        object-fit: cover;
+    }
 
     @include respond-to(tablet){
         width: 240px;
         height: 137px;
     }
     @include respond-to(desktop){
-        width: 265px;
-        height: 291px;
+        width: 379px;
+        height: 235px;
+        
     }
     @include respond-to(large){
         width: 379px;
         height: 235px;
     }
 }
+
+
+.imageContainer--dish {
+
+    @include respond-to(tablet){
+        width: 240px;
+        height: 160px;
+    }
+    @include respond-to(desktop){
+        width: 379px;
+        height: 250px;
+        
+    }
+    @include respond-to(large){
+        width: 379px;
+        height: 250px;
+    }
+    
+  }
 
 .content {
     font-family: $font-family-main;
@@ -91,9 +173,30 @@ $mim-width: 900px;
     @include respond-to(large){
         font-size: $font-size-default+6px;
         line-height: 30px;
-
     }
 }
+
+.content--dish {
+    @include respond-to(tablet) {
+        font-size: $font-size-default+8px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    @include respond-to(desktop) {
+        min-height: 80px; 
+        font-size: $font-size-default+14px;
+        display: flex;
+        flex-direction: column;
+    }
+    @include respond-to(large) {
+        min-height: 80px; 
+        font-size: $font-size-default+22px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 .children {
     font-family: $font-family-main;
@@ -102,35 +205,79 @@ $mim-width: 900px;
     line-height: 20px;
     letter-spacing: 1.97px;
     padding-left: 16px;
+    padding-right: 20px;
     padding-top: 8px;
 
-    @media screen and (min-width: $mim-width) {
-        @include flex-column(9px);
-        align-items: center;
-        font-size: 24px;
-        line-height: 30px;
-    }
-
-    @include respond-to(tablet){
-        @include flex-column(9px);
+    @include respond-to(tablet) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
         align-items: center;
         font-size: 20px;
         line-height: 26px;
     }
-    @include respond-to(desktop){
-        @include flex-column(9px);
-        align-items: center;
+    @include respond-to(desktop) {
         font-size: 22px;
         line-height: 28px;
     }
-    @include respond-to(large){
-        @include flex-column(9px);
-        align-items: center;
+    @include respond-to(large) {
         font-size: 24px;
         line-height: 30px;
     }
   }
 
+
+  .children--restaurant {
+    > *:nth-child(2) {
+        display: none;
+    }
+}
+
+
+.children--dish {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    > *:first-child {
+        order: 2; 
+    }
+
+    > *:nth-child(2) {
+        order: 1; 
+    }
+
+    > *:last-child {
+        position: absolute;
+        bottom: 10px; 
+        text-align: center;
+        padding: 16px 0;
+        font-weight: $font-weight-regular;
+        display: flex;
+        left: 16px;
+        width: 100%;
+        color: #222; 
+    }
+
+  @include respond-to(tablet) {
+    @include children-dish-base-style;
+  }
+  @include respond-to(desktop) {
+    @include children-dish-base-style;
+  }
+  @include respond-to(large) {
+    @include children-dish-base-style;
+  }
+ 
+}
+
+
+.children--dish p > span {
+    font-size: 0.7em;
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
 .starRatingStyle{
     font-size: 40px;
     color: #DE9200;
