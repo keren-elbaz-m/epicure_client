@@ -11,8 +11,8 @@ export default function About(){
         <div className={style.secondaryContainer}>
             <div className={style.textBlock}>
                 <h1 className={style.title}>{RESOURES.homepage.aboutUs}</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro vitae officiis enim dignissimos culpa eveniet possimus dolorem aperiam. Atque temporibus culpa, officia facilis doloribus asperiores fugit officiis odio amet optio.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas necessitatibus nam, consequatur eaque sunt dolor ratione distinctio voluptatibus cupiditate vel, provident maiores vero hic! Est debitis quibusdam odit mollitia iste.</p>
+                <p>{RESOURES.homepage.description}</p>
+                <p>{RESOURES.homepage.description}</p>
             </div>
             <div className={style.iconsWrapper}>
                 {contactIcons.map((icon, index) => (
