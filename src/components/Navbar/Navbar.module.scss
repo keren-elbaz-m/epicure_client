@@ -6,7 +6,6 @@ body{
 }
 
 .navbar {
-  position: fixed;
   top: 0;
   width: 100%;
   height: 46px;
@@ -16,7 +15,12 @@ body{
   justify-content: space-between;
   padding: 0 16px;
   left: -1px;
-  position: relative;
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white; 
+
 }
   
 .hamburger {
