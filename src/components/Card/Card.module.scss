@@ -230,6 +230,9 @@ $mim-width: 900px;
   .children--restaurant {
     > *:nth-child(2) {
         display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
     }
 }
 
