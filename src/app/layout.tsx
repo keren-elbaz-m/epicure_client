@@ -29,8 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
-        {/* {children} */}
-        <main style={{ overflow: "visible" }}>{children}</main>
+          <main>{children}</main>
         <Footer/>
       </body>
     </html>
