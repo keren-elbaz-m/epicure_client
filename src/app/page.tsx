@@ -26,9 +26,8 @@ export default async function Home() {
 
   const restOfChefOfTheWeek = await getDataFromApi(API_REST_CHEF_BY_ID(chefID || 1));
   const restOfChefCards = MapToCards(restOfChefOfTheWeek, SectionPart.RESTAURANT);
+  //remove outside to function: getChefFirstName
   const firstName = dataChef?.name.split(" ")[0] || "Chef";
-  console.log(dataChef)
-  console.log(dataChef?.name.split(" ")[0]);
 
   return (
     <>
