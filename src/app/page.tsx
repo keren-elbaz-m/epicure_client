@@ -10,6 +10,8 @@ import About from "@/components/About/About";
 import { API_CHEF_BY_ID, API_REST_CHEF_BY_ID, API_ROUTES } from "@/constans/Api.constans";
 import { getRandomChef } from "@/lib/getRandomChef";
 import { getItemFromApi } from "@/lib/getItemFromApi";
+import { getChefFirstName } from "@/lib/getChefFirstName";
+import { get } from "http";
 
 export default async function Home() {
 
@@ -26,8 +28,7 @@ export default async function Home() {
 
   const restOfChefOfTheWeek = await getDataFromApi(API_REST_CHEF_BY_ID(chefID || 1));
   const restOfChefCards = MapToCards(restOfChefOfTheWeek, SectionPart.CHEF_RESTAURANT);
-  //remove outside to function: getChefFirstName
-  const firstName = dataChef?.name.split(" ")[0] || "Chef";
+  const firstName = getChefFirstName(dataChef);
 
   return (
     <>
