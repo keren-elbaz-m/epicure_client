@@ -10,25 +10,40 @@ type CardProps = {
       [key: string]: any; 
     };
     children?: React.ReactNode;
-    variant: SectionPart.RESTAURANT | SectionPart.DISH | SectionPart.CHEF;
+    variant: SectionPart.RESTAURANT | SectionPart.DISH | SectionPart.CHEF | SectionPart.CHEF_RESTAURANT;
 };
 
 export default function Card({item, children, variant}: CardProps) {
     return (
-        <div className={`${styles.card} ${styles[variant]}`}>
-            <div className={`${styles.imageContainer} ${styles[`imageContainer--${variant}`]}`}>
-                <Image
-                    src={item.imageUrl}
-                    alt={item.name}
-                    fill
-                />
+        <div className={`${styles.cardWrapper} ${styles[`cardWrapper--${variant}`]}`}>
+            <div className={`${styles.card} ${styles[variant]}`}>
+                <div className={`${styles.imageContainer} ${styles[`imageContainer--${variant}`]}`}>
+                    <Image
+                        src={item.imageUrl}
+                        alt={item.name}
+                        fill
+                    />
+                </div>
+
+                {variant !== SectionPart.CHEF && (
+                    <div className={`${styles.content} ${styles[`content--${variant}`]}`}>
+                        <h1 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h1>
+                        <div className={`${styles.children} ${styles[`children--${variant}`]}`}>
+                            {children}
+                        </div>
+                    </div>
+                )}
+
+                {variant === SectionPart.CHEF && (
+                    <h1 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h1>
+                )}
             </div>
-            <div className={`${styles.content} ${styles[`content--${variant}`]}`}>
-                <h1 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h1>
+
+            {variant === SectionPart.CHEF && (
                 <div className={`${styles.children} ${styles[`children--${variant}`]}`}>
                     {children}
                 </div>
-            </div>
+            )}
         </div>
     );
 }

@@ -11,6 +11,18 @@
         padding-top: 0;
     }
 }
+.section--chef_restaurant{
+     padding-bottom: 48px;
+     @include respond-to(desktop){
+        .linkWrapper{
+            display:none ;
+        }
+    }
+}
+
+.section--chef{
+    padding-right: 20px;
+}
 
 .sectionTitle{
     font-family: $font-family-main;
@@ -29,6 +41,13 @@
         padding-top: 80px;
     }
 }
+
+.sectionTitle--chef_restaurant{
+    text-align: left;
+    padding-left: 127px;
+}
+
+
 
 .linkWrapper{
     @include flex(row, flex-start, flex-start,12px);
@@ -91,10 +110,32 @@
   margin: 0 auto;
   padding-left: 127px;
   padding-right: 127px;
-  
-  > *{
-    max-width: 379px;
-    min-width: 250px;
-  } 
 
+}
+
+.staticCards--chef{
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: flex-start;
+    gap: 24px;
+    margin: 0 auto;
+    max-width: $max-desktop-width;
+
+    @media screen and (min-width: $mim-width) {
+        padding-left: 127px;
+        padding-right: 127px;
+    }
+}
+.staticCards--chef_restaurant {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: flex-start;
+    gap: 24px;
+    margin: 0 auto;
+    max-width: $max-desktop-width;
+
+    @media screen and (min-width: $mim-width) {
+        padding-left: 127px;
+        padding-right: 127px;
+    }
 }
