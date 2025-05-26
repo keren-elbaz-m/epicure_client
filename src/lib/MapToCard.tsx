@@ -50,6 +50,14 @@ export function MapToCards(
             </>
         );
 
+        case SectionPart.CHEF:
+        const chef = item as Chef;
+        return (
+            <>
+            <p>{chef.description}</p>
+            </>
+        );
+
         default:
         return null;
         }
@@ -64,9 +72,7 @@ export function MapToCards(
 
     return (
       <Card key={baseItem.id} item={baseItem} variant={type}>
-        {
-          renderContent(item)
-        }
+        {renderContent(item)}
       </Card>
     );
   }).filter((card): card is ReactElement => card !== null);

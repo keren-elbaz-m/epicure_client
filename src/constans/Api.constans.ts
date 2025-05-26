@@ -4,3 +4,6 @@ export const API_ROUTES = {
     DISHES: '/dish',
     CHEFS: '/chef',
 }
+
+export const API_CHEF_BY_ID = (id: number | string) => `/chef/${id}`;
+export const API_REST_CHEF_BY_ID = (id: number | string) => `/chef/${id}/restaurants`;
