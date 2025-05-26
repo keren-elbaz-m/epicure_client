@@ -33,7 +33,7 @@ export default function Section({sectionLabel,titleLink, cards, variant}: Sectio
                 </div>
             </div>
             {titleLink && (
-                <div className={style.linkWrapper}>
+                <div className={`${style.linkWrapper} ${style[`linkWrapper--${variant}`]} ${style.linkWrapperAligned}`}>
                     <a href={titleLink.url} className={style.link}>{titleLink.label}</a>
                     <Image src={section_link_icon} className={style.linkIcon} alt="section link icon"/>
                 </div>

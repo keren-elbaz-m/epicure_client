@@ -44,7 +44,17 @@
 
 .sectionTitle--chef_restaurant{
     text-align: left;
-    padding-left: 127px;
+    max-width: 2000px;
+    
+     @media screen and (min-width: $mim-width) {
+        max-width: $max-desktop-width;
+        margin: 0 auto;
+        padding-left: 127px;
+        padding-right: 127px;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+   
 }
 
 
@@ -125,6 +135,7 @@
         padding-left: 127px;
         padding-right: 127px;
     }
+
 }
 .staticCards--chef_restaurant {
     padding-left: 0;
@@ -135,7 +146,9 @@
     max-width: $max-desktop-width;
 
     @media screen and (min-width: $mim-width) {
-        padding-left: 127px;
-        padding-right: 127px;
-    }
+    max-width: $max-desktop-width;
+    margin: 0 auto;
+    padding-left: 127px;
+    padding-right: 127px;
+  }
 }

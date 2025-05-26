@@ -53,8 +53,6 @@ $mim-width: 900px;
     }
 }
 
-
-
 .name {
     font-family: $font-family-main;
     font-weight: $font-weight-regular;
@@ -133,13 +131,13 @@ $mim-width: 900px;
     color: $font-color;
     font-family: $font-family-main;
     font-weight: $font-weight-regular;
-    font-size: $font-size-default+2px;
+    font-size: $font-size-default+4px;
     line-height: 47px;
     letter-spacing: 2px;
     text-align: center;
 
     @include respond-to(tablet) {
-        font-size: 28px;
+        font-size: 36px;
     }
 
 }
@@ -277,9 +275,12 @@ $mim-width: 900px;
 
 
 .children--restaurant {
-> *:nth-child(2) {
-    display: none;
-}
+    > *:nth-child(2) {
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
 }
 
 
@@ -380,3 +381,20 @@ $mim-width: 900px;
     box-sizing: border-box;
   }
 }
+
+.name--chef_restaurant{
+    font-family: $font-family-main;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-default+2px;
+    line-height: 47px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $font-color;
+    padding-top: 16px;
+
+    @include respond-to(tablet) {
+        font-size: 28px;
+        line-height: 35px;
+    }
+}
+
