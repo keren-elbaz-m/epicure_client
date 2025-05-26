@@ -68,7 +68,7 @@ export default function NavbarMobile() {
                 {!behavior.hideIcons && (
                     <div className={styles.icons}>
                         <button className={styles.buttonIconsStyle} onClick={()=>{
-                            handleDropdownClick(DropDownType.SEARCH, <Search/>)
+                            handleDropdownClick(DropDownType.SEARCH, <Search variant="dropdown"/>)
                         }}>
                             <Image src={search_icon} alt="search icon" />
                         </button>
