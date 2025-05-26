@@ -2,6 +2,9 @@ export const RESOURES = {
     app: {
         appName: 'Epicure',
     },
+    navbar:{
+        search:'Search for restaurant cuisine, chef',
+    },
     homepage: {
         popularSection: 'popular restaurant in epicure:',
         signaturSection : 'signature dish of',
