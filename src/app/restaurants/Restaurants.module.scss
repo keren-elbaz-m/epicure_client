@@ -1,6 +1,7 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
+
 .name{
     font-family: $font-family-main;
     font-weight: 200;
@@ -53,7 +54,7 @@
     }
 
     @media screen and (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr); // בדיוק 4 כרטיסיות
+        grid-template-columns: repeat(4, 1fr); 
     }
 
     @media screen and (min-width: 900px) and (max-width: 1199px) {
