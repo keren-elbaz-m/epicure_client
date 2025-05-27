@@ -94,7 +94,8 @@ export type SectionLink = {
 export enum SectionPart{
     RESTAURANT = 'restaurant',
     DISH = 'dish',
-    CHEF = 'chef'
+    CHEF = 'chef',
+    RESTAURANT_PAGE = 'restaurant_page'
 }
 
 export enum TypeDishIcon{
