@@ -1,20 +1,14 @@
-import Link from "next/link";
-import { restaurants } from "@/data/restaurants.data";
+import TabsFilterBar from "@/components/Filter/TabsFilterBar";
+import DropdownFilterBar from "@/components/Filter/DropdownFilterBar";
+import style from "@/app/restaurants/Restaurants.module.scss";
+
 export default function RestaurantsPage() {
   
     return (
       <div>
-        <h1>All Restaurants</h1>
-        {restaurants.map((restaurant) => (
-            <div key={restaurant.id}>
-                <h2>
-                    <Link href={`/restaurants/${restaurant.id}`}>
-                        {restaurant.name}
-                    </Link>
-                </h2>
-                <p>{restaurant.chefName}</p>
-            </div>
-        ))}
+        <h1 className={style.name}>Restaurants</h1>
+        <TabsFilterBar activeTab="All" />
+        <DropdownFilterBar className={style.desktopOnly}/>
       </div>
     );
   }
