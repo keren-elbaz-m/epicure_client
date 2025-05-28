@@ -109,3 +109,29 @@ export enum ContactIcons{
     android = "android",
 }
 
+export type RestaurantItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  chefName?: string;
+  rating?: number;
+};
+
+export type DishItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  price?: number;
+  ingredients: string[];
+  type: {
+    name: string;
+    iconUrl: string;
+  };
+};
+
+export type ChefItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  description: string;
+};
