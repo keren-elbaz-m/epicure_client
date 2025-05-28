@@ -4,9 +4,18 @@ import { SectionPart } from '@/types';
 import { RestaurantItem, DishItem, ChefItem } from '@/types';
 
 type CardProps =
-  | { variant: SectionPart.RESTAURANT; item: RestaurantItem; children?: React.ReactNode }
-  | { variant: SectionPart.DISH; item: DishItem; children?: React.ReactNode }
-  | { variant: SectionPart.CHEF | SectionPart.CHEF_RESTAURANT; item: ChefItem; children?: React.ReactNode };
+  | { 
+        variant: SectionPart.RESTAURANT; 
+        item: RestaurantItem; children?: React.ReactNode 
+    }
+  | { 
+    variant: SectionPart.DISH; 
+    item: DishItem; children?: React.ReactNode 
+    } 
+  | { 
+    variant: SectionPart.CHEF | SectionPart.CHEF_RESTAURANT; 
+    item: ChefItem; children?: React.ReactNode 
+};
 
 const getClassName = (
   base: string,

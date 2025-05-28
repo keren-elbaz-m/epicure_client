@@ -3,7 +3,7 @@ import style from "@/app/restaurants/Restaurants.module.scss";
 import { Restaurant, SectionPart } from "@/types";
 import { useEffect, useState } from "react";
 import TabsFilterBar from "./TabsFilterBar";
-import { MapToCards } from "@/lib/MapToCard";
+import { MapToCards } from "@/lib/utils/MapToCard";
 import DropdownFilterBar from "@/components/Filter/DropdownFilterBar";
 import { TabLabel, TabLabelToFilterMap } from "@/types";
 

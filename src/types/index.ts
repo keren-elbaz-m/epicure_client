@@ -95,7 +95,7 @@ export enum SectionPart{
     RESTAURANT = 'restaurant',
     DISH = 'dish',
     CHEF = 'chef',
-    RESTAURANT_PAGE = 'restaurant_page'
+    RESTAURANT_PAGE = 'restaurant_page',
     CHEF_RESTAURANT = 'chef_restaurant'
 }
 
@@ -125,6 +125,7 @@ export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
   "New": RestaurantFilter.NEW,
   "Popular": RestaurantFilter.POPULAR,
   "Open Now": RestaurantFilter.OPEN,
+};
 
 export type RestaurantItem = {
   id: number;
