@@ -1,34 +1,23 @@
 import { NextResponse } from "next/server";
 import { restaurants } from "@/data/restaurants.data";
-import { RestaurantFilter } from "@/types";
+import { Restaurant, RestaurantFilter } from "@/types";
+
+const filterStrategies: Record<RestaurantFilter, (restaurants: Restaurant[]) => Restaurant[]> = {
+  [RestaurantFilter.ALL]: (restaurants) => restaurants,
+  [RestaurantFilter.POPULAR]: (restaurants) => restaurants.filter((r) => r.isPopular),
+  [RestaurantFilter.NEW]: (restaurants) => restaurants.filter((r) => r.isNew),
+  [RestaurantFilter.OPEN]: (restaurants) => restaurants.filter((r) => r.isOpen),
+};
 
 export async function GET(request: Request) {
-  try
-  {
+  try {
     const url = new URL(request.url);
-    const filter = url.searchParams.get("filter");
+    const filterParam = url.searchParams.get("filter");
+    const filter = (filterParam as RestaurantFilter) || RestaurantFilter.ALL;
 
-    if (!filter || filter === RestaurantFilter.ALL) {
-      return NextResponse.json(restaurants);
-    }
+    const filteredRestaurants = filterStrategies[filter](restaurants);
 
-    let filtered = restaurants;
-
-    switch (filter) {
-      case RestaurantFilter.POPULAR:
-        filtered = restaurants.filter((r) => r.isPopular);
-        break;
-      case RestaurantFilter.NEW:
-        filtered = restaurants.filter((r) => r.isNew);
-        break;
-      case RestaurantFilter.OPEN:
-        filtered = restaurants.filter((r) => r.isOpen);
-        break;
-      default:
-        filtered=[];
-        break;
-    }
-    return NextResponse.json(filtered);
+    return NextResponse.json(filteredRestaurants);
   }catch (error) {
     console.error("Error fetching restaurants:", error);
     return NextResponse.json({ error: "Failed to fetch restaurants" }, { status: 500 });
