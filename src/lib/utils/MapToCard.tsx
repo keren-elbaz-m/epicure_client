@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Card from "@/components/Card/Card";
 import RatingStars from "@/components/Rating/Rating";
-import style from "@/app/Homepage.module.scss";
 import { ReactElement } from "react";
 import { Restaurant, Dish, Chef } from "@/types";
 import { SectionPart } from "@/types";

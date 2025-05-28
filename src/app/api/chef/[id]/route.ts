@@ -1,16 +1,26 @@
-import { NextResponse } from "next/server";
-import { chefs } from "@/data/chefs.data";
+import { getChefById } from "@/lib/services/chefService";
+import { getRestaurantsByIds } from "@/lib/services/restaurantService";
 
 export async function GET(
-  request: Request,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
-  const chefId = Number(params.id);
-  const chef = chefs.find(c => c.id === chefId);
+  const chef = await getChefById(params.id);
 
   if (!chef) {
-    return NextResponse.json({ message: "chef not found" }, { status: 404 });
+    return new Response(JSON.stringify({ error: "Chef not found" }), { status: 404 });
   }
 
-  return NextResponse.json(chef);
+  const restaurantIds = chef.restaurants;
+  const fullRestaurants = await getRestaurantsByIds(restaurantIds);
+
+  const fullChefObject = {
+    ...chef,
+    restaurants: fullRestaurants
+  };
+
+  return new Response(JSON.stringify(fullChefObject), {
+    status: 200,
+    headers: { "Content-Type": "application/json" }
+  });
 }

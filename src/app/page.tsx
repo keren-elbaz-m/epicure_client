@@ -2,16 +2,14 @@ import Hero from "@/components/hero/Hero";
 import { RESOURES } from "@/data/text";
 import Section from "@/components/Section/Section";
 import { sectionLinks } from "@/data/link";
-import { getDataFromApi } from "@/lib/getCardsFromApi";
-import { MapToCards } from "@/lib/MapToCard";
+import { getDataFromApi } from "@/lib/utils/getCardsFromApi";
+import { MapToCards } from "@/lib/utils/MapToCard";
 import { Chef, SectionPart } from "@/types";
 import DishType from "@/components/DishType/DishType";
 import About from "@/components/About/About";
-import { API_CHEF_BY_ID, API_REST_CHEF_BY_ID, API_ROUTES } from "@/constans/Api.constans";
-import { getRandomChef } from "@/lib/getRandomChef";
-import { getItemFromApi } from "@/lib/getItemFromApi";
-import { getChefFirstName } from "@/lib/getChefFirstName";
-import { get } from "http";
+import { API_CHEF_BY_ID, API_ROUTES } from "@/constans/Api.constans";
+import { getRandomChef } from "@/lib/utils/getRandomChef";
+import { getItemFromApi } from "@/lib/utils/getItemFromApi";
 
 export default async function Home() {
 
@@ -23,13 +21,12 @@ export default async function Home() {
   const dishCards = MapToCards(dataDish, SectionPart.DISH);
 
   const chefID = await getRandomChef();
-  const dataChef = await getItemFromApi<Chef>(API_CHEF_BY_ID(chefID || 1));
-  const chefCards = MapToCards([dataChef], SectionPart.CHEF);
+  const dataChefWithRestaurants = await getItemFromApi<Chef>(API_CHEF_BY_ID(chefID || 1));
+  const chefCards = MapToCards([dataChefWithRestaurants], SectionPart.CHEF);
 
-  const restOfChefOfTheWeek = await getDataFromApi(API_REST_CHEF_BY_ID(chefID || 1));
-  const restOfChefCards = MapToCards(restOfChefOfTheWeek, SectionPart.CHEF_RESTAURANT);
-  const firstName = getChefFirstName(dataChef);
-
+  const restOfChefCards = MapToCards(dataChefWithRestaurants.restaurants, SectionPart.CHEF_RESTAURANT);
+  const firstName = dataChefWithRestaurants.name.split(' ')[0];
+  
   return (
     <>
       <Hero/>
