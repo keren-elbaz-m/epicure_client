@@ -1,8 +1,8 @@
 import style from "@/app/restaurants/Restaurants.module.scss";
 import { API_ROUTES } from "@/constans/Api.constans";
-import { MapToCards } from "@/lib/MapToCard";
+import { MapToCards } from "@/lib/utils/MapToCard";
 import { SectionPart } from "@/types";
-import { getDataFromApi } from "@/lib/getCardsFromApi";
+import { getDataFromApi } from "@/lib/utils/getDataFromApi";
 import Filter from "@/components/Filter/Filter";
 
 export default async function RestaurantsPage() {
