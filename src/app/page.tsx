@@ -2,7 +2,7 @@ import Hero from "@/components/hero/Hero";
 import { RESOURES } from "@/data/text";
 import Section from "@/components/Section/Section";
 import { sectionLinks } from "@/data/link";
-import { getDataFromApi } from "@/lib/utils/getCardsFromApi";
+import { getDataFromApi } from "@/lib/utils/getDataFromApi";
 import { MapToCards } from "@/lib/utils/MapToCard";
 import { Chef, SectionPart } from "@/types";
 import DishType from "@/components/DishType/DishType";

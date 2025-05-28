@@ -1,5 +1,5 @@
 import { API_ROUTES } from "@/constans/Api.constans";
-import { getDataFromApi } from "./utils/getCardsFromApi";
+import { getDataFromApi } from "@/lib/utils/getDataFromApi";
 
 export async function getRandomChef(): Promise<number | null> {
   try {
