@@ -27,7 +27,7 @@ export default function Card({item, children, variant}: CardProps) {
 
                 {variant !== SectionPart.CHEF && (
                     <div className={`${styles.content} ${styles[`content--${variant}`]}`}>
-                        <h1 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h1>
+                        <h2 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h2>
                         <div className={`${styles.children} ${styles[`children--${variant}`]}`}>
                             {children}
                         </div>
@@ -35,7 +35,7 @@ export default function Card({item, children, variant}: CardProps) {
                 )}
 
                 {variant === SectionPart.CHEF && (
-                    <h1 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h1>
+                    <h2 className={`${styles.name} ${styles[`name--${variant}`]}`}>{item.name}</h2>
                 )}
             </div>
 
