@@ -3,7 +3,7 @@ import { Chef } from '@/types/index'
 export const chefs: Chef[] = [
     {
         id: 1,
-        name: "asaf granit",
+        name: "Asaf Granit",
         imageUrl: "/images/chefs/asaf_granit.png",
         views: 100,
         isNew: false,
@@ -12,7 +12,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 2,
-        name: "aviv moshe",
+        name: "Aviv Moshe",
         imageUrl: "/images/chefs/aviv_moshe.png",
         views: 200,
         isNew: true,
@@ -21,7 +21,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 3,
-        name: "eyal shani",
+        name: "Eyal Shani",
         imageUrl: "/images/chefs/eyal_shani.png",
         views: 300,
         isNew: false,
@@ -40,7 +40,7 @@ export const chefs: Chef[] = [
 
     {
         id: 5,
-        name: "nitzan raz",
+        name: "Nitzan Raz",
         imageUrl: "/images/chefs/nitzan_raz.png",
         views: 400,
         isNew: false,
@@ -49,7 +49,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 6,
-        name: "omer miller",
+        name: "Omer Miller",
         imageUrl: "/images/chefs/omer_miller.png",
         views: 150,
         isNew: true,
@@ -58,7 +58,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 7,
-        name: "shahaf shabtay",
+        name: "Shahaf Shabtay",
         imageUrl: "/images/chefs/shahaf_shabtay.png",
         views: 250,
         isNew: false,
@@ -67,7 +67,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 8,
-        name: "yossi shitrit",
+        name: "Yossi Shitrit",
         imageUrl: "/images/chefs/yossi_shitrit.png",
         views: 350,
         isNew: false,
@@ -76,7 +76,7 @@ export const chefs: Chef[] = [
     },
     {
         id: 9,
-        name: "yuval ben neriah",
+        name: "Yuval Ben Neriah",
         imageUrl: "/images/chefs/yuval_ben_neriah.png",
         views: 500,
         isNew: true,

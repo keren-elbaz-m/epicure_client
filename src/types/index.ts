@@ -96,6 +96,7 @@ export enum SectionPart{
     DISH = 'dish',
     CHEF = 'chef',
     RESTAURANT_PAGE = 'restaurant_page'
+    CHEF_RESTAURANT = 'chef_restaurant'
 }
 
 export enum TypeDishIcon{
@@ -108,6 +109,7 @@ export enum ContactIcons{
     apple = "apple",
     android = "android",
 }
+
 
 export enum RestaurantFilter {
   ALL = "all",
@@ -123,4 +125,31 @@ export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
   "New": RestaurantFilter.NEW,
   "Popular": RestaurantFilter.POPULAR,
   "Open Now": RestaurantFilter.OPEN,
+
+export type RestaurantItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  chefName?: string;
+  rating?: number;
+};
+
+export type DishItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  price?: number;
+  ingredients: string[];
+  type: {
+    name: string;
+    iconUrl: string;
+  };
+};
+
+export type ChefItem = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  description: string;
+
 };
