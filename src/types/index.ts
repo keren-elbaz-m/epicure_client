@@ -115,3 +115,12 @@ export enum RestaurantFilter {
   NEW = "new",
   OPEN = "open",
 }
+
+export type TabLabel = "All" | "New" | "Popular" | "Open Now";
+
+export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
+  "All": RestaurantFilter.ALL,
+  "New": RestaurantFilter.NEW,
+  "Popular": RestaurantFilter.POPULAR,
+  "Open Now": RestaurantFilter.OPEN,
+};

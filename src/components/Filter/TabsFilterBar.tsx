@@ -1,22 +1,24 @@
 import style from '@/components/Filter/Filter.module.scss';
+import { TabLabelToFilterMap,TabLabel } from "@/types";
+
 
 type Props = {
-  activeTab: string;
-  onTabClick: (tab: string) => void;
+  activeTab: TabLabel;
+  onTabClick: (tab: TabLabel) => void;
 };
 
 export default function TabsFilterBar({activeTab, onTabClick}: Props) {
-    const tabs = ['All', 'New', 'Popular', 'Open Now'];
+    const tabs = Object.entries(TabLabelToFilterMap);
 
     return(
         <div className={style.tabsBar}>
-            {tabs.map((tab)=>(
+            {tabs.map(([label, filterValue])=>(
                 <span 
-                    key={tab} 
-                    className={`${style.tab} ${activeTab === tab ? style.active : ''}`}
-                    onClick={() => onTabClick(tab)}
+                    key={label} 
+                    className={`${style.tab} ${activeTab === label ? style.active : ''}`}
+                    onClick={() => onTabClick(label as TabLabel)}
                 >
-                    {tab}
+                    {label}
                 </span>
             ))}
         </div>

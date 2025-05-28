@@ -5,18 +5,16 @@ import { useEffect, useState } from "react";
 import TabsFilterBar from "./TabsFilterBar";
 import { MapToCards } from "@/lib/MapToCard";
 import DropdownFilterBar from "@/components/Filter/DropdownFilterBar";
-
-type Props = {
-  onCardsChange: (cards: React.ReactNode[]) => void;
-};
+import { TabLabel, TabLabelToFilterMap } from "@/types";
 
 export default function Filter() {
-    const [activeTab, setActiveTab]= useState("All");
+    const defaultTab = Object.keys(TabLabelToFilterMap)[0] as TabLabel;
+    const [activeTab, setActiveTab]= useState<TabLabel>(defaultTab);
       const [cards, setCards] = useState<React.ReactNode[]>([]);
 
 
     useEffect(() => {
-        const filter = activeTab === "All" ? "all" : activeTab.toLowerCase().replace(/\s/g, "");
+        const filter = TabLabelToFilterMap[activeTab];
         const fetchFilteredRestaurants = async () => {
             const response = await fetch(`/api/restaurants?filter=${filter}`);
             const data: Restaurant[] = await response.json();
