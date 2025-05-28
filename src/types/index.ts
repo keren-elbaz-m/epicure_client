@@ -109,3 +109,9 @@ export enum ContactIcons{
     android = "android",
 }
 
+export enum RestaurantFilter {
+  ALL = "all",
+  POPULAR = "popular",
+  NEW = "new",
+  OPEN = "open",
+}
