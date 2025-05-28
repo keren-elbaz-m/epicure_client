@@ -3,15 +3,8 @@ import Image from "next/image";
 import Card from "@/components/Card/Card";
 import RatingStars from "@/components/Rating/Rating";
 import { ReactElement } from "react";
-import { Restaurant, Dish, Chef } from "@/types";
 import { SectionPart } from "@/types";
-
-interface CardItem {
-  id: number;
-  name: string;
-  imageUrl: string;
-}
-
+import { RestaurantItem, DishItem, ChefItem } from '@/types';
 
 export function MapToCards(
   data: unknown[] | undefined | null,
@@ -19,19 +12,19 @@ export function MapToCards(
 ): ReactElement[] {
   if (!data) return [];
 
-    function renderContent(item: unknown): React.ReactNode {
+    function renderContent(item: RestaurantItem | DishItem | ChefItem, type: SectionPart): React.ReactNode {
     switch (type) {
         case SectionPart.RESTAURANT:
-        const restaurant = item as Restaurant;
+        const restaurant = item as RestaurantItem;
         return (
             <>
             <p>{restaurant.chefName}</p>
-            <RatingStars rating={restaurant.rating} max={5} />
+            {restaurant.rating && <RatingStars rating={restaurant.rating} max={5} />}
             </>
         );
 
         case SectionPart.DISH:
-        const dish = item as Dish;
+        const dish = item as DishItem;
         return (
             <>
             <div>
@@ -50,7 +43,7 @@ export function MapToCards(
         );
 
         case SectionPart.CHEF:
-        const chef = item as Chef;
+        const chef = item as ChefItem;
         return (
             <>
             <p>{chef.description}</p>
@@ -65,14 +58,49 @@ export function MapToCards(
 
   return data.map((item) => {
     if (!item || typeof item !== 'object') return null;
-    
-    const baseItem = item as CardItem;
-    if (!baseItem.id || !baseItem.name || !baseItem.imageUrl) return null;
 
-    return (
-      <Card key={baseItem.id} item={baseItem} variant={type}>
-        {renderContent(item)}
-      </Card>
-    );
-  }).filter((card): card is ReactElement => card !== null);
+    if (!("id" in item) || !("name" in item) || !("imageUrl" in item)) return null;
+
+    switch (type) {
+        case SectionPart.RESTAURANT: {
+          const restaurant = item as RestaurantItem;
+          return (
+            <Card key={restaurant.id} item={restaurant} variant={SectionPart.RESTAURANT}>
+              {renderContent(restaurant, SectionPart.RESTAURANT)}
+            </Card>
+          );
+        }
+
+        case SectionPart.DISH: {
+          const dish = item as DishItem;
+          return (
+            <Card key={dish.id} item={dish} variant={SectionPart.DISH}>
+              {renderContent(dish, SectionPart.DISH)}
+            </Card>
+          );
+        }
+
+        case SectionPart.CHEF: {
+          const chef = item as ChefItem;
+          return (
+            <Card key={chef.id} item={chef} variant={SectionPart.CHEF}>
+              {renderContent(chef, SectionPart.CHEF)}
+            </Card>
+          );
+        }
+
+        case SectionPart.CHEF_RESTAURANT: {
+          const chef = item as ChefItem;
+          return (
+            <Card key={chef.id} item={chef} variant={SectionPart.CHEF_RESTAURANT}>
+              {renderContent(chef, SectionPart.CHEF_RESTAURANT)}
+            </Card>
+          );
+        }
+
+        default:
+          return null;
+      }
+    })
+    .filter((card): card is ReactElement => card !== null);
 }

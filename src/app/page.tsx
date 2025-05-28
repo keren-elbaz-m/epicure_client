@@ -12,9 +12,6 @@ import { getRandomChef } from "@/lib/utils/getRandomChef";
 import { getItemFromApi } from "@/lib/utils/getItemFromApi";
 
 export default async function Home() {
-
-
-
   const dataRest = await getDataFromApi(API_ROUTES.RESTAURANTS);
   const dataDish = await getDataFromApi(API_ROUTES.DISHES);
   const restaurantCards = MapToCards(dataRest,SectionPart.RESTAURANT);
@@ -47,6 +44,7 @@ export default async function Home() {
         cards={chefCards}
         variant={SectionPart.CHEF}
       />
+
       <Section
         sectionLabel={`${firstName}${RESOURES.homepage.chefRestuarants}`}
         cards={restOfChefCards}
