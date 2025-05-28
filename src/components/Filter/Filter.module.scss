@@ -1,0 +1,92 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.tabsBar {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 40px;
+    padding-top: 24px;
+    overflow-x: auto;
+    justify-content: center;
+
+    @include respond-to(tablet) {
+        padding-top: 48px;
+    }
+}
+
+.tab {
+  font-family: $font-family-main;
+  font-size: 18px;
+  letter-spacing: 1.92px;
+  line-height: 100%;
+  color: $font-color;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 8px;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    margin-top: 4px;
+  }
+
+  &:hover::after {
+    background-color: #aaa;
+  }
+
+  &.active::after {
+    background-color: #000;
+  }
+}
+
+.dropdownBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FAFAFA;
+    height: 60px;
+    gap:15px;
+
+}
+
+.dropdownItem {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap:8px;
+
+    &:hover {
+        background-color: #d3d3d3; 
+        cursor: pointer;
+    }
+
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1.92px;
+    color: $font-color;
+
+}
+
+.innerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+  margin-right: 10px;
+}

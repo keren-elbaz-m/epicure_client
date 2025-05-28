@@ -1,20 +1,22 @@
-import Link from "next/link";
-import { restaurants } from "@/data/restaurants.data";
-export default function RestaurantsPage() {
-  
+import style from "@/app/restaurants/Restaurants.module.scss";
+import { API_ROUTES } from "@/constans/Api.constans";
+import { MapToCards } from "@/lib/MapToCard";
+import { SectionPart } from "@/types";
+import { getDataFromApi } from "@/lib/getCardsFromApi";
+import Filter from "@/components/Filter/Filter";
+
+export default async function RestaurantsPage() {
+
+
+  const allRestaurants = await getDataFromApi(API_ROUTES.RESTAURANTS);
+  const restCards = MapToCards(allRestaurants, SectionPart.RESTAURANT);
+
     return (
-      <div>
-        <h1>All Restaurants</h1>
-        {restaurants.map((restaurant) => (
-            <div key={restaurant.id}>
-                <h2>
-                    <Link href={`/restaurants/${restaurant.id}`}>
-                        {restaurant.name}
-                    </Link>
-                </h2>
-                <p>{restaurant.chefName}</p>
-            </div>
-        ))}
+      <div className={style.container}>
+        <h1 className={style.name}>Restaurants</h1>
+
+        <Filter/>
+        
       </div>
     );
   }

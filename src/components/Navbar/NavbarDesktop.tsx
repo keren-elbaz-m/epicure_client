@@ -13,7 +13,10 @@ import { useState } from "react";
 import DropDown from "@/components/dropDown/DropDown";
 import { RESOURES } from "@/data/text";
 
-export default function NavbarDesktop() {
+type NavbarDesktopProps = {
+  pathname: string;
+}
+export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const toggleCart = () => setIsCartOpen(prev => !prev);
@@ -33,8 +36,18 @@ export default function NavbarDesktop() {
           </span>
 
           <div className={styles.links}>
-              <Link href="/restaurants">Restaurants</Link>
-              <Link href="/chefs">Chefs</Link>
+            <Link
+              href="/restaurants"
+              className={`${styles.navLink} ${pathname === '/restaurants' ? styles.active : ''}`}
+            >
+              Restaurants
+            </Link>    
+            <Link
+              href="/chefs"
+              className={`${styles.navLink} ${pathname === '/chefs' ? styles.active : ''}`}
+            >
+              chefs
+            </Link>          
           </div>
         </div>
 

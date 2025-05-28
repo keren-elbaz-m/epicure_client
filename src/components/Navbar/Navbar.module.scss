@@ -125,3 +125,14 @@ body{
     text-decoration: none;
   }
 }
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.active {
+  border-bottom: 2px solid orange;
+}
