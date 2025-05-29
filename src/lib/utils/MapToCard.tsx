@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Card from "@/components/Card/Card";
 import RatingStars from "@/components/Rating/Rating";
 import { ReactElement } from "react";
@@ -63,13 +64,15 @@ export function MapToCards(
 
     switch (type) {
         case SectionPart.RESTAURANT: {
-          const restaurant = item as RestaurantItem;
-          return (
-            <Card key={restaurant.id} item={restaurant} variant={SectionPart.RESTAURANT}>
+        const restaurant = item as RestaurantItem;
+        return (
+          <Link key={restaurant.id} href={`/restaurants/${restaurant.id}`}>
+            <Card item={restaurant} variant={SectionPart.RESTAURANT}>
               {renderContent(restaurant, SectionPart.RESTAURANT)}
             </Card>
-          );
-        }
+          </Link>
+        );
+      }
 
         case SectionPart.DISH: {
           const dish = item as DishItem;

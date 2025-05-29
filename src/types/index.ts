@@ -21,6 +21,7 @@ export type Restaurant = {
         lunch: string[];
         dinner: string[];
     };
+    dishIds: number[];
 };
 
 export type Chef = {
@@ -133,6 +134,7 @@ export type RestaurantItem = {
   imageUrl: string;
   chefName?: string;
   rating?: number;
+  isOpen?: boolean;
 };
 
 export type DishItem = {
@@ -154,3 +156,27 @@ export type ChefItem = {
   description: string;
 
 };
+
+export type RestaurantDetailsResponse = {
+  restaurant: RestaurantItem;
+  dishes: DishItem[];
+};
+
+export type HomeHeroProps = {
+  variant: 'home';
+  fallback: {
+    mobile: string;
+    desktop: string;
+  };
+  fallbackOverlay: string;
+};
+
+export type RestaurantHeroProps = {
+  variant: 'restaurant';
+  name: string;
+//   chefName: string;
+//   isOpen: boolean;
+  imageUrl: string;
+};
+
+export type HeroProps = HomeHeroProps | RestaurantHeroProps;

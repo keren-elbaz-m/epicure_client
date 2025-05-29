@@ -15,7 +15,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 2, 3, 5, 6, 7, 8, 9],
     },
     {
         id: 2,
@@ -31,7 +32,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 2,3],
     },
     {
         id: 3,
@@ -47,7 +49,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [3,4,7],
     },
     {
         id: 4,
@@ -63,14 +66,15 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 3,7,9],
     },
     {
         id: 5,
         imageUrl: "/images/restaurants/messa.png",
         name: "Messa",
         chefName: "Aviv Moshe",
-        isOpen: true,
+        isOpen: false,
         rating: 3,
         location: { lat: 32.071, lng: 34.769 },
         isNew: false,
@@ -79,7 +83,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 6,7],
     },
     {
         id: 6,
@@ -95,7 +100,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 2, 3, 4, 5, 6, 7, 8],
     },
 
     {
@@ -112,7 +118,8 @@ export const restaurants: Restaurant[] = [
         distance: 2.5,
         menu: {
             breakfast: [], lunch: [], dinner: []
-        }
+        },
+        dishIds: [1, 2, 3, 5,9],
     },
 
 ]

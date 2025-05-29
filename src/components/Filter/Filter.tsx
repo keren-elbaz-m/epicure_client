@@ -28,7 +28,7 @@ export default function Filter() {
 
     return (
         <>
-            <TabsFilterBar activeTab={activeTab} onTabClick={setActiveTab} />
+            <TabsFilterBar tabs={Object.keys(TabLabelToFilterMap)} activeTab={activeTab} onTabClick={setActiveTab} />
             <DropdownFilterBar className={style.desktopOnly}/>
             <div className={style.cardsGrid}>
                 {cards}

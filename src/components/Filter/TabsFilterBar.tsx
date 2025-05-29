@@ -3,8 +3,9 @@ import { TabLabelToFilterMap,TabLabel } from "@/types";
 
 
 type Props = {
-  activeTab: TabLabel;
-  onTabClick: (tab: TabLabel) => void;
+    tabs: string[];
+    activeTab: TabLabel;
+    onTabClick: (tab: TabLabel) => void;
 };
 
 export default function TabsFilterBar({activeTab, onTabClick}: Props) {

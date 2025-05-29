@@ -1,4 +1,6 @@
 import Hero from "@/components/hero/Hero";
+import hero_desktop from "@/assets/images/hero_desktop.png";
+import hero_mobile from "@/assets/images/hero_mobile.png";
 import { RESOURES } from "@/data/text";
 import Section from "@/components/Section/Section";
 import { sectionLinks } from "@/data/link";
@@ -26,7 +28,15 @@ export default async function Home() {
   
   return (
     <>
-      <Hero/>
+      <Hero
+        variant="home"
+        fallback={{
+          mobile: hero_mobile.src,
+          desktop: hero_desktop.src,
+        }}
+        fallbackOverlay={RESOURES.homepage.hero}
+      />
+      
       <Section
         sectionLabel={RESOURES.homepage.popularSection}
         cards={restaurantCards}
