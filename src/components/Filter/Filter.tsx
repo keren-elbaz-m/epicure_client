@@ -10,7 +10,7 @@ import { TabLabel, TabLabelToFilterMap } from "@/types";
 export default function Filter() {
     const defaultTab = Object.keys(TabLabelToFilterMap)[0] as TabLabel;
     const [activeTab, setActiveTab]= useState<TabLabel>(defaultTab);
-      const [cards, setCards] = useState<React.ReactNode[]>([]);
+    const [cards, setCards] = useState<React.ReactNode[]>([]);
 
 
     useEffect(() => {
@@ -28,7 +28,9 @@ export default function Filter() {
 
     return (
         <>
-            <TabsFilterBar tabs={Object.keys(TabLabelToFilterMap)} activeTab={activeTab} onTabClick={setActiveTab} />
+            <TabsFilterBar tabLabels={Object.keys(TabLabelToFilterMap) as TabLabel[]} 
+            activeTab={activeTab} 
+            setActiveTab={setActiveTab} />
             <DropdownFilterBar className={style.desktopOnly}/>
             <div className={style.cardsGrid}>
                 {cards}

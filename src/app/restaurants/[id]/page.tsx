@@ -1,25 +1,17 @@
-// page.tsx
 import { getItemFromApi } from "@/lib/utils/getItemFromApi";
-import { API_ROUTES } from "@/constans/Api.constans";
-import { MapToCards } from "@/lib/utils/MapToCard";
-import { SectionPart } from "@/types";
-import { notFound } from "next/navigation";
+import { API_ROUTES} from "@/constans/Api.constans";
 import Hero from "@/components/hero/Hero";
 import style from "@/./app/restaurants/Restaurants.module.scss"
 import Image from "next/image";
-import TabsFilterBar from "@/components/Filter/TabsFilterBar";
-import { RestaurantDetailsResponse } from "@/types";
+import { TabLabelToDishFilterMap, DishTabLabel, RestaurantDetailsResponse } from "@/types";
+import FilterDish from "@/components/Filter/FilterDish";
 
-export default async function RestaurantPage({ params }: { params: { id: string } }) {
-  if (!params?.id) {
-    notFound(); 
-  }
+export default async function Page({ params }: { params: { id: string } }) {
+  const data: RestaurantDetailsResponse = await getItemFromApi(
+    API_ROUTES.RESTAURANT_DETAILS(params.id)
+  );
+  const { restaurant } = data;
 
-
-
-const data:RestaurantDetailsResponse = await getItemFromApi(API_ROUTES.RESTAURANT_DETAILS(params.id));
-const { restaurant, dishes } = data;  
-const TABS = ["Breakfast", "Lunch", "Dinner"];
 return (
   
     <div>
@@ -46,10 +38,11 @@ return (
         </>
       )}
 
-      
-      <div className={style.cardsGrid}>
-        {MapToCards(dishes, SectionPart.DISH)}
-      </div>
+      <FilterDish
+        restaurantId={restaurant.id.toString()}
+        tabLabels={Object.keys(TabLabelToDishFilterMap) as DishTabLabel[]}
+      />
+
     </div>
   );
 }

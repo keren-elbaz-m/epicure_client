@@ -9,7 +9,7 @@
     overflow: hidden;
     @include flex(column,center,center);
     @include respond-to(mobile) {
-      height: 50vh;
+    height: 50vh;
   }
 }
 

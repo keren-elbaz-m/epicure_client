@@ -17,9 +17,9 @@ export type Restaurant = {
     };
     distance: number;
     menu: {
-        breakfast: string[];
-        lunch: string[];
-        dinner: string[];
+        breakfast: number[];
+        lunch: number[];
+        dinner: number[];
     };
     dishIds: number[];
 };
@@ -128,6 +128,20 @@ export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
   "Open Now": RestaurantFilter.OPEN,
 };
 
+export enum DishFilter {
+  BREAKFAST = "breakfast",
+  LUNCH = "lunch",
+  DINNER = "dinner",
+}
+
+export type DishTabLabel = "Breakfast" | "Lunch" | "Dinner";
+
+export const TabLabelToDishFilterMap: Record<DishTabLabel, DishFilter> = {
+  "Breakfast": DishFilter.BREAKFAST,
+  "Lunch": DishFilter.LUNCH,
+  "Dinner": DishFilter.DINNER,
+};
+
 export type RestaurantItem = {
   id: number;
   name: string;
@@ -174,8 +188,6 @@ export type HomeHeroProps = {
 export type RestaurantHeroProps = {
   variant: 'restaurant';
   name: string;
-//   chefName: string;
-//   isOpen: boolean;
   imageUrl: string;
 };
 
