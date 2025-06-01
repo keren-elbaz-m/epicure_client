@@ -6,20 +6,15 @@ body{
 }
 
 .navbar {
-  top: 0;
-  width: 100%;
-  height: 46px;
+  max-width: 1186px; 
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 64px;
   background-color: $background-color;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  left: -1px;
 
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background-color: white; 
 
 }
   
@@ -56,8 +51,8 @@ body{
 
 .icons {
   display: flex;
-  gap: $gap-small;
-  font-size: $icons-size;
+  gap: 24px;
+  font-size: 24px;
   @include visible-state(true, 0);
   
 }
@@ -66,16 +61,23 @@ body{
   @include visible-state(false, 0);
 }
 
-.buttonIconsStyle{
+.logoIcon{
+  gap:15.07px;
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonIconsStyle{  
   border: none;
   background-color: transparent;
+  width: 24px;
+  height: 24px;
 }
 
 @media screen and (min-width: $min-desktop-width) {
   .navbar {
     width: menu-width-desktop;
     height: 64px  ; 
-    padding: 0 32px;
   }
 }
 
@@ -84,12 +86,9 @@ body{
   align-items: center;
   justify-content: space-between;
   gap: $gap-medium;
-
   max-width: 1440px;
   margin: 0 auto; 
-
   width: 100%;
-  padding: 0 32px;
 
   @media screen and (min-width: $min-desktop-width) {
     gap: $gap-large;
@@ -99,10 +98,10 @@ body{
 .leftSection {
   display: flex;
   align-items: center;
-  gap: $gap-small; 
+  gap:32px;
 }
 
-.brand {
+.brandName {
   font-family: $font-family-main;
   font-weight: $font-weight-light;
   font-size: 27px;
@@ -110,19 +109,24 @@ body{
   letter-spacing: 1.35px;
   display: flex;
   align-items: center;
-  padding-right:$padding-horizontal-desktop;
-  padding-left: 15.02px;
 }
 
 .links {
-  display: flex;
-  gap: $gap-medium;
+    gap: 30px;
+    display: flex;
+    padding-top: 4px;
+  
 
   a {
     font-family: $font-family-main;
-    font-size: 16px;
     color: #000000;
     text-decoration: none;
+    letter-spacing: 1.92px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 100%;
+
   }
 }
 
