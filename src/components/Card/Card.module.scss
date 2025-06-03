@@ -8,6 +8,7 @@ $mim-width: 900px;
     overflow: hidden;
     position: relative;
     @include flex-column();
+
 }
 
 .card--restaurant{
@@ -23,6 +24,8 @@ $mim-width: 900px;
     @include respond-to(large){
         width: 379px;
         height: 405px;
+        display: flex;
+        flex-direction: column
     }
 }
 .card--dish{
@@ -33,7 +36,7 @@ $mim-width: 900px;
     }
     @include respond-to(desktop){
         width: 265px;
-        height: 654px;
+        height: 590px;
     }
     @include respond-to(large){
         width: 379px;
@@ -42,18 +45,28 @@ $mim-width: 900px;
         
 }
 
-.card.chef {
-    width: 100%;
-    aspect-ratio: 335 / 262;
+.card--chef{
+    width: 335px;
+    height: 262px;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    overflow: hidden;
-    @include respond-to(desktop){
-        width: 100%;
-        height: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 478px;
+        height: 372px;
+    }
+    
+}
+.card--chef_restaurant{
+    @media screen and (min-width:768px) {
+        width: 231px;
+        height: 357px;
+        
     }
 }
 
-.name {
+.name--restaurant{
     font-family: $font-family-main;
     font-weight: $font-weight-regular;
     font-size: $font-size-default;
@@ -63,23 +76,33 @@ $mim-width: 900px;
     padding-left: 16px;
     padding-top: 16px;
 
-    @include respond-to(tablet){
+     @include respond-to(tablet){
         font-size: $font-size-default+8px;
         line-height: 31px;
         text-align: center;
     }
-    @include respond-to(desktop){
-        font-size: $font-size-default+14px;
-        text-align: center;
-    }
+   
     @include respond-to(large){
-        font-size: $font-size-default+22px;
-        text-align: center;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        padding-top: 0;
     }
-} 
+
+}
 
 .name--dish {
+    font-family: $font-family-main;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-default;
+    line-height: 100%;
+    letter-spacing: 2.67px;
+    color: #000000;
+    padding-left: 16px;
+    padding-top: 16px;
     @include respond-to(tablet) {
+        font-family: $font-family-main;
         min-height: 62px;
         font-size: $font-size-default+8px;
         display: -webkit-box;
@@ -87,8 +110,13 @@ $mim-width: 900px;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-left: 16px;
-        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        padding-top: 0;
+        font-weight: 400;
     }
     @include respond-to(desktop) {
         min-height: 80px; 
@@ -98,9 +126,14 @@ $mim-width: 900px;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-left: 16px;
-        padding-top: 18px;
-        padding-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        padding-top: 0;
+        font-weight: 400;
+
     }
     @include respond-to(large) {
         height: 120px; 
@@ -110,14 +143,17 @@ $mim-width: 900px;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding-left: 16px;
         font-family: Helvetica Neue;
-
         line-height: 47px;
         letter-spacing: 2.67px;
         text-align: center;
-
-
+        width: 220px;
+        height: 94px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        font-weight: 400;
+        padding-top: 0;
     }
 }
 
@@ -126,18 +162,32 @@ $mim-width: 900px;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 12px 16px;
     background: #FFFFFFCC;
+    padding-right: 0;
     color: $font-color;
     font-family: $font-family-main;
     font-weight: $font-weight-regular;
     font-size: $font-size-default+4px;
-    line-height: 47px;
+    line-height: 28px;
     letter-spacing: 2px;
     text-align: center;
+    height: 51px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
 
-    @include respond-to(tablet) {
-        font-size: 36px;
+
+    @media screen and (min-width:768px) {
+        font-family: Helvetica Neue;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 47px;
+        letter-spacing: 2.67px;
+        text-align: center;
+        height: 78px;
+
+
     }
 
 }
@@ -180,29 +230,37 @@ $mim-width: 900px;
         
     }
     @include respond-to(large){
-        width: 379px;
-        height: 250px;
+        width: 380px;
+        height: 306px;
     }
     
   }
 
-.imageContainer--chef {
-    position: relative;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
 
-  @include respond-to(desktop) {
-    width: 100%;
-    height: auto;
-  } 
+.imageContainer--chef {
+  width: 100%;
+  height: 100%;
+  position: relative;
 
   img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
 
-.content {
+.imageContainer--chef_restaurant{
+    height: 170px;
+    img {
+        width: 100%;
+        height: 90%;
+    }
+    @media screen and (min-width:768px) {
+        height: 225px;       
+    }
+}
+
+.content--restaurant {
     font-family: $font-family-main;
     font-weight: $font-weight-light;
     font-size: $font-size-small+2px;
@@ -221,14 +279,26 @@ $mim-width: 900px;
     @include respond-to(large){
         font-size: $font-size-default+6px;
         line-height: 30px;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        font-size: 24px;
+        line-height: 30px;
+        padding-top: 25px;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 8px;
     }
 }
 
 .content--dish {
+    white-space: pre-line;
+    font-family: $font-family-main;
     @include respond-to(tablet) {
         font-size: $font-size-default+8px;
         display: flex;
         flex-direction: column;
+        font-family: $font-family-main;
         
     }
     @include respond-to(desktop) {
@@ -236,12 +306,16 @@ $mim-width: 900px;
         font-size: $font-size-default+14px;
         display: flex;
         flex-direction: column;
+        font-family: $font-family-main;
     }
     @include respond-to(large) {
         min-height: 80px; 
         font-size: $font-size-default+22px;
         display: flex;
         flex-direction: column;
+        font-family: $font-family-main;
+        padding-top:24px;
+
     }
 }
 
@@ -252,8 +326,7 @@ $mim-width: 900px;
     line-height: 20px;
     letter-spacing: 1.97px;
     padding-left: 16px;
-    padding-right: 20px;
-    padding-top: 8px;
+    padding-top: 10px;
 
     @include respond-to(tablet) {
         display: flex;
@@ -270,6 +343,8 @@ $mim-width: 900px;
     @include respond-to(large) {
         font-size: 24px;
         line-height: 30px;
+        gap:12px;
+        padding-left: 0;
     }
   }
 
@@ -287,7 +362,9 @@ $mim-width: 900px;
 .children--dish {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
+    
+    margin:0 auto;
 
     > *:first-child {
         order: 2; 
@@ -301,12 +378,12 @@ $mim-width: 900px;
         position: absolute;
         bottom: 10px; 
         text-align: center;
-        padding: 16px 0;
         font-weight: $font-weight-regular;
         display: flex;
         left: 16px;
         width: 100%;
         color: #222; 
+        
     }
 
   @include respond-to(tablet) {
@@ -317,8 +394,9 @@ $mim-width: 900px;
   }
   @include respond-to(large) {
     @include children-dish-base-style;
+    max-width: 295px;
+    padding-top:3px;
   }
- 
 }
 
 
@@ -330,8 +408,8 @@ $mim-width: 900px;
 }
 
 .children--chef{
-    margin-top: 40px;
-    padding: 8px 12px;
+    margin-top: 14px;
+    padding-left: 0;
     font-size: $font-size-small+2px;
     line-height: 22px;
     font-family: $font-family-main;
@@ -340,11 +418,9 @@ $mim-width: 900px;
     line-height: 28px;
     letter-spacing: 1.25px;
     text-align: justify;
-
-
-    @include respond-to(desktop) {
+    @media screen and (min-width: 768px){
+        padding-top: 23px;
         width: 100%;
-        padding-top: 10px;
         margin: 0;
         font-family: $font-family-main;
         font-weight: $font-weight-light;
@@ -358,6 +434,7 @@ $mim-width: 900px;
 .starRatingStyle{
     font-size: 40px;
     color: #DE9200;
+
 
     @include respond-to(tablet){
         font-size: 30px;
@@ -375,10 +452,11 @@ $mim-width: 900px;
 
   @include respond-to(desktop) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
     width: 100%;
     box-sizing: border-box;
+    
   }
 }
 
@@ -388,13 +466,18 @@ $mim-width: 900px;
     font-size: $font-size-default+2px;
     line-height: 47px;
     letter-spacing: 2px;
-    text-align: center;
+    text-align: left;
     color: $font-color;
-    padding-top: 16px;
+    padding-left: 16px;
+    padding-top:3px;
+    height: 81px;
 
     @include respond-to(tablet) {
         font-size: 28px;
         line-height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

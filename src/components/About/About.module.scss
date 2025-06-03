@@ -8,11 +8,19 @@
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    padding-top: 24px;
+    padding-top: 2px;
+    @media screen and (min-width:768px) {
+        padding: 42px 27px;
+        padding-top: 24px;
+    }
     
     .logo{
         order:1;
         padding-bottom: 32px;
+        img{
+                width: 102px;
+                height: 195px;
+            }
     }
 
     .secondaryContainer{
@@ -23,13 +31,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 64px 128px;
+        padding: 41px 128px;
         
         .secondaryContainer{
             display: flex;
             flex-direction: column;
             order:1;
-            gap: 32px;
+            gap: 127px;
             width: 60%;
             .textBlock{
                 order:1;
@@ -45,6 +53,15 @@
             align-self: center;
             justify-content: flex-end;
             width: 30%;
+            
+            img{
+                width: 178px;
+                height: 166px;
+                margin-top: 19px;
+                margin-right:4px
+            }
+            
+            
         }
     }
 }
@@ -63,6 +80,7 @@
 
     .textBlock{
         order:3;
+        padding-top:46px;
     };
 }
 .iconsWrapper{
@@ -100,6 +118,9 @@
         line-height: 35px;
         letter-spacing: 1.25px;
         text-transform: uppercase;
+        @media screen and (min-width:768px) {
+            font-size: 32px;
+        }
 
     }
 
@@ -108,6 +129,9 @@
         margin-bottom: 16px;
         line-height: 1.6;
     }
+    @media screen and (min-width:768px) {
+        padding-top:0;
+    }
 }
 
 .description{
@@ -115,6 +139,5 @@
     @include respond-to(desktop){
         white-space: pre-line;
     }
-
 }
 

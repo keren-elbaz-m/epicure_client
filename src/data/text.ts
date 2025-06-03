@@ -7,6 +7,7 @@ export const RESOURES = {
         search:'Search for restaurant cuisine, chef',
     },
     homepage: {
+        hero:'Epicure works with the top\nchef restaurants in Tel Aviv',
         popularSection: 'popular restaurant in epicure:',
         signaturSection : 'signature dish of',
         iconMeaning: 'The meaning of our icons',

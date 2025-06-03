@@ -2,11 +2,14 @@ $icons-size: 24px;
 
 .container{
     width: 100%;
-    height:218px;
-    left: -1px;
     display: flex;
     justify-content: center;
+}
+ 
+.container--dropdown{
+    height: 218px;
     padding-top: 24px;
+    left: -1px;
 }
 
 .searchBloc {
@@ -44,7 +47,9 @@ $icons-size: 24px;
     letter-spacing: 1.29px;
     color: #000000;
     background: transparent;
+
 }
+
 
 .icon {
     width: 20px;

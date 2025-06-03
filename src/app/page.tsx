@@ -36,6 +36,7 @@ export default async function Home() {
       <Section
         sectionLabel={RESOURES.homepage.signaturSection}
         cards={dishCards}
+        titleLink={sectionLinks[0]}
         variant={SectionPart.DISH}
       />
       <DishType/>

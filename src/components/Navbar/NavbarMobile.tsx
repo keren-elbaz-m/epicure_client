@@ -15,6 +15,7 @@ import Cart from "@/components/cart/cart";
 import BurgerMenuContent from "@/components/burgerMenu/BurgerMenu";
 import Search from "@/components/search/search";
 import { dropdownBehaviors, DropDownType } from "@/types";
+import layoutStyle from "@/app/Layout.module.scss";
 
 
 
@@ -42,7 +43,7 @@ export default function NavbarMobile() {
     const behavior = dropdownBehaviors[dropdownType ?? DropDownType.CART];
 
     return (
-        <>
+        <div className={layoutStyle.mobileWrapper}>
             <nav className={styles.navbar}>
                 <button 
                     onClick={()=> handleDropdownClick(DropDownType.BURGER, <BurgerMenuContent onClose={closeDropdown} />)}
@@ -87,6 +88,6 @@ export default function NavbarMobile() {
             <DropDown isOpen={isOpen} onClose={closeDropdown} type={dropdownType ?? undefined}>
                 {dropdownContent}
             </DropDown>
-        </>
+        </div>
     );
 }
