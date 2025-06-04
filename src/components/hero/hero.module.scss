@@ -6,9 +6,7 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  // @media screen and (min-width:768px){
-  //   height: 696px;
-  // }
+
 
 }
 .heroContainer {
@@ -29,6 +27,7 @@
 }
 
 .heroImage {
+  transition: opacity 0.3s ease;
     object-fit: cover;
     z-index: 0;
 }
@@ -119,3 +118,17 @@
       height: 32px;
     }
   }
+
+  .mobileOnly {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.desktopOnly {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}

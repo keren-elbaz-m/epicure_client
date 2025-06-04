@@ -16,10 +16,20 @@ export default function Hero() {
       <div className={style.container}>
         <div className={style.heroContainer}>
           <Image
-            src={isMobile? hero_mobile : hero_desktop}
-            alt="hero background"
+            src={hero_mobile}
+            alt="hero background mobile"
             fill
-            className={style.heroImage}
+            priority
+            sizes="(max-width: 768px) 100vw, 1200px"
+            className={`${style.heroImage} ${style.mobileOnly}`}
+          />
+          <Image
+            src={hero_desktop}
+            alt="hero background desktop"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1200px"
+            className={`${style.heroImage} ${style.desktopOnly}`}
           />
           <div className={isMobile ? style.overlayMobile : style.overlay}>
             <div className={isMobile ? style.heroTextMobile : style.heroText}>

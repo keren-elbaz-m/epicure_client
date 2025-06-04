@@ -58,7 +58,7 @@ export default function NavbarMobile() {
                 <div className={styles.logoWrapper}>
                     {!behavior.hideLogo && (
                         <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
-                            <Image src={epicure_logo_icon} alt="epicure logo icon" />
+                            <Image src={epicure_logo_icon} alt="epicure logo icon" width={32} height={33}/>
                         </div>
                     )}
                     {dropdownType === "search" && (
@@ -71,14 +71,14 @@ export default function NavbarMobile() {
                         <button className={styles.buttonIconsStyle} onClick={()=>{
                             handleDropdownClick(DropDownType.SEARCH, <Search variant="dropdown"/>)
                         }}>
-                            <Image src={search_icon} alt="search icon" />
+                            <Image src={search_icon} alt="search icon" width={24} height={24}/>
                         </button>
 
-                            <Image src={person_icon} alt="person icon" />
+                            <Image src={person_icon} alt="person icon" width={24} height={24}/>
                         <button className={styles.buttonIconsStyle} onClick={()=>{
                             handleDropdownClick(DropDownType.CART, <Cart/>)
                         }}>
-                            <Image src={shopping_bag_icon} alt="shopping bag icon" />
+                            <Image src={shopping_bag_icon} alt="shopping bag icon" width={24} height={24}/>
                         </button>
                     </div>
                 )}
