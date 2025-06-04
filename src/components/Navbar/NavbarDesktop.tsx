@@ -12,6 +12,7 @@ import Cart from "@/components/cart/cart";
 import { useState } from "react";
 import DropDown from "@/components/dropDown/DropDown";
 import { RESOURES } from "@/data/text";
+import { getPageContext } from "@/lib/utils/getPageContext";
 
 type NavbarDesktopProps = {
   pathname: string;
@@ -21,9 +22,7 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const toggleCart = () => setIsCartOpen(prev => !prev);
   const closeCart = () => setIsCartOpen(false);
-
-  const isRestaurants = pathname.startsWith("/restaurants");
-  const isChefs = pathname.startsWith("/chefs");
+  const {isRestaurants, isChefs} = getPageContext(pathname);
 
   return (
     <>
