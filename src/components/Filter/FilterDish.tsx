@@ -7,6 +7,7 @@ import { MapToCards } from "@/lib/utils/MapToCard";
 import { SectionPart } from "@/types";
 import TabsFilterBar from "@/components/Filter/TabsFilterBar";
 import style from "@/app/restaurants/Restaurants.module.scss";
+import { DishService } from "@/lib/services/dish.service";
 
 type Props = {
   restaurantId: string;
@@ -16,20 +17,19 @@ type Props = {
 export default function FilterDish({ restaurantId, tabLabels }: Props) {
   const [activeTab, setActiveTab] = useState<DishTabLabel>(tabLabels[0]);
   const [cards, setCards] = useState<React.ReactNode[]>([]);
+  const [dishes, setDishes] = useState<Dish[]>([]);
 
   useEffect(() => {
-    const fetchFilteredDishes = async () => {
-      const res = await fetch(
-        `${API_ROUTES.BASE_URL}${DISHES_BY_RESTAURANT(restaurantId, activeTab)}`,
-        { cache: "no-store" }
-      );
-      const dishes: Dish[] = await res.json();
-      const mapped = MapToCards(dishes, SectionPart.DISH);
-      setCards(mapped);
-    };
+  const fetchFilteredDishes = async () => {
+    const result = await DishService.getDishesByRestaurant(restaurantId, activeTab);
+    setDishes(result);
 
-    fetchFilteredDishes();
-  }, [restaurantId, activeTab]);
+    const mapped = MapToCards(result, SectionPart.DISH); 
+    setCards(mapped);
+  };
+
+  fetchFilteredDishes();
+}, [restaurantId, activeTab]);
 
   return (
     <>
