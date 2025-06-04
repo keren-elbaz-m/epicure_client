@@ -192,3 +192,8 @@ export type RestaurantHeroProps = {
 };
 
 export type HeroProps = HomeHeroProps | RestaurantHeroProps;
+
+export enum HeroVariant {
+  HOME= 'home', 
+  RESTAURANT= 'restaurant'
+};

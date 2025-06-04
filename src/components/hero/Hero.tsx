@@ -4,13 +4,13 @@ import Search from "@/components/search/search";
 import style from "@/components/hero/hero.module.scss";
 import { useScreenType } from "@/hooks/useScreenType";
 import { screenType } from "@/types/index";
-import { HeroProps } from "@/types/index";
+import { HeroProps,HeroVariant  } from "@/types/index";
 
 export default function Hero(props: HeroProps) {
   const screen = useScreenType();
   const isMobile = screen === screenType.MOBILE;
 
-  if (props.variant === 'home') {
+  if (props.variant === HeroVariant.HOME) {
     const finalImage = isMobile ? props.fallback.mobile : props.fallback.desktop;
 
     return (
@@ -25,7 +25,7 @@ export default function Hero(props: HeroProps) {
       </div>
     );
   }
-  if (props.variant === "restaurant") {
+  if (props.variant === HeroVariant.RESTAURANT) {
   return (
     <div className={style.heroRestContainer}>
       <Image src={props.imageUrl} alt={props.name} fill className={style.heroImage} />
