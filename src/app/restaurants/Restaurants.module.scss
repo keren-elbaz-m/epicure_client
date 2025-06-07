@@ -1,7 +1,6 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
-
 .name{
     font-family: $font-family-main;
     font-weight: 200;
@@ -10,13 +9,12 @@
     letter-spacing: 1.92px;
     text-transform: uppercase;
     padding-left: 20px;
-    padding-top: 14px;
-    padding-bottom: 24px;
+    padding-top: 16px;
+    padding-bottom: 22px;
 
     @include respond-to(tablet){
         display: none;
     }
-
 }
 
 .desktopOnly {
@@ -25,48 +23,95 @@
     }
 }
 
-
 .cardsSection {
   max-width: 1400px;
   margin: 0 auto;
   padding-inline: 32px;
-
-  @include respond-to(desktop) {
-    padding-inline: 64px;
-  }
 }
-
 
 .cardsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 24px;
-
-    padding: 32px 20px;
-    justify-content: center;
-    justify-items: center;
-
-    margin: 0 auto;
+    justify-content: start;
+    justify-items: start;
     max-width: 1200px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1195px) {
         padding: 70px 32px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr); 
-    }
-
-    @media screen and (min-width: 900px) and (max-width: 1199px) {
         grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 32px 0px;
+        justify-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
     }
 
-    @media screen and (min-width: 600px) and (max-width: 899px) {
+    @media screen and (min-width: 900px) and (max-width: 1194px) {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 32px 20px;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
     }
 
-    @media screen and (max-width: 599px) {
+    @media screen and (min-width: 696px) and (max-width: 899px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 32px 20px;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 469px) {
         grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 26px 20px;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
     }
     
+}
+
+.cardsLayout{
+    max-width:375;
+
+    @media screen and (min-width:695px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:0 auto;
+        max-width: 1186px;
+        padding-top:11px;
+    }
+
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+  padding: 32px 20px;
+  margin: 0 auto;
+  justify-content: start;
+  justify-items: start;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    justify-items: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 695px) {
+    grid-template-columns: 1fr;
+  }
 }

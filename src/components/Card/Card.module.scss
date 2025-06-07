@@ -28,6 +28,27 @@ $mim-width: 900px;
         flex-direction: column
     }
 }
+
+.card--restaurant_wide {
+  width: 100%;
+  height: auto;
+
+  @media screen and (max-width: 695px) {
+    width: 335px;
+    height: 288px;
+  }
+
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    width: 320px;
+    height: 310px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 379px;
+    height: 405px;
+  }
+}
+
 .card--dish{
     @include card-size(245px, 388px);
     @include respond-to(tablet){
@@ -59,6 +80,7 @@ $mim-width: 900px;
     
 }
 .card--chef_restaurant{
+
     @media screen and (min-width:768px) {
         width: 231px;
         height: 357px;
@@ -90,6 +112,32 @@ $mim-width: 900px;
         padding-top: 0;
     }
 
+}
+
+.name--restaurant_wide {
+  font-family: $font-family-main;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-default;
+  line-height: 100%;
+  letter-spacing: 2.67px;
+  color: #000000;
+  padding-left: 16px;
+  padding-top: 18px;
+
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 .name--dish {
@@ -219,7 +267,6 @@ $mim-width: 900px;
 
 
 .imageContainer--dish {
-
     @include respond-to(tablet){
         width: 240px;
         height: 160px;
@@ -234,7 +281,7 @@ $mim-width: 900px;
         height: 306px;
     }
     
-  }
+}
 
 
 .imageContainer--chef {
@@ -260,7 +307,31 @@ $mim-width: 900px;
     }
 }
 
-.content--restaurant {
+.imageContainer--restaurant_wide {
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 695px) {
+    width: 335px;
+    height: 207px;
+  }
+
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    width: 320px;
+    height: 200px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 379px;
+    height: 235px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.content--restaurant{
     font-family: $font-family-main;
     font-weight: $font-weight-light;
     font-size: $font-size-small+2px;
@@ -289,6 +360,36 @@ $mim-width: 900px;
         padding-right: 0;
         gap: 8px;
     }
+}
+
+.content--restaurant_wide {
+  font-family: $font-family-main;
+  font-weight: $font-weight-light;
+  font-size: $font-size-small + 2px;
+  line-height: 20px;
+  letter-spacing: 1.97px;
+
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    font-size: $font-size-default;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    padding-top: 23px;
+  }
 }
 
 .content--dish {
@@ -348,8 +449,30 @@ $mim-width: 900px;
     }
   }
 
+.children--restaurant_wide {
+  padding-top: 15px;
 
-.children--restaurant {
+  @media screen and (min-width: 696px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+    line-height: 30px;
+    gap: 12px;
+    padding-left: 0;
+    padding-top: 2px;
+  }
+  
+}
+
+.children--restaurant, .children--restaurant_wide {
     > *:nth-child(2) {
         display: none;
         @include respond-to(tablet) {
@@ -434,8 +557,6 @@ $mim-width: 900px;
 .starRatingStyle{
     font-size: 40px;
     color: #DE9200;
-
-
     @include respond-to(tablet){
         font-size: 30px;
     }
@@ -446,6 +567,19 @@ $mim-width: 900px;
         font-size: 40px;
     }
 }
+
+
+.starRating--restaurant_wide{
+    font-size: 40px;
+    color: #DE9200;
+    @media screen and (min-width: 696px) and (max-width: 1199px) {
+        font-size: 32px;
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 40px;
+    }
+}
+
 
 .cardWrapper--chef {
   display: block;
@@ -472,7 +606,7 @@ $mim-width: 900px;
     padding-top:3px;
     height: 81px;
 
-    @include respond-to(tablet) {
+    @media screen and (min-width:469px) {
         font-size: 28px;
         line-height: 35px;
         display: flex;

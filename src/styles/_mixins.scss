@@ -155,3 +155,22 @@
         }
       }
 }
+
+@mixin restaurant-card-base{
+  @include card-size(245px, 233px);
+  @include respond-to(tablet){
+      width: 239px;
+      height: 266px;
+  }
+  @include respond-to(desktop){
+      width: 265px;
+      height: 291px;
+  }
+  @include respond-to(large){
+      width: 379px;
+      height: 405px;
+      display: flex;
+      flex-direction: column
+  }
+
+}

@@ -9,7 +9,7 @@ export default function DropdownFilterBar({className}: {className?: string}) {
         {filters.map((label) => (
             <span key={label} className={style.dropdownItem}>
                 <span className={style.innerContent}>{label}</span>
-                <Image src="/images/icons/dropdownArrow.svg" alt="dropdown arrow" className={style.icon} width={16} height={16} />
+                <Image src="/images/icons/dropdownArrow.svg" alt="dropdown arrow" className={style.icon} width={24} height={24} />
             </span>
         ))}
         </div>

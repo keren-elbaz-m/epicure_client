@@ -5,7 +5,7 @@ import { RestaurantItem, DishItem, ChefItem } from '@/types';
 
 type CardProps =
   | { 
-        variant: SectionPart.RESTAURANT; 
+        variant: SectionPart.RESTAURANT | SectionPart.RESTAURANT_WIDE; 
         item: RestaurantItem; children?: React.ReactNode 
     }
   | { 

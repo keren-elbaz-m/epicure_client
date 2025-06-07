@@ -16,6 +16,7 @@ import BurgerMenuContent from "@/components/burgerMenu/BurgerMenu";
 import Search from "@/components/search/search";
 import { dropdownBehaviors, DropDownType } from "@/types";
 import layoutStyle from "@/app/Layout.module.scss";
+import Link from "next/link";
 
 
 
@@ -57,9 +58,11 @@ export default function NavbarMobile() {
 
                 <div className={styles.logoWrapper}>
                     {!behavior.hideLogo && (
-                        <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
-                            <Image src={epicure_logo_icon} alt="epicure logo icon" width={32} height={33}/>
-                        </div>
+                        <Link href="/">
+                            <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
+                                <Image src={epicure_logo_icon} alt="epicure logo icon" width={32} height={33}/>
+                            </div>
+                        </Link>
                     )}
                     {dropdownType === "search" && (
                         <span className={styles.searchTitle}>Search</span>

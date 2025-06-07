@@ -29,10 +29,11 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
       <div className={styles.desktopContent}>
         <div className={styles.leftSection}>
           <div className={styles.logoIcon}>
-            <div className={styles.logo}>
-              <Image src={epicure_logo_icon} alt="epicure logo icon" />
-            </div>
-            
+            <Link href="/">
+              <div className={styles.logo}>
+                <Image src={epicure_logo_icon} alt="epicure logo icon" />
+              </div>
+            </Link>
             <span className={styles.brandName}>
               {RESOURES.app.appName.toUpperCase()}
             </span>
