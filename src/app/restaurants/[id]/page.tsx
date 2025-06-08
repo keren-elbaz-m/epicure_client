@@ -17,24 +17,25 @@ return (
     <div>
       {restaurant.chefName && restaurant.isOpen !== undefined && restaurant.imageUrl && (
         <>
-        <Hero
-          variant="restaurant"
-          name={restaurant.name!}
-          imageUrl={restaurant.imageUrl!}
-        />
-        <div className={style.details}>
-          <h1 className={style.headerName}>{restaurant.name}</h1>
-          <p className={style.chef}>{restaurant.chefName}</p>
-          <p className={restaurant.isOpen ? style.open : style.closed}>
-            {restaurant.isOpen ? (
-              <>
-                <Image src="/images/icons/clock.svg" alt="clock" width={16} height={16} />
-                {" "}Open now
-              </>
-            ) : "Closed"}
-          </p>
+          <Hero
+            variant="restaurant"
+            name={restaurant.name!}
+            imageUrl={restaurant.imageUrl!}
+          />
+          <div className={style.details}>
+            <h1 className={style.headerName}>{restaurant.name}</h1>
+            <div className={style.lowerText}>
+              <p className={style.chef}>{restaurant.chefName}</p>
+              <p className={restaurant.isOpen ? style.open : style.closed}>
+                {restaurant.isOpen ? (
+                  <>
+                    <Image src="/images/icons/clock.svg" alt="clock" width={16} height={16} />
+                    {" "}Open now
+                  </>
+                ) : "Closed"}
+              </p>
+            </div>
           </div>
-            
         </>
       )}
 

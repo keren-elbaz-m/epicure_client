@@ -72,25 +72,26 @@
 }
 
 .details {
-
+    padding-left: 20px;
     text-align: left;
-    padding-left:10%;
-    gap:16px;
+    gap:18px;
     display: flex;
     flex-direction: column;
-    margin-top: 24px;
+    margin-top: 25px;
     @media screen and (min-width: 768px) {
+        padding-top: 8px;
         align-items: center;
         padding-left:0;
+        gap:3px;
     }
 }
 
 .headerName {
     font-family: Helvetica Neue;
     font-weight: 400;
-    font-size: 20px;
     line-height: 100%;
     letter-spacing: 2.67px;
+    font-size: 18px;
 
     @media screen and (min-width: 768px) {
         font-size: 56px;
@@ -102,12 +103,28 @@
 
 }
 
+.lowerText{
+    display: flex;
+    flex-direction: column;
+    gap:17px;
+    @media screen and (min-width: 768px) {
+        gap:33px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
 .chef {
     font-family: Helvetica Neue;
     font-weight: 200;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 1.97px;
+
+
     @media screen and (min-width: 768px) {
         font-weight: 200;
         font-size: 32px;
@@ -119,7 +136,8 @@
 }
 
 .open {
-  font-family: Helvetica Neue;
+    padding-left: 1px;
+    font-family: Helvetica Neue;
     font-weight: 200;
     font-size: 18px;
     line-height: 20px;
