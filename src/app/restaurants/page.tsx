@@ -12,11 +12,13 @@ export default async function RestaurantsPage() {
   const restCards = MapToCards(allRestaurants, SectionPart.RESTAURANT);
 
     return (
-      <div className={style.container}>
-        <h1 className={style.name}>Restaurants</h1>
-
-        <Filter/>
-        
+      <div className={style.layout}>
+        <div className={style.container}>
+          <h1 className={style.name}>Restaurants</h1>
+          
+          <Filter/>
+          
+        </div>
       </div>
     );
   }

@@ -15,6 +15,8 @@ import Cart from "@/components/cart/cart";
 import BurgerMenuContent from "@/components/burgerMenu/BurgerMenu";
 import Search from "@/components/search/search";
 import { dropdownBehaviors, DropDownType } from "@/types";
+import layoutStyle from "@/app/Layout.module.scss";
+import Link from "next/link";
 
 
 
@@ -42,7 +44,7 @@ export default function NavbarMobile() {
     const behavior = dropdownBehaviors[dropdownType ?? DropDownType.CART];
 
     return (
-        <>
+        <div className={layoutStyle.mobileWrapper}>
             <nav className={styles.navbar}>
                 <button 
                     onClick={()=> handleDropdownClick(DropDownType.BURGER, <BurgerMenuContent onClose={closeDropdown} />)}
@@ -56,9 +58,11 @@ export default function NavbarMobile() {
 
                 <div className={styles.logoWrapper}>
                     {!behavior.hideLogo && (
-                        <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
-                            <Image src={epicure_logo_icon} alt="epicure logo icon" />
-                        </div>
+                        <Link href="/">
+                            <div className={`${styles.logo} ${dropdownType === "search" ? styles.hidden : ""}`}>
+                                <Image src={epicure_logo_icon} alt="epicure logo icon" width={32} height={33}/>
+                            </div>
+                        </Link>
                     )}
                     {dropdownType === "search" && (
                         <span className={styles.searchTitle}>Search</span>
@@ -70,14 +74,14 @@ export default function NavbarMobile() {
                         <button className={styles.buttonIconsStyle} onClick={()=>{
                             handleDropdownClick(DropDownType.SEARCH, <Search variant="dropdown"/>)
                         }}>
-                            <Image src={search_icon} alt="search icon" />
+                            <Image src={search_icon} alt="search icon" width={24} height={24}/>
                         </button>
 
-                            <Image src={person_icon} alt="person icon" />
+                            <Image src={person_icon} alt="person icon" width={24} height={24}/>
                         <button className={styles.buttonIconsStyle} onClick={()=>{
                             handleDropdownClick(DropDownType.CART, <Cart/>)
                         }}>
-                            <Image src={shopping_bag_icon} alt="shopping bag icon" />
+                            <Image src={shopping_bag_icon} alt="shopping bag icon" width={24} height={24}/>
                         </button>
                     </div>
                 )}
@@ -87,6 +91,6 @@ export default function NavbarMobile() {
             <DropDown isOpen={isOpen} onClose={closeDropdown} type={dropdownType ?? undefined}>
                 {dropdownContent}
             </DropDown>
-        </>
+        </div>
     );
 }

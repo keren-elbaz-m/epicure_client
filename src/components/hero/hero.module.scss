@@ -1,19 +1,33 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
+.container{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+
+}
 .heroContainer {
-    width: 100%;
-    min-width: 335px;
-    aspect-ratio: 1440 / 696; 
-    position: relative;
-    overflow: hidden;
-    @include flex(column,center,center);
-    @include respond-to(mobile) {
-      height: 50vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(273px, 48vw, 696px);
+
+  aspect-ratio: 1440 / 696;
+
+  @media screen and (max-width: 374px) {
+    height: 273px;
+    aspect-ratio: unset;
   }
 }
 
 .heroImage {
+  transition: opacity 0.3s ease;
     object-fit: cover;
     z-index: 0;
 }
@@ -35,19 +49,26 @@
     text-align: center;
     width: 776px;
     height: 221px;
+    gap:20px;
     @include padding-block(36px,126px);
     z-index: 1;
   }
 
 .overlayMobile {
-    position: relative;
     z-index: 1;
+    text-align: center;
+    background-color: #ffffffd9;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
     width: 335px;
-    height: 144px;
-    @include padding-block(18px,24px);
-    background-color: rgba(255, 255, 255, 0.85);
-    @include flex-column;
-    justify-content: space-between;
+    height: 142px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
   
 .heroText{
@@ -58,18 +79,22 @@
     letter-spacing: 1.97px;
     color: black;
     max-width: 402px;    
+    white-space: pre-line;
 }
 .heroTextMobile {
-    font-size: 20px;
-    line-height: 28px;
-    max-width: 100%;
+    white-space: pre-line;
+    letter-spacing: 3.08px;
     text-align: center;
-    height: 144px;
+    width: 315px;
+    font-family: Helvetica Neue;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 31px;
+    display: flex;
+    justify-content: center;
   }
 
 .heroSearch {
-    width: 400px;
-    max-width: 550px;
   
     & div {
       width: 505px;
@@ -93,3 +118,17 @@
       height: 32px;
     }
   }
+
+  .mobileOnly {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.desktopOnly {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}

@@ -16,7 +16,7 @@ export default function Cart() {
       onClick={(e) => e.stopPropagation()}
     >
       <div className={styles.wrapper}>
-        <Image src={empty_bag_icon} alt="empty bag icon"   className={isDesktop ? styles.iconDesktop : styles.iconMobile} />
+        <Image src={empty_bag_icon} alt="empty bag icon"  width={49} height={49}  className={isDesktop ? styles.iconDesktop : styles.iconMobile} />
         <p className={styles.text}>YOUR BAG IS EMPTY</p>
       </div>
       <button

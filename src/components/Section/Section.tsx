@@ -5,7 +5,6 @@ import style from "@/components/Section/Section.module.scss";
 import section_link_icon from "@/assets/icons/section_link_icon.svg";
 import Carousel from "@/components/Carousel/Carousel";
 import { SectionPart } from "@/types";
-import { title } from "process";
 
 type SectionProps = {
     sectionLabel: string;
@@ -35,7 +34,7 @@ export default function Section({sectionLabel,titleLink, cards, variant}: Sectio
             {titleLink && (
                 <div className={`${style.linkWrapper} ${style[`linkWrapper--${variant}`]} ${style.linkWrapperAligned}`}>
                     <a href={titleLink.url} className={style.link}>{titleLink.label}</a>
-                    <Image src={section_link_icon} className={style.linkIcon} alt="section link icon"/>
+                    <Image src={section_link_icon} className={style.linkIcon} alt="section link icon" width={24} height={24}/>
                 </div>
             )}
             

@@ -2,15 +2,24 @@
 @import '../../styles/variables';
 
 .tabsBar {
-    display: flex;
-    gap: 40px;
-    padding-bottom: 40px;
-    padding-top: 24px;
-    overflow-x: auto;
-    justify-content: center;
+  max-width: 375px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left:21px;
+  display: flex;
+  gap:35px;
+  padding-top:6px;
+  overflow-x: auto;
 
-    @include respond-to(tablet) {
-        padding-top: 48px;
+    @media screen and (min-width:768px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+      padding-top: 47px;
+      gap: 40px;
+      padding-bottom: 29px;
     }
 }
 
@@ -38,17 +47,21 @@
   }
 
   &.active::after {
-    background-color: #000;
+    background-color: #DE9200;
   }
 }
 
 .dropdownBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FAFAFA;
-    height: 60px;
-    gap:15px;
+    display: none;
+    @media screen and (min-width:768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #FAFAFA;
+      height: 60px;
+      gap:26px;
+      
+    }
 
 }
 
@@ -84,8 +97,6 @@
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
   object-fit: contain;
   display: block;
   margin-right: 10px;

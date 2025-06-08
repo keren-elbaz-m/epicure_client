@@ -112,16 +112,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  // padding-left: 16px;
   padding-top: 24px;
 }
 
 @mixin children-dish-base-style {
-  padding-left: 16px;
-  padding-right: 16px;
   display: flex;
   flex-direction: column;
-  flex: 1;
 
     > *:first-child {
       order: 1; 
@@ -134,16 +130,13 @@
       align-items: center;
       justify-content: center;
       flex: 1;
-            margin-top: auto;
-      margin-bottom: auto;
       text-align: center;
+
     }
       > *:last-child {
         position: absolute;
-        bottom: 16px; 
         left: 0;
         right: 0;
-        padding: 0 16px;
         font-weight: $font-weight-regular;
         display: flex;
         align-items: center;
@@ -161,4 +154,23 @@
           display: block;
         }
       }
+}
+
+@mixin restaurant-card-base{
+  @include card-size(245px, 233px);
+  @include respond-to(tablet){
+      width: 239px;
+      height: 266px;
+  }
+  @include respond-to(desktop){
+      width: 265px;
+      height: 291px;
+  }
+  @include respond-to(large){
+      width: 379px;
+      height: 405px;
+      display: flex;
+      flex-direction: column
+  }
+
 }

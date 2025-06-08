@@ -4,7 +4,7 @@ export const restaurants: Restaurant[] = [
     {
         id: 1,
         imageUrl: "/images/restaurants/claro.png",
-        name: "claro",
+        name: "Claro",
         chefName: "Ran Shmueli",
         isOpen: true,
         rating: 4,
@@ -20,7 +20,7 @@ export const restaurants: Restaurant[] = [
     {
         id: 2,
         imageUrl: "/images/restaurants/lumina.png",
-        name: "lumina",
+        name: "Lumina",
         chefName: "Meir Adoni",
         isOpen: true,
         rating: 3,

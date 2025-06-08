@@ -96,7 +96,9 @@ export enum SectionPart{
     DISH = 'dish',
     CHEF = 'chef',
     RESTAURANT_PAGE = 'restaurant_page',
-    CHEF_RESTAURANT = 'chef_restaurant'
+    CHEF_RESTAURANT = 'chef_restaurant',
+    RESTAURANT_WIDE = 'restaurant_wide',
+
 }
 
 export enum TypeDishIcon{
