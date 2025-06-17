@@ -156,3 +156,47 @@ export type ChefItem = {
   description: string;
 
 };
+
+export type RestaurantDetailsResponse = {
+  restaurant: RestaurantItem;
+  dishes: DishItem[];
+};
+
+export type HomeHeroProps = {
+  variant: 'home';
+  fallback: {
+    mobile: string;
+    desktop: string;
+  };
+  fallbackOverlay: string;
+};
+
+export type RestaurantHeroProps = {
+  variant: 'restaurant';
+  name: string;
+  imageUrl: string;
+};
+
+export type HeroProps = HomeHeroProps | RestaurantHeroProps;
+
+export enum HeroVariant {
+  HOME= 'home', 
+  RESTAURANT= 'restaurant'
+};
+
+
+export enum DishSideOption {
+  WHITE_BREAD = "White bread",
+  STICKY_RICE = "Sticky rice",
+}
+
+export enum DishChangeOption {
+  WITHOUT_PEANUTS = "Without peanuts",
+  LESS_SPICY = "Less spicy",
+}
+
+export type DishCustomization = {
+  side: DishSideOption | null;
+  changes: DishChangeOption[];
+  quantity: number;
+};

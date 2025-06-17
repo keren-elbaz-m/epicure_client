@@ -1,26 +1,54 @@
-import { Restaurant } from "@/types";
+import { getItemFromApi } from "@/lib/utils/getItemFromApi";
+import { API_ROUTES} from "@/constans/Api.constans";
+import Hero from "@/components/hero/Hero";
+import style from "@/./app/restaurants/Restaurants.module.scss"
+import Image from "next/image";
+import { TabLabelToDishFilterMap, DishTabLabel, RestaurantDetailsResponse } from "@/types";
+import FilterDish from "@/components/Filter/FilterDish";
+import FilterDishModal from "@/components/DishModal/FilterDishModal";
 
-type Props = {
-    params: {
-        id: string;
-    }
+export default async function Page({ params }: { params: { id: string } }) {
+  const data: RestaurantDetailsResponse = await getItemFromApi(
+    API_ROUTES.RESTAURANT_DETAILS(params.id)
+  );
+  const { restaurant } = data;
+
+return (
+  
+    <div>
+      {restaurant.chefName && restaurant.isOpen !== undefined && restaurant.imageUrl && (
+        <>
+          <Hero
+            variant="restaurant"
+            name={restaurant.name!}
+            imageUrl={restaurant.imageUrl!}
+          />
+          <div className={style.details}>
+            <h1 className={style.headerName}>{restaurant.name}</h1>
+            <div className={style.lowerText}>
+              <p className={style.chef}>{restaurant.chefName}</p>
+              <p className={restaurant.isOpen ? style.open : style.closed}>
+                {restaurant.isOpen ? (
+                  <>
+                    <Image src="/images/icons/clock.svg" alt="clock" width={16} height={16} />
+                    {" "}Open now
+                  </>
+                ) : "Closed"}
+              </p>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* <FilterDish
+        restaurantId={restaurant.id.toString()}
+        tabLabels={Object.keys(TabLabelToDishFilterMap) as DishTabLabel[]}
+      /> */}
+      <FilterDishModal
+        restaurantId={restaurant.id.toString()}
+        tabLabels={Object.keys(TabLabelToDishFilterMap) as DishTabLabel[]}
+      />
+
+    </div>
+  );
 }
-
-export default async function RestaurantDetailsPage({ params }: Props) {
-    const res = await fetch(`http://localhost:3000/api/restaurants/${params.id}`);
-    const restaurant: Restaurant = await res.json();
-  
-    if (!restaurant?.id) {
-      return <div>Restaurant not found</div>;
-    }
-  
-    return (
-      <div>
-        <h1>{restaurant.name}</h1>
-        <p>Chef: {restaurant.chefName}</p>
-        <p>Rating: {restaurant.rating}</p>
-        <p>Location: {restaurant.location.lat}, {restaurant.location.lng}</p>
-        <p>Price Range: {restaurant.priceRange.min} - {restaurant.priceRange.max}</p>
-      </div>
-    );
-  }
