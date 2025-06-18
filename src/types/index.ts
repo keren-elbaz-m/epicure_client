@@ -1,5 +1,5 @@
 export type Restaurant = {
-    id: number;
+    _id: number;
     imageUrl: string;
     name: string;
     chefName: string;
@@ -129,17 +129,17 @@ export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
 };
 
 export enum DishFilter {
-  BREAKFAST = "breakfast",
-  LUNCH = "lunch",
-  DINNER = "dinner",
+    BREAKFAST = "breakfast",
+    LUNCH = "lunch",
+    DINNER = "dinner",
 }
 
 export type DishTabLabel = "Breakfast" | "Lunch" | "Dinner";
 
 export const TabLabelToDishFilterMap: Record<DishTabLabel, DishFilter> = {
-  "Breakfast": DishFilter.BREAKFAST,
-  "Lunch": DishFilter.LUNCH,
-  "Dinner": DishFilter.DINNER,
+    Breakfast: DishFilter.BREAKFAST,
+    Lunch: DishFilter.LUNCH,
+    Dinner: DishFilter.DINNER,
 };
 
 export type RestaurantItem = {
@@ -170,37 +170,29 @@ export type ChefItem = {
     description: string;
 };
 
-  id: number;
-  name: string;
-  imageUrl: string;
-  description: string;
-
-};
-
 export type RestaurantDetailsResponse = {
-  restaurant: RestaurantItem;
-  dishes: DishItem[];
+    restaurant: RestaurantItem;
+    dishes: DishItem[];
 };
 
 export type HomeHeroProps = {
-  variant: 'home';
-  fallback: {
-    mobile: string;
-    desktop: string;
-  };
-  fallbackOverlay: string;
+    variant: "home";
+    fallback: {
+        mobile: string;
+        desktop: string;
+    };
+    fallbackOverlay: string;
 };
 
 export type RestaurantHeroProps = {
-  variant: 'restaurant';
-  name: string;
-  imageUrl: string;
+    variant: "restaurant";
+    name: string;
+    imageUrl: string;
 };
 
 export type HeroProps = HomeHeroProps | RestaurantHeroProps;
 
 export enum HeroVariant {
-  HOME= 'home', 
-  RESTAURANT= 'restaurant'
-};
-
+    HOME = "home",
+    RESTAURANT = "restaurant",
+}

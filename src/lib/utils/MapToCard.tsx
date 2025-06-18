@@ -7,9 +7,7 @@ import RatingStars from "@/components/Rating/Rating";
 import { ReactElement } from "react";
 import { SectionPart } from "@/types";
 import { RestaurantItem, DishItem, ChefItem } from "@/types";
-import Link from "next/link";
 import { restaurants } from "@/data/restaurants.data";
-
 
 export function MapToCards(
     data: unknown[] | undefined | null,
@@ -85,14 +83,12 @@ export function MapToCards(
         .map((item) => {
             if (!item || typeof item !== "object") return null;
             if (!("_id" in item) || !("name" in item) || !("imageUrl" in item))
-
                 return null;
 
             switch (type) {
                 case SectionPart.RESTAURANT: {
                     const restaurant = item as RestaurantItem;
                     return (
-
                         <Link
                             key={restaurant._id}
                             href={`/restaurants/${restaurant._id}`}
