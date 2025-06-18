@@ -1,18 +1,26 @@
 import { API_ROUTES, DISHES_BY_RESTAURANT } from "@/constans/Api.constans";
-import { Dish, DishTabLabel } from "@/types";
+import { Dish, DishTabLabel, DishFilter } from "@/types";
+import { BASE_API_URL } from "@/constans/Api.constans";
 
-async function getDishesByRestaurant(restaurantId: string, tab: DishTabLabel):Promise<Dish[]>{
-    const res = await fetch(
-        `${API_ROUTES.BASE_URL}${DISHES_BY_RESTAURANT(restaurantId,tab)}`, {cache:"no-store"}
-    );
+export const fetchDishesByRestaurant = async (
+    restaurantId: string,
+    type?: DishFilter
+): Promise<Dish[]> => {
+    const url = type
+        ? `${BASE_API_URL}/restaurants/${restaurantId}/dishes?type=${type}`
+        : `${BASE_API_URL}/restaurants/${restaurantId}/dishes`;
 
-    if(!res.ok){
-        throw new Error("Faild to fetch dishes");
+    const res = await fetch(url);
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch dishes");
     }
-    const dishes = await res.json() as Dish[];        
-    return dishes;
-}
+
+    const json = await res.json();
+
+    return json.data?.menu?.[type ?? "breakfast"] ?? [];
+};
 
 export const DishService = {
-    getDishesByRestaurant
+    fetchDishesByRestaurant,
 };
