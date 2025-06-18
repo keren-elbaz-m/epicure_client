@@ -1,68 +1,66 @@
-@import '../../styles/mixins';
-@import '../../styles/variables';
+@import "../../styles/mixins";
+@import "../../styles/variables";
 
 .tabsBar {
-  max-width: 375px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-left:21px;
-  display: flex;
-  gap:35px;
-  padding-top:6px;
-  overflow-x: auto;
+    max-width: 375px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 21px;
+    display: flex;
+    gap: 35px;
+    padding-top: 32px;
+    overflow-x: auto;
 
-    @media screen and (min-width:768px) {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 0 auto;
-      padding-top: 47px;
-      gap: 40px;
-      padding-bottom: 29px;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 47px;
+        gap: 40px;
+        padding-bottom: 29px;
     }
 }
 
 .tab {
-  font-family: $font-family-main;
-  font-size: 18px;
-  letter-spacing: 1.92px;
-  line-height: 100%;
-  color: $font-color;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 8px;
+    font-family: $font-family-main;
+    font-size: 18px;
+    letter-spacing: 1.92px;
+    line-height: 100%;
+    color: $font-color;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 8px;
 
-  &::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color 0.3s;
-    margin-top: 4px;
-  }
+    &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s;
+        margin-top: 4px;
+    }
 
-  &:hover::after {
-    background-color: #aaa;
-  }
+    &:hover::after {
+        background-color: #aaa;
+    }
 
-  &.active::after {
-    background-color: #DE9200;
-  }
+    &.active::after {
+        background-color: #de9200;
+    }
 }
 
 .dropdownBar {
     display: none;
-    @media screen and (min-width:768px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #FAFAFA;
-      height: 60px;
-      gap:26px;
-      
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fafafa;
+        height: 60px;
+        gap: 26px;
     }
-
 }
 
 .dropdownItem {
@@ -71,10 +69,10 @@
     display: flex;
     align-items: center;
     height: 60px;
-    gap:8px;
+    gap: 8px;
 
     &:hover {
-        background-color: #d3d3d3; 
+        background-color: #d3d3d3;
         cursor: pointer;
     }
 
@@ -84,7 +82,6 @@
     line-height: 100%;
     letter-spacing: 1.92px;
     color: $font-color;
-
 }
 
 .innerContent {
@@ -93,11 +90,10 @@
     justify-content: center;
     padding-left: 5px;
     transition: background-color 0.3s ease;
-    
 }
 
 .icon {
-  object-fit: contain;
-  display: block;
-  margin-right: 10px;
+    object-fit: contain;
+    display: block;
+    margin-right: 10px;
 }
