@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import style from "@/app/restaurants/Restaurants.module.scss";
 import { Restaurant, SectionPart } from "@/types";
 import { useEffect, useState } from "react";
@@ -9,9 +9,8 @@ import { TabLabel, TabLabelToFilterMap } from "@/types";
 
 export default function Filter() {
     const defaultTab = Object.keys(TabLabelToFilterMap)[0] as TabLabel;
-    const [activeTab, setActiveTab]= useState<TabLabel>(defaultTab);
+    const [activeTab, setActiveTab] = useState<TabLabel>(defaultTab);
     const [cards, setCards] = useState<React.ReactNode[]>([]);
-
 
     useEffect(() => {
         const filter = TabLabelToFilterMap[activeTab];
@@ -25,21 +24,17 @@ export default function Filter() {
         fetchFilteredRestaurants();
     }, [activeTab]);
 
-
     return (
         <>
-            <TabsFilterBar tabLabels={Object.keys(TabLabelToFilterMap) as TabLabel[]} 
-            activeTab={activeTab} 
-            setActiveTab={setActiveTab} />
-            <DropdownFilterBar className={style.desktopOnly}/>
+            <TabsFilterBar
+                tabLabels={Object.keys(TabLabelToFilterMap) as TabLabel[]}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+            />
+            <DropdownFilterBar className={style.desktopOnly} />
             <div className={style.cardsLayout}>
-                <div className={style.cardsGrid}>
-                    {cards}
-                </div>
+                <div className={style.cardsGrid}>{cards}</div>
             </div>
-            
-
         </>
     );
-
 }
