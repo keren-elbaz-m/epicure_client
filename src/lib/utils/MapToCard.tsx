@@ -97,11 +97,6 @@ export function MapToCards(
                                 item={restaurant}
                                 variant={SectionPart.RESTAURANT}
                             >
-                                {/*        case SectionPart.RESTAURANT:{
-          const restaurant = item as RestaurantItem;
-          return (
-            <Card key={restaurant.id} item={restaurant} variant={SectionPart.RESTAURANT}>  */}
-
                                 {renderContent(
                                     restaurant,
                                     SectionPart.RESTAURANT

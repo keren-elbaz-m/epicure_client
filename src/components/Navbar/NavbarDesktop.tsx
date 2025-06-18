@@ -38,18 +38,6 @@ export default function NavbarDesktop({ pathname }: NavbarDesktopProps) {
                             </div>
                         </Link>
 
-                        {/* <div className={styles.logoIcon}>
-            <Link href="/">
-              <div className={styles.logo}>
-                <Image src={epicure_logo_icon} alt="epicure logo icon" />
-              </div>
-            </Link>
-            <span className={styles.brandName}>
-              {RESOURES.app.appName.toUpperCase()}
-            </span>
-
-          </div>  */}
-
                         <div className={styles.links}>
                             <Link
                                 href="/restaurants"
