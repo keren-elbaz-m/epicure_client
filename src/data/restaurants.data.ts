@@ -14,8 +14,9 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [1,5,6,9], lunch: [7,8], dinner: [2,3,5,7]
+        },
+        dishIds: [1, 2, 3, 5, 6, 7, 8, 9],
     },
     {
         id: 2,
@@ -30,8 +31,9 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [1,2,3], lunch: [2,3], dinner: [1]
+        },
+        dishIds: [1, 2,3],
     },
     {
         id: 3,
@@ -46,8 +48,9 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [4,7], lunch: [3], dinner: [7]
+        },
+        dishIds: [3,4,7],
     },
     {
         id: 4,
@@ -62,24 +65,27 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [3,7], lunch: [1,9], dinner: [1,3,7]
+        },
+        dishIds: [1, 3,7,9],
     },
     {
         id: 5,
         imageUrl: "/images/restaurants/messa.png",
         name: "Messa",
         chefName: "Aviv Moshe",
-        isOpen: true,
+        isOpen: false,
         rating: 3,
         location: { lat: 32.071, lng: 34.769 },
         isNew: false,
         isPopular: false,
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
+        dishIds: [1, 6,7],
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [1,6], lunch: [6], dinner: [7]
+        },
+        
     },
     {
         id: 6,
@@ -94,8 +100,9 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [1,4,5], lunch: [2,3], dinner: [6,7,8]
+        },
+        dishIds: [1, 2, 3, 4, 5, 6, 7, 8],
     },
 
     {
@@ -111,8 +118,9 @@ export const restaurants: Restaurant[] = [
         priceRange: { min: 100, max: 300 },
         distance: 2.5,
         menu: {
-            breakfast: [], lunch: [], dinner: []
-        }
+            breakfast: [1,2], lunch: [1,5], dinner: [3,5,9]
+        },
+        dishIds: [1, 2, 3, 5,9],
     },
 
 ]

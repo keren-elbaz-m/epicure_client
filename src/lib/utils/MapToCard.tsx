@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Card from "@/components/Card/Card";
 import style from "@/components/Card/Card.module.scss";
 import RatingStars from "@/components/Rating/Rating";
@@ -8,6 +9,7 @@ import { SectionPart } from "@/types";
 import { RestaurantItem, DishItem, ChefItem } from "@/types";
 import Link from "next/link";
 import { restaurants } from "@/data/restaurants.data";
+
 
 export function MapToCards(
     data: unknown[] | undefined | null,
@@ -82,21 +84,29 @@ export function MapToCards(
     return data
         .map((item) => {
             if (!item || typeof item !== "object") return null;
-
             if (!("_id" in item) || !("name" in item) || !("imageUrl" in item))
+
                 return null;
 
             switch (type) {
                 case SectionPart.RESTAURANT: {
                     const restaurant = item as RestaurantItem;
                     return (
-                        <Card
+
+                        <Link
                             key={restaurant._id}
-                            item={restaurant}
-                            variant={SectionPart.RESTAURANT}
+                            href={`/restaurants/${restaurant._id}`}
                         >
-                            {renderContent(restaurant, SectionPart.RESTAURANT)}
-                        </Card>
+                            <Card
+                                item={restaurant}
+                                variant={SectionPart.RESTAURANT}
+                            >
+                                {renderContent(
+                                    restaurant,
+                                    SectionPart.RESTAURANT
+                                )}
+                            </Card>
+                        </Link>
                     );
                 }
 
@@ -142,16 +152,21 @@ export function MapToCards(
                 case SectionPart.RESTAURANT_WIDE: {
                     const restaurant = item as RestaurantItem;
                     return (
-                        <Card
+                        <Link
                             key={restaurant._id}
-                            item={restaurant}
-                            variant={SectionPart.RESTAURANT_WIDE}
+                            href={`/restaurants/${restaurant._id}`}
                         >
-                            {renderContent(
-                                restaurant,
-                                SectionPart.RESTAURANT_WIDE
-                            )}
-                        </Card>
+                            <Card
+                                key={restaurant._id}
+                                item={restaurant}
+                                variant={SectionPart.RESTAURANT_WIDE}
+                            >
+                                {renderContent(
+                                    restaurant,
+                                    SectionPart.RESTAURANT_WIDE
+                                )}
+                            </Card>
+                        </Link>
                     );
                 }
 

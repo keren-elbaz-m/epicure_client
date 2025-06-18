@@ -24,6 +24,7 @@ export default function Filter() {
 
         fetchFilteredRestaurants();
     }, [activeTab]);
+
     return (
         <>
             <TabsFilterBar activeTab={activeTab} onTabClick={setActiveTab} />

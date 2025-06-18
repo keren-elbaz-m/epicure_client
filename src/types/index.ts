@@ -17,10 +17,11 @@ export type Restaurant = {
     };
     distance: number;
     menu: {
-        breakfast: string[];
-        lunch: string[];
-        dinner: string[];
+        breakfast: number[];
+        lunch: number[];
+        dinner: number[];
     };
+    dishIds: number[];
 };
 
 export type Chef = {
@@ -127,12 +128,27 @@ export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
     "Open Now": RestaurantFilter.OPEN,
 };
 
+export enum DishFilter {
+  BREAKFAST = "breakfast",
+  LUNCH = "lunch",
+  DINNER = "dinner",
+}
+
+export type DishTabLabel = "Breakfast" | "Lunch" | "Dinner";
+
+export const TabLabelToDishFilterMap: Record<DishTabLabel, DishFilter> = {
+  "Breakfast": DishFilter.BREAKFAST,
+  "Lunch": DishFilter.LUNCH,
+  "Dinner": DishFilter.DINNER,
+};
+
 export type RestaurantItem = {
     _id: number;
     name: string;
     imageUrl: string;
     chefName?: string;
     rating?: number;
+    isOpen?: boolean;
 };
 
 export type DishItem = {
@@ -153,3 +169,38 @@ export type ChefItem = {
     imageUrl: string;
     description: string;
 };
+
+  id: number;
+  name: string;
+  imageUrl: string;
+  description: string;
+
+};
+
+export type RestaurantDetailsResponse = {
+  restaurant: RestaurantItem;
+  dishes: DishItem[];
+};
+
+export type HomeHeroProps = {
+  variant: 'home';
+  fallback: {
+    mobile: string;
+    desktop: string;
+  };
+  fallbackOverlay: string;
+};
+
+export type RestaurantHeroProps = {
+  variant: 'restaurant';
+  name: string;
+  imageUrl: string;
+};
+
+export type HeroProps = HomeHeroProps | RestaurantHeroProps;
+
+export enum HeroVariant {
+  HOME= 'home', 
+  RESTAURANT= 'restaurant'
+};
+
