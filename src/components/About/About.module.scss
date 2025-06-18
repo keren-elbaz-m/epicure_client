@@ -1,7 +1,5 @@
-@import '../../styles/mixins';
-@import '../../styles/variables';
-
-
+@import "../../styles/mixins";
+@import "../../styles/variables";
 
 .container {
     background-color: $light-gray-color;
@@ -9,86 +7,84 @@
     flex-direction: column;
     padding-left: 20px;
     padding-top: 2px;
-    @media screen and (min-width:768px) {
+    @media screen and (min-width: 768px) {
         padding: 42px 27px;
         padding-top: 24px;
     }
-    
-    .logo{
-        order:1;
+
+    .logo {
+        order: 1;
         padding-bottom: 32px;
-        img{
-                width: 102px;
-                height: 195px;
-            }
+        img {
+            width: 102px;
+            height: 95px;
+        }
     }
 
-    .secondaryContainer{
-        order:2;        
+    .secondaryContainer {
+        order: 2;
     }
 
-    @include respond-to(desktop){
+    @include respond-to(desktop) {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         padding: 41px 128px;
-        
-        .secondaryContainer{
+
+        .secondaryContainer {
             display: flex;
             flex-direction: column;
-            order:1;
+            order: 1;
             gap: 127px;
             width: 60%;
-            .textBlock{
-                order:1;
+            .textBlock {
+                order: 1;
             }
-            .iconsWrapper{
+            .iconsWrapper {
                 flex-direction: row;
-                order:2
+                order: 2;
             }
         }
-        .logo{
-            order:2;
+        .logo {
+            order: 2;
             display: flex;
             align-self: center;
             justify-content: flex-end;
             width: 30%;
-            
-            img{
+
+            img {
                 width: 178px;
                 height: 166px;
                 margin-top: 19px;
-                margin-right:4px
+                margin-right: 4px;
             }
-            
-            
         }
     }
 }
 
-.secondaryContainer{
+.secondaryContainer {
     display: flex;
     flex-direction: column;
-    .logo{
-        order:1;
+    .logo {
+        order: 1;
         padding-bottom: 32px;
     }
 
-    .iconsWrapper{
-        order:2;        
+    .iconsWrapper {
+        order: 2;
     }
 
-    .textBlock{
-        order:3;
-        padding-top:46px;
-    };
+    .textBlock {
+        order: 3;
+        padding-top: 46px;
+    }
 }
-.iconsWrapper{
+.iconsWrapper {
     display: flex;
     flex-direction: column;
     gap: 16px;
 
-    button{
+    button {
         width: 180px;
         height: 52px;
         gap: 7px;
@@ -102,7 +98,7 @@
     }
 }
 
-.textBlock{
+.textBlock {
     padding-top: 48px;
     font-family: Helvetica Neue;
     font-weight: 200;
@@ -110,34 +106,31 @@
     line-height: 28px;
     letter-spacing: 2.14px;
 
-
-    .title{
+    .title {
         font-family: Helvetica Neue;
         font-weight: 200;
         font-size: 18px;
         line-height: 35px;
         letter-spacing: 1.25px;
         text-transform: uppercase;
-        @media screen and (min-width:768px) {
+        @media screen and (min-width: 768px) {
             font-size: 32px;
         }
-
     }
 
-    P{
+    P {
         padding-right: 20px;
         margin-bottom: 16px;
         line-height: 1.6;
     }
-    @media screen and (min-width:768px) {
-        padding-top:0;
+    @media screen and (min-width: 768px) {
+        padding-top: 0;
     }
 }
 
-.description{
-    padding-top:16px;
-    @include respond-to(desktop){
+.description {
+    padding-top: 16px;
+    @include respond-to(desktop) {
         white-space: pre-line;
     }
 }
-

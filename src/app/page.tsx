@@ -11,14 +11,17 @@ import About from "@/components/About/About";
 import { fetchRestaurants } from "@/lib/services/restaurant.service";
 import { fetchDishes } from "@/lib/services/dish.service";
 import { fetchChefOfTheWeek } from "@/lib/services/chef.service";
+import { getHomePageData } from "@/lib/services/home-page.service";
 
 export default async function Home() {
-    const dataRest = await fetchRestaurants();
-    const dataDish = await fetchDishes();
-    const restaurantCards = MapToCards(dataRest, SectionPart.RESTAURANT);
-    const dishCards = MapToCards(dataDish, SectionPart.DISH);
+    const { chefData, restaurantData, dishData } = await getHomePageData();
 
-    const chefData = await fetchChefOfTheWeek();
+    // const dataRest = await fetchRestaurants();
+    // const dataDish = await fetchDishes();
+    const restaurantCards = MapToCards(restaurantData, SectionPart.RESTAURANT);
+    const dishCards = MapToCards(dishData, SectionPart.DISH);
+
+    // const chefData = await fetchChefOfTheWeek();
 
     const chefCards = chefData ? MapToCards([chefData], SectionPart.CHEF) : [];
     const restOfChefCards = chefData?.restaurants
