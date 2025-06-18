@@ -3,25 +3,69 @@
 
 
 .container {
-  text-align: center;
-  padding: 40px 0;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+      height: 342px;
+      display: flex;
+      padding-top: 80px;
+    }
+}
+.innerContainer {
+  height: 486px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: $light-gray-color;
+  width: 100%;
+  padding: 0 0;
+  gap: 32px;
+   
+   @media screen and (min-width: 768px) {
+        background-color: $light-gray-color;
+        padding: 37px 0;
+        gap: 32px;
+        height: 265px;
+        gap: 35;
+        padding: 0 0;
+    }
 }
 
 .title {
-  font-size: $font-size-default;
+  font-family: Helvetica Neue;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 35px;
+  letter-spacing: 1.25px;
   text-transform: uppercase;
-  letter-spacing:1.25px;
-  font-family: $font-family-main;
-  margin-bottom: 40px;
-  font-weight: $font-weight-light;
+
+  @media  screen and (min-width:768px){
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 2.14px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0;
+  }
+    
 }
 
 .iconsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
+
+  @media screen and (min-width:768px) {
+    gap:76px;
+    
+  }
 
 }
 
@@ -29,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 29px;
 
   p {
     font-family: Helvetica Neue;
@@ -38,7 +82,18 @@
     line-height: 30px;
     letter-spacing: 1.97px;
     text-align: center;
+  }
 
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+    p {
+        font-family: Helvetica Neue;
+        font-weight: 200;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 1.97px;
+        text-align: center;
+    }
   }
 }
 
@@ -55,12 +110,16 @@
         justify-content: center;
     }
   .iconImage{
-        width: 78px;
+        width: 77px;
         height: 60px;
     }
 }
 
 .iconImage{
-    width: 64px;
-    height: 64px;
+    width: 46px;
+    height: 46px;
+    @media screen and (min-width:768px){
+      width: 77px;
+      height: 60px;
+    }
 }

@@ -3,10 +3,11 @@
 
 .footerMobileContainer{
   background-color: $background-color;
-  padding: 24px;
+  padding: 20px;
   @include flex(column, flex-start, flex-start);
   width: 100%;
   height: 202px;
+  padding-top:46px;
 }
 
 .footerDesktopContainer {
@@ -23,7 +24,6 @@
   width: 100%;
   max-width: 377px;
   height: 100%;
-  padding-left: 19px;
 }
 
 .linksWrapperDesktop {

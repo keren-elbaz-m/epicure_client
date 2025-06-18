@@ -6,6 +6,7 @@ import epicure_logo_icon from "@/assets/icons/epicure_logo_icon.svg";
 import person_icon from "@/assets/icons/person_icon.svg";
 import search_icon from "@/assets/icons/search_icon.svg";
 import shopping_bag_icon from "@/assets/icons/shopping_bag_icon.svg";
+import layoutStyle from "@/app/Layout.module.scss";
 
 import { DropDownType } from "@/types";
 import Cart from "@/components/cart/cart";
@@ -25,19 +26,30 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
   const {isRestaurants, isChefs} = getPageContext(pathname);
 
   return (
-    <>
+    <div className={layoutStyle.navbarWrapper}>
     <nav className={styles.navbar}>
       <div className={styles.desktopContent}>
         <div className={styles.leftSection}>
+
           <Link href="/">
             <div className={styles.logo}>
               <Image src={epicure_logo_icon} alt="epicure logo icon" />
             </div>
           </Link>
+
+<!--           <div className={styles.logoIcon}>
+            <Link href="/">
+              <div className={styles.logo}>
+                <Image src={epicure_logo_icon} alt="epicure logo icon" />
+              </div>
+            </Link>
+            <span className={styles.brandName}>
+              {RESOURES.app.appName.toUpperCase()}
+            </span>
+
+          </div> -->
+
           
-          <span className={styles.brand}>
-            {RESOURES.app.appName}
-          </span>
 
           <div className={styles.links}>
             <Link
@@ -50,19 +62,19 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
               href="/chefs"
               className={`${styles.navLink} ${isChefs ? styles.active : ''}`}
             >
-              chefs
+              Chefs
             </Link>          
           </div>
         </div>
 
         <div className={styles.icons}>
             <button className={styles.buttonIconsStyle}>
-                <Image src={search_icon} alt="search icon" />
+                <Image src={search_icon} alt="search icon" width={24} height={24}/>
             </button>
-                <Image src={person_icon} alt="person icon" />
+                <Image src={person_icon} alt="person icon" width={24} height={24}/>
 
             <button className={styles.buttonIconsStyle} onClick={toggleCart}>
-                <Image src={shopping_bag_icon} alt="shopping bag icon" />
+                <Image src={shopping_bag_icon} alt="shopping bag icon" width={24} height={24}/>
             </button>
 
         </div>
@@ -76,6 +88,6 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
     >
       <Cart />
     </DropDown>
-  </>
+  </div>
   );
 }

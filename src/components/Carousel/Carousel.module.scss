@@ -1,7 +1,7 @@
 .carouselContainer {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+
 }
 
 .carousel {
@@ -11,7 +11,7 @@
 
 .slideContainer {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     will-change: transform;
     padding: 0 10px;
 }

@@ -18,7 +18,7 @@ export default function Filter() {
         const fetchFilteredRestaurants = async () => {
             const response = await fetch(`/api/restaurants?filter=${filter}`);
             const data: Restaurant[] = await response.json();
-            const mappedCards = MapToCards(data, SectionPart.RESTAURANT);
+            const mappedCards = MapToCards(data, SectionPart.RESTAURANT_WIDE);
             setCards(mappedCards);
         };
 
@@ -32,9 +32,12 @@ export default function Filter() {
             activeTab={activeTab} 
             setActiveTab={setActiveTab} />
             <DropdownFilterBar className={style.desktopOnly}/>
-            <div className={style.cardsGrid}>
-                {cards}
+            <div className={style.cardsLayout}>
+                <div className={style.cardsGrid}>
+                    {cards}
+                </div>
             </div>
+            
 
         </>
     );

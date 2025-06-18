@@ -5,7 +5,7 @@ import { RestaurantItem, DishItem, ChefItem } from '@/types';
 
 type CardProps =
   | { 
-        variant: SectionPart.RESTAURANT; 
+        variant: SectionPart.RESTAURANT | SectionPart.RESTAURANT_WIDE; 
         item: RestaurantItem; children?: React.ReactNode 
     }
   | { 
@@ -38,6 +38,7 @@ export default function Card({item, children, variant}: CardProps) {
             src={item.imageUrl}
             alt={`${variant === SectionPart.CHEF ? "Portrait of" : "Image of"} ${item.name}`}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
 

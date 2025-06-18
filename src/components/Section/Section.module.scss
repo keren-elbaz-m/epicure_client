@@ -5,23 +5,58 @@
     background-color: $background-color;
     padding-left: 20px;
     padding-top: 48px;
-    padding-bottom: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     @media screen and (min-width: $mim-width) {
-        padding-top: 0;
+        padding-top: 85px;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1186px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
 }
 .section--chef_restaurant{
-     padding-bottom: 48px;
+    padding-left: 20px;
+    padding-bottom: 48px;
+    padding-top: 43px;
+    
      @include respond-to(desktop){
         .linkWrapper{
             display:none ;
         }
     }
+    @media screen and (min-width: $mim-width) {
+        display: flex;
+        align-items: flex-start; 
+        margin-left: 0; 
+        margin-right: 0; 
+        max-width: 1200px; 
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding-bottom: 82px;
+  }
 }
+.section--chef{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 .section--chef{
     padding-right: 20px;
+    @media screen and (min-width: 768px) {
+        padding-right: 0;
+    }
+    @media screen and (min-width: 768px)  and (max-width: 1439px) {
+        padding-right: 20;
+    }
 }
 
 .sectionTitle{
@@ -31,28 +66,52 @@
     text-transform: uppercase;
     font-size: $font-size-default;
     line-height: 24px;
-    padding-bottom: 17px;
+    padding-bottom: 15px;
 
     @media screen and (min-width: $mim-width) {
         font-size: 30px;
         line-height: 35px;
         text-align: center;
         padding-bottom: 40px;
-        padding-top: 80px;
     }
 }
 
+.sectionTitle--chef{
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 35px;
+    @media screen and (min-width:768px) {
+        font-family: Helvetica Neue;
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: 1.25px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 37px;
+
+        
+    }
+}
 .sectionTitle--chef_restaurant{
     text-align: left;
     max-width: 2000px;
     
      @media screen and (min-width: $mim-width) {
         max-width: $max-desktop-width;
-        margin: 0 auto;
-        padding-left: 127px;
-        padding-right: 127px;
         justify-content: flex-start;
         gap: 24px;
+        font-family: Helvetica Neue;
+        font-weight: 200;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: 1.25px;
+        text-transform: capitalize;
+
     }
    
 }
@@ -62,15 +121,23 @@
 .linkWrapper{
     @include flex(row, flex-start, flex-start,12px);
     width: 100%;
-    height: 35px;
-    padding-top: 18.2px;
 
-    @media screen and (min-width: $mim-width) {
+    height: 35px;
+    padding-top: 24px;
+    padding-bottom: 35px;
+    @media screen and (min-width: 768px) {
         justify-content: flex-end;
         gap: 12px;
         width: 100%;
-        padding-top: 40px;
-        padding-right: 127px;
+        padding-top: 45px;
+        padding-bottom: 25px;
+    }
+    
+}
+
+.linkWrapper--dish{
+    @media screen and (min-width: 768px) {
+        display: none;
     }
 }
 
@@ -93,6 +160,9 @@
 .linkIcon{
     width: 24px;
     height: 24px;
+  object-fit: contain;
+
+
 }
 
 
@@ -109,18 +179,15 @@
 
     @media screen and (min-width: $mim-width) {
         display: block;
+        max-width: 1186px;
     }
 }
 
 .staticCards {
-  max-width: $max-desktop-width;
   display: flex;
   gap: 24px;
   justify-content: center;
   margin: 0 auto;
-  padding-left: 127px;
-  padding-right: 127px;
-
 }
 
 .staticCards--chef{
@@ -130,13 +197,8 @@
     gap: 24px;
     margin: 0 auto;
     max-width: $max-desktop-width;
-
-    @media screen and (min-width: $mim-width) {
-        padding-left: 127px;
-        padding-right: 127px;
-    }
-
 }
+
 .staticCards--chef_restaurant {
     padding-left: 0;
     padding-right: 0;
@@ -146,9 +208,9 @@
     max-width: $max-desktop-width;
 
     @media screen and (min-width: $mim-width) {
-    max-width: $max-desktop-width;
-    margin: 0 auto;
-    padding-left: 127px;
-    padding-right: 127px;
+    display: flex;
+    align-items: flex-start; 
+    margin-left: 0; 
+    margin-right: 0; 
   }
 }
