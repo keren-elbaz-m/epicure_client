@@ -31,7 +31,7 @@ export type Chef = {
     isNew: boolean;
     description: string;
     restaurants: string[];
-}
+};
 
 export type Dish = {
     id: number;
@@ -39,22 +39,22 @@ export type Dish = {
     imageUrl: string;
     price: number;
     ingredients: string[];
-    type:{
+    type: {
         name: string;
         iconUrl: string;
-    }
-}
+    };
+};
 
 export enum screenType {
-    DESKTOP  = "desktop",
-    MOBILE = "mobile"
+    DESKTOP = "desktop",
+    MOBILE = "mobile",
 }
 
-export enum DropDownType{
+export enum DropDownType {
     BURGER = "burger",
-    SEARCH = "search", 
+    SEARCH = "search",
     CART = "cart",
-    PERSON = "person"
+    PERSON = "person",
 }
 
 export type DropdownBehavior = {
@@ -89,70 +89,67 @@ export const dropdownBehaviors: Record<DropDownType, DropdownBehavior> = {
 export type SectionLink = {
     label: string;
     url: string;
+};
+
+export enum SectionPart {
+    RESTAURANT = "restaurant",
+    DISH = "dish",
+    CHEF = "chef",
+    RESTAURANT_PAGE = "restaurant_page",
+    CHEF_RESTAURANT = "chef_restaurant",
+    RESTAURANT_WIDE = "restaurant_wide",
 }
 
-export enum SectionPart{
-    RESTAURANT = 'restaurant',
-    DISH = 'dish',
-    CHEF = 'chef',
-    RESTAURANT_PAGE = 'restaurant_page',
-    CHEF_RESTAURANT = 'chef_restaurant',
-    RESTAURANT_WIDE = 'restaurant_wide',
-
-}
-
-export enum TypeDishIcon{
+export enum TypeDishIcon {
     SPICY = "spicy",
     VEGAN = "vegan",
-    VEGETARIAN = "vegetarian"
+    VEGETARIAN = "vegetarian",
 }
 
-export enum ContactIcons{
+export enum ContactIcons {
     apple = "apple",
     android = "android",
 }
 
-
 export enum RestaurantFilter {
-  ALL = "all",
-  POPULAR = "popular",
-  NEW = "new",
-  OPEN = "open",
+    ALL = "all",
+    POPULAR = "popular",
+    NEW = "new",
+    OPEN = "open",
 }
 
 export type TabLabel = "All" | "New" | "Popular" | "Open Now";
 
 export const TabLabelToFilterMap: Record<TabLabel, RestaurantFilter> = {
-  "All": RestaurantFilter.ALL,
-  "New": RestaurantFilter.NEW,
-  "Popular": RestaurantFilter.POPULAR,
-  "Open Now": RestaurantFilter.OPEN,
+    All: RestaurantFilter.ALL,
+    New: RestaurantFilter.NEW,
+    Popular: RestaurantFilter.POPULAR,
+    "Open Now": RestaurantFilter.OPEN,
 };
 
 export type RestaurantItem = {
-  id: number;
-  name: string;
-  imageUrl: string;
-  chefName?: string;
-  rating?: number;
+    _id: number;
+    name: string;
+    imageUrl: string;
+    chefName?: string;
+    rating?: number;
 };
 
 export type DishItem = {
-  id: number;
-  name: string;
-  imageUrl: string;
-  price?: number;
-  ingredients: string[];
-  type: {
+    _id: number;
     name: string;
-    iconUrl: string;
-  };
+    imageUrl: string;
+    price?: number;
+    ingredients: string[];
+    type: {
+        name: string;
+        iconUrl: string;
+    };
 };
 
 export type ChefItem = {
-  id: number;
-  name: string;
-  imageUrl: string;
-  description: string;
-
+    _id: number;
+    name: string;
+    imageUrl: string;
+    description: string;
 };
