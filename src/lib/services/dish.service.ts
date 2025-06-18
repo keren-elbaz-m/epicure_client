@@ -21,6 +21,23 @@ export const fetchDishesByRestaurant = async (
     return json.data?.menu?.[type ?? "breakfast"] ?? [];
 };
 
+export const fetchDishes = async (): Promise<Dish[]> => {
+    try {
+        const url = `${BASE_API_URL}${API_ROUTES.DISHES}`;
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            throw new Error("Failed to fetch dishes");
+        }
+
+        const json = await res.json();
+        return Array.isArray(json.data) ? json.data : [];
+    } catch (error) {
+        console.error("Error fetching dishes:", error);
+        return [];
+    }
+};
+
 export const DishService = {
     fetchDishesByRestaurant,
 };

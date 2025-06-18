@@ -1,15 +1,24 @@
-import { API_ROUTES } from "@/constans/Api.constans";
-import { getDataFromApi } from "@/lib/utils/getDataFromApi";
+import { API_ROUTES, BASE_API_URL } from "@/constans/Api.constans";
+import { Chef } from "@/types";
 
-export async function getRandomChef(): Promise<number | null> {
-  try {
-    const dataChefs = await getDataFromApi(API_ROUTES.CHEFS);
-    if (!Array.isArray(dataChefs) || dataChefs.length === 0) return null;
+export const getRandomChef = async (): Promise<string | null> => {
+    try {
+        const res = await fetch(`${BASE_API_URL}${API_ROUTES.CHEFS}`);
 
-    const randomIndex = Math.floor(Math.random() * dataChefs.length);
-    return (dataChefs[randomIndex] as { id: number }).id;
-  } catch (error) {
-    console.error('Error f etching chefs:', error);
-    return null;
-  }
-}
+        if (!res.ok) {
+            console.error("Failed to fetch chefs:", res.status);
+            return null;
+        }
+
+        const json = await res.json();
+        const chefs: Chef[] = json.data ?? [];
+
+        if (chefs.length === 0) return null;
+
+        const randomIndex = Math.floor(Math.random() * chefs.length);
+        return chefs[randomIndex]._id;
+    } catch (error) {
+        console.error("Error fetching chefs:", error);
+        return null;
+    }
+};

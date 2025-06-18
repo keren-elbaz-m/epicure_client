@@ -1,5 +1,5 @@
 export type Restaurant = {
-    _id: number;
+    _id: string;
     imageUrl: string;
     name: string;
     chefName: string;
@@ -25,7 +25,7 @@ export type Restaurant = {
 };
 
 export type Chef = {
-    id: number;
+    _id: string;
     name: string;
     imageUrl: string;
     views: number;
