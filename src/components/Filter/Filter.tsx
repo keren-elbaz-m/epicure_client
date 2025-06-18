@@ -6,30 +6,53 @@ import TabsFilterBar from "./TabsFilterBar";
 import { MapToCards } from "@/lib/utils/MapToCard";
 import DropdownFilterBar from "@/components/Filter/DropdownFilterBar";
 import { TabLabel, TabLabelToFilterMap } from "@/types";
+import { fetchRestaurants } from "@/lib/services/restaurant.service";
+import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Filter() {
-    const defaultTab = Object.keys(TabLabelToFilterMap)[0] as TabLabel;
+type Props = {
+    initialData: Restaurant[];
+    initialFilter: string;
+};
+
+export default function Filter({ initialData, initialFilter }: Props) {
+    const router = useRouter();
+    const defaultTab = (Object.keys(TabLabelToFilterMap).find(
+        (key) => TabLabelToFilterMap[key as TabLabel] === initialFilter
+    ) || Object.keys(TabLabelToFilterMap)[0]) as TabLabel;
+
     const [activeTab, setActiveTab] = useState<TabLabel>(defaultTab);
-    const [cards, setCards] = useState<React.ReactNode[]>([]);
+    const [cards, setCards] = useState<React.ReactNode[]>(
+        MapToCards(initialData, SectionPart.RESTAURANT_WIDE)
+    );
+
+    const handleTabClick = (tab: TabLabel) => {
+        setActiveTab(tab);
+        const newFilter = TabLabelToFilterMap[tab];
+        router.push(`?filter=${newFilter}`);
+    };
 
     useEffect(() => {
         const filter = TabLabelToFilterMap[activeTab];
-        const fetchFilteredRestaurants = async () => {
-            const response = await fetch(`/api/restaurants?filter=${filter}`);
-            const data: Restaurant[] = await response.json();
-            const mappedCards = MapToCards(data, SectionPart.RESTAURANT_WIDE);
-            setCards(mappedCards);
+
+        if (filter === "all") {
+            setCards(MapToCards(initialData, SectionPart.RESTAURANT_WIDE));
+            return;
+        }
+
+        const fetchFiltered = async () => {
+            const data = await fetchRestaurants({ query: filter });
+            setCards(MapToCards(data, SectionPart.RESTAURANT_WIDE));
         };
 
-        fetchFilteredRestaurants();
-    }, [activeTab]);
+        fetchFiltered();
+    }, [activeTab, initialData]);
 
     return (
         <>
             <TabsFilterBar
-                tabLabels={Object.keys(TabLabelToFilterMap) as TabLabel[]}
                 activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                tabLabels={Object.keys(TabLabelToFilterMap) as TabLabel[]}
+                setActiveTab={handleTabClick}
             />
             <DropdownFilterBar className={style.desktopOnly} />
             <div className={style.cardsLayout}>

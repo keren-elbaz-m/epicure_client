@@ -7,6 +7,7 @@ import RatingStars from "@/components/Rating/Rating";
 import { ReactElement } from "react";
 import { SectionPart } from "@/types";
 import { RestaurantItem, DishItem, ChefItem } from "@/types";
+import { restaurants } from "@/data/restaurants.data";
 
 export function MapToCards(
     data: unknown[] | undefined | null,
@@ -81,8 +82,7 @@ export function MapToCards(
     return data
         .map((item) => {
             if (!item || typeof item !== "object") return null;
-
-            if (!("id" in item) || !("name" in item) || !("imageUrl" in item))
+            if (!("_id" in item) || !("name" in item) || !("imageUrl" in item))
                 return null;
 
             switch (type) {
@@ -90,8 +90,8 @@ export function MapToCards(
                     const restaurant = item as RestaurantItem;
                     return (
                         <Link
-                            key={restaurant.id}
-                            href={`/restaurants/${restaurant.id}`}
+                            key={restaurant._id}
+                            href={`/restaurants/${restaurant._id}`}
                         >
                             <Card
                                 item={restaurant}
@@ -110,7 +110,7 @@ export function MapToCards(
                     const dish = item as DishItem;
                     return (
                         <Card
-                            key={dish.id}
+                            key={dish._id}
                             item={dish}
                             variant={SectionPart.DISH}
                         >
@@ -123,7 +123,7 @@ export function MapToCards(
                     const chef = item as ChefItem;
                     return (
                         <Card
-                            key={chef.id}
+                            key={chef._id}
                             item={chef}
                             variant={SectionPart.CHEF}
                         >
@@ -136,7 +136,7 @@ export function MapToCards(
                     const chef = item as ChefItem;
                     return (
                         <Card
-                            key={chef.id}
+                            key={chef._id}
                             item={chef}
                             variant={SectionPart.CHEF_RESTAURANT}
                         >
@@ -149,11 +149,11 @@ export function MapToCards(
                     const restaurant = item as RestaurantItem;
                     return (
                         <Link
-                            key={restaurant.id}
-                            href={`/restaurants/${restaurant.id}`}
+                            key={restaurant._id}
+                            href={`/restaurants/${restaurant._id}`}
                         >
                             <Card
-                                key={restaurant.id}
+                                key={restaurant._id}
                                 item={restaurant}
                                 variant={SectionPart.RESTAURANT_WIDE}
                             >
