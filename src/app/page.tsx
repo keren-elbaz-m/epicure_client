@@ -15,14 +15,8 @@ import { getHomePageData } from "@/lib/services/home-page.service";
 
 export default async function Home() {
     const { chefData, restaurantData, dishData } = await getHomePageData();
-
-    // const dataRest = await fetchRestaurants();
-    // const dataDish = await fetchDishes();
     const restaurantCards = MapToCards(restaurantData, SectionPart.RESTAURANT);
     const dishCards = MapToCards(dishData, SectionPart.DISH);
-
-    // const chefData = await fetchChefOfTheWeek();
-
     const chefCards = chefData ? MapToCards([chefData], SectionPart.CHEF) : [];
     const restOfChefCards = chefData?.restaurants
         ? MapToCards(chefData.restaurants, SectionPart.CHEF_RESTAURANT)
