@@ -13,6 +13,7 @@ import Cart from "@/components/cart/cart";
 import { useState } from "react";
 import DropDown from "@/components/dropDown/DropDown";
 import { RESOURES } from "@/data/text";
+import { getPageContext } from "@/lib/utils/getPageContext";
 
 type NavbarDesktopProps = {
   pathname: string;
@@ -22,13 +23,21 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const toggleCart = () => setIsCartOpen(prev => !prev);
   const closeCart = () => setIsCartOpen(false);
+  const {isRestaurants, isChefs} = getPageContext(pathname);
 
   return (
     <div className={layoutStyle.navbarWrapper}>
     <nav className={styles.navbar}>
       <div className={styles.desktopContent}>
         <div className={styles.leftSection}>
-          <div className={styles.logoIcon}>
+
+          <Link href="/">
+            <div className={styles.logo}>
+              <Image src={epicure_logo_icon} alt="epicure logo icon" />
+            </div>
+          </Link>
+
+<!--           <div className={styles.logoIcon}>
             <Link href="/">
               <div className={styles.logo}>
                 <Image src={epicure_logo_icon} alt="epicure logo icon" />
@@ -38,19 +47,20 @@ export default function NavbarDesktop({pathname}:NavbarDesktopProps) {
               {RESOURES.app.appName.toUpperCase()}
             </span>
 
-          </div>
+          </div> -->
+
           
 
           <div className={styles.links}>
             <Link
               href="/restaurants"
-              className={`${styles.navLink} ${pathname === '/restaurants' ? styles.active : ''}`}
+              className={`${styles.navLink} ${isRestaurants ? styles.active : ''}`}
             >
               Restaurants
             </Link>    
             <Link
               href="/chefs"
-              className={`${styles.navLink} ${pathname === '/chefs' ? styles.active : ''}`}
+              className={`${styles.navLink} ${isChefs ? styles.active : ''}`}
             >
               Chefs
             </Link>          

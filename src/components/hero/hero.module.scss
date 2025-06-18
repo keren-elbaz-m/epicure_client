@@ -10,19 +10,16 @@
 
 }
 .heroContainer {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: clamp(273px, 48vw, 696px);
 
-  aspect-ratio: 1440 / 696;
+    width: 100%;
+    min-width: 335px;
+    aspect-ratio: 1440 / 696; 
+    position: relative;
+    overflow: hidden;
+    @include flex(column,center,center);
+    @include respond-to(mobile) {
+    height: 50vh;
 
-  @media screen and (max-width: 374px) {
-    height: 273px;
-    aspect-ratio: unset;
   }
 }
 
@@ -119,6 +116,28 @@
     }
   }
 
+
+
+.heroRestContainer {
+    width: 100%;
+    height: 272px;
+    min-width: 335px; 
+    position: relative;
+    overflow: hidden;
+    margin:0 auto;
+
+  @media screen and (min-width: 768px) {
+        max-width: 1186px;
+        height: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+  
+
   .mobileOnly {
   display: block;
   @media screen and (min-width: 768px) {
@@ -132,3 +151,4 @@
     display: block;
   }
 }
+
