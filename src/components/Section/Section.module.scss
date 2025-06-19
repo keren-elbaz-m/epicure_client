@@ -1,7 +1,7 @@
-@import '../../styles/mixins';
-@import '../../styles/variables';
+@import "../../styles/mixins";
+@import "../../styles/variables";
 
-.section{
+.section {
     background-color: $background-color;
     padding-left: 20px;
     padding-top: 48px;
@@ -22,44 +22,50 @@
         margin: 0 auto;
     }
 }
-.section--chef_restaurant{
+.section--chef_restaurant {
     padding-left: 20px;
     padding-bottom: 48px;
     padding-top: 43px;
-    
-     @include respond-to(desktop){
-        .linkWrapper{
-            display:none ;
+
+    @include respond-to(desktop) {
+        .linkWrapper {
+            display: none;
         }
     }
     @media screen and (min-width: $mim-width) {
         display: flex;
-        align-items: flex-start; 
-        margin-left: 0; 
-        margin-right: 0; 
-        max-width: 1200px; 
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 1186px;
         margin: 0 auto;
         box-sizing: border-box;
         padding-bottom: 82px;
-  }
+        padding-left: 0;
+    }
+    @include respond-to(tablet) {
+        padding-left: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+        padding-left: 0;
+    }
 }
-.section--chef{
-    padding-left: 20px;
+
+.section--chef {
     padding-right: 20px;
 }
 
-
-.section--chef{
+.section--chef {
     padding-right: 20px;
     @media screen and (min-width: 768px) {
         padding-right: 0;
     }
-    @media screen and (min-width: 768px)  and (max-width: 1439px) {
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
         padding-right: 20;
     }
 }
 
-.sectionTitle{
+.sectionTitle {
     font-family: $font-family-main;
     font-weight: $font-weight-light;
     letter-spacing: 1.25px;
@@ -76,7 +82,7 @@
     }
 }
 
-.sectionTitle--chef{
+.sectionTitle--chef {
     letter-spacing: 1.2px;
     text-transform: uppercase;
     padding-bottom: 15px;
@@ -84,7 +90,8 @@
     font-size: 18px;
     font-weight: 200;
     line-height: 35px;
-    @media screen and (min-width:768px) {
+
+    @media screen and (min-width: 768px) {
         font-family: Helvetica Neue;
         font-weight: 200;
         font-size: 30px;
@@ -93,15 +100,13 @@
         text-align: center;
         text-transform: uppercase;
         padding-bottom: 37px;
-
-        
     }
 }
-.sectionTitle--chef_restaurant{
+.sectionTitle--chef_restaurant {
     text-align: left;
     max-width: 2000px;
-    
-     @media screen and (min-width: $mim-width) {
+
+    @media screen and (min-width: $mim-width) {
         max-width: $max-desktop-width;
         justify-content: flex-start;
         gap: 24px;
@@ -111,17 +116,12 @@
         line-height: 35px;
         letter-spacing: 1.25px;
         text-transform: capitalize;
-
     }
-   
 }
 
-
-
-.linkWrapper{
-    @include flex(row, flex-start, flex-start,12px);
+.linkWrapper {
+    @include flex(row, flex-start, flex-start, 12px);
     width: 100%;
-
     height: 35px;
     padding-top: 24px;
     padding-bottom: 35px;
@@ -132,16 +132,15 @@
         padding-top: 45px;
         padding-bottom: 25px;
     }
-    
 }
 
-.linkWrapper--dish{
+.linkWrapper--dish {
     @media screen and (min-width: 768px) {
         display: none;
     }
 }
 
-.link{
+.link {
     font-family: $font-family-main;
     font-weight: $font-weight-regular;
     font-size: 16px;
@@ -157,23 +156,20 @@
     }
 }
 
-.linkIcon{
+.linkIcon {
     width: 24px;
     height: 24px;
-  object-fit: contain;
-
-
+    object-fit: contain;
 }
-
 
 .carouselOnly {
     display: block;
-  
+
     @media screen and (min-width: $mim-width) {
-      display: none;
+        display: none;
     }
 }
-  
+
 .staticOnly {
     display: none;
 
@@ -184,19 +180,29 @@
 }
 
 .staticCards {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  margin: 0 auto;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.staticCards--chef{
-    padding-left: 0;
+.staticCards--chef {
+    padding-left: 20px;
+
     padding-right: 0;
     justify-content: flex-start;
     gap: 24px;
     margin: 0 auto;
     max-width: $max-desktop-width;
+    @media screen and (min-width: 768px) {
+        padding-left: 0;
+    }
+    @include respond-to(tablet) {
+        padding-left: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+        padding-left: 0;
+    }
 }
 
 .staticCards--chef_restaurant {
@@ -208,9 +214,9 @@
     max-width: $max-desktop-width;
 
     @media screen and (min-width: $mim-width) {
-    display: flex;
-    align-items: flex-start; 
-    margin-left: 0; 
-    margin-right: 0; 
-  }
+        display: flex;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

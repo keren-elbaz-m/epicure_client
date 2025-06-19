@@ -1,20 +1,28 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
+.contWrap {
+    background-color: $light-gray-color;
+}
+
+.layout {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
 .container {
     background-color: $light-gray-color;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 2px;
-    @media screen and (min-width: 768px) {
-        padding: 42px 27px;
-        padding-top: 24px;
-    }
 
     .logo {
         order: 1;
         padding-bottom: 32px;
+        padding-top: 24px;
         img {
             width: 102px;
             height: 95px;
@@ -29,7 +37,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 41px 128px;
 
         .secondaryContainer {
             display: flex;
