@@ -1,8 +1,10 @@
 .dropdownContainer {
-    position: fixed; 
-    top: 46px; 
+    position: fixed;
+    top: 46px;
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 999; 
-  }
+    z-index: 999;
+    top: 44px;
+    box-shadow: 0 16px 8px -11px #00000024;
+}
